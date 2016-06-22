@@ -11,5 +11,6 @@
  <stylesheet id="columns.css" enabled="0"/>
  <!-- mobile.css conflict because it needs sunburst's viewport -->
  <stylesheet id="mobile.css" enabled="0"/>
+ <stylesheet id="public.css" enabled="0"/>
 
 </object>
