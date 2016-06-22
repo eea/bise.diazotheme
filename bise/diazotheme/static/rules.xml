@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+  xmlns="http://namespaces.plone.org/diazo" 
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  css:if-content="#visual-portal-wrapper"
+  >
+
+    <theme href="folder.html" css:if-content="#visual-portal-wrapper" />
+
+    <!--Plone.app.toolbar-->
+    <!-- <append theme="/html/body" content="//div[@data&#45;iframe='toolbar']" /> -->
+
+    <!-- =============[ Head ]============= -->
+    <copy css:content="html" css:theme="html" attributes="lang dir" />
+    <drop css:theme="head script" css:if-content=".template-sat"/>
+    <before css:content="head style, head link, head script, head meta" css:theme-children="head" />
+    <replace css:content="head title" css:theme="head title" />
+    <copy css:content="head base" css:theme="head base" />
+    <drop css:content="head link[rel='shortcut icon']" />
+    <drop css:content="head link[rel='apple-touch-icon']" />
+
+    <!-- ===========[ Content ]============= -->
+    <merge attributes="class" css:content="body" css:theme="body" />
+    <copy attributes="id dir" css:content="body" css:theme="body" />
+	<copy attributes="role" css:content="content" css:theme="contentspace" />
+
+    <!-- Site header -->
+    <replace css:theme-children=".navbar-search" css:content="#searchbar-options form" />
+
+    <!-- Columns -->
+    <replace css:content-children="#portal-column-one" css:theme="aside" />
+    <replace css:content="#portal-column-content" css:theme=".article-body" />
+
+    <!-- Move the editor bar above the main content (article) -->
+    <drop css:content="#edit-bar" />
+    <before css:theme="article" css:content="#edit-bar" method="raw" />
+
+    <!-- Move the breadcrumbs -->
+    <drop css:content="#portal-breadcrumbs" />
+    <replace css:theme="nav .breadcrumbs" css:content="#portal-breadcrumbs" method="raw" />
+
+    <!-- Drop the theme H1 title -->
+    <drop css:theme="article h1" />
+
+    <!-- Main navigation menu -->
+    <replace css:theme=".navmenus" css:content="#bise-globalnav" />
+
+    <!-- Footer work -->
+    <replace css:theme-children="#site-footer nav" css:content="#personalbar-options" />
+
+    <!-- TODO: use xslt transformation to get this right -->
+    <replace css:theme-children=".footer-logos" css:content="#editable-footer a" />
+
+</rules>

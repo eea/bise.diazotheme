@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BISE</title>
+  <meta name="description" content="The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,400,300italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="normalize.css">
+  <!-- <link rel="stylesheet" href="pageScroll.css"> -->
+  <script src="./static/js/contrib/jquery.min.js"></script>
+</head>
+<body>
+  <style>
+
+/*    .ds-parent {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ds-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .ds-elem {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }*/
+
+    #main {
+      /*position: absolute;*/
+      /*height: 100vh!important;*/
+    }
+
+    .section {
+      position: relative;
+      text-align: center;
+    }
+
+    .section:first-child::before {
+      content: none;
+    }
+    .section::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,.2);
+    }
+    .section-header {
+      position: absolute;
+      top: 5em;
+      left: 3em;
+      right: 3em;
+      text-align: center;
+    }
+    .section-footer {
+      position: absolute;
+      bottom: 5em;
+      left: 3em;
+      right: 3em;
+      text-align: center;
+    }
+
+    .container,
+    .container-small {
+      max-width: 40em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .container-small {
+      max-width: 25em;
+    }
+
+
+
+    .layout-table {
+      min-height: 100vh;
+      width: 100%;
+      display: table;
+      table-layout: auto;
+      border-collapse: collapse;
+    }
+    @media (max-width: 780px) {
+      .layout-table {
+        min-height: 50vh;
+      }
+    }
+
+    .layout-row {
+      display: table-row;
+    }
+
+    .layout-cell {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 2em 3em;
+    }
+
+    .no-leading-before {
+      margin-top: 0;
+    }
+    .no-leading {
+      margin-bottom: 0;
+    }
+
+    .align-center { text-align: center; }
+    .align-right { text-align: right; }
+    .align-left { text-align: left; }
+
+    .inline-block { display: inline-block; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #555;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      font-weight: inherit;
+      line-height: 1.25;
+    }
+    h1 { font-size: 2.75em; color: #222; }
+    h2 { font-size: 2.25em; }
+
+    img {
+      vertical-align: middle;
+    }
+
+    a {
+      color: #01BB00;
+      text-decoration: none;
+    }
+
+    .media img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+
+    ul,
+    ol {
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    .leading-large {
+      margin-bottom: 2em;
+    }
+
+    small,
+    .small {
+      font-size: 75%;
+    }
+
+    .i {
+      font-style: italic;
+    }
+
+    .muted {
+      color: gray;
+    }
+
+    .cd-section .container {
+      display: table;
+      table-layout: auto;
+      border-collapse: collapse;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .4em .6em;
+      border: 0;
+      background: transparent;
+      text-align: center;
+      transition: all .3s;
+    }
+
+    .btn-download {
+      display: block;
+      padding: 1.5em;
+      font-weight: bolder;
+      position: relative;
+      z-index: 5;
+      color: inherit;
+    }
+
+    .btn-download path {
+      stroke: #555;
+      transition: stroke .3s;
+    }
+
+    .btn-download:hover,
+    .btn-download:focus {
+      background-color: #EA4C3A;
+      color: #fff;
+    }
+    .btn-download:hover path,
+    .btn-download:focus path {
+      stroke: #fff;
+    }
+
+    .btn-download svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+      height: 2em;
+    }
+
+    #patternleaves {
+      background: url('bise-pattern-leaves.png') repeat;
+    }
+    #patterndna {
+      background: url('bise-pattern-dna.png') repeat;
+    }
+    #patternmyriapod {
+      background: url('bise-pattern-myriapod.png') repeat;
+    }
+    #patternfish {
+      background: url('bise-pattern-fish.png') repeat;
+    }
+
+    #logobreakdown .container {
+      opacity: 0!important;
+      transition: opacity .3s;
+    }
+    #logobreakdown.visible .container {
+      opacity: 1!important;
+    }
+
+    #lockuphorizontal .content,
+    #lockupvertical .content {
+      display: table-row;
+      padding: 0;
+    }
+
+    #lockuphorizontal .cell,
+    #lockupvertical .cell {
+      display: table-cell;
+      border: solid #fff;
+    }
+
+    #logo,
+    #logobreakdown {
+      background-color: #006b47;
+    }
+    
+    #logoinverted {
+      background-color: #F7F4ED;
+    }
+
+    #logosmall {
+      background-color: #fff;
+    }
+
+    #avatars {
+      background-color: #fff;
+    }
+
+
+    #blueprint {
+      background-color: #0B6FCE;
+      background-image: url('bise-pattern-blueprint.png');
+      background-repeat: repeat;
+    }
+  </style>
+
+  <main id="main" class="ds-parent">
+    <div class="ds-container">
+      
+      <section class="section">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell" style="position: relative">
+
+              <div class="container align-center">
+                <span class="inline-block">
+                  <h1>BISE Logo Presentation</h1>
+                  <span class="muted">by</span> <br>
+                  <a href="http://eaudeweb.ro"><img src="logo-edw-fancy-lockup-horizontal.png" alt="EDW Logo"></a>
+                </span>
+              </div>
+              <div class="small muted align-center" style="position: absolute; bottom: 8em; left: 0; width: 100%;">Scroll down</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="container-small align-left">
+                <h2>Objectives</h2>
+                <ol class="leading-large">
+                  <li>Use the full design vocabulary: color, shape, detail, balance, contrast, symbol and concept, to create a rich and memorable identity</li>
+                  <li>Exploit the versatility of a modern logo in order to accomodate users on a variety of mediums, traditional or digital</li>
+                  <li>Show due and full appreciation to <strong>biodiversity</strong></li>
+                </ol>
+                <!-- <p class="small muted">BISE needs to capture a particularly relevant idea and use it to build on top of it.</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="container-small align-left">
+                <h2>Biodiversity</h2>
+
+                <p><a href="https://www.google.ro/search?q=biodiversity&safe=off&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiWvquIiqLLAhUqJpoKHebsB9wQ_AUIBygB&biw=1920&bih=951" target="_blank">Green circles and leaves</a> is the predominant oversimplifaction of the topic. However, it might be suitable for one branch of the topic. Turning <em>green circles and leaves</em> to <em>color shape and symbol</em> would therefor create the template for the remaining branches of biodiversity.</p>
+                <!-- <p class="small muted">The amplitude of this topic suggests creating a visual identity that is based on a unifying concept, rather than a set of rigid guidelines.</p> -->
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Patterns -->
+
+      <section class="section" id="patternleaves">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="patterndna">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="patternmyriapod">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="patternfish">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell"></div>
+          </div>
+        </div>
+      </section>
+
+      <!--/Patterns -->
+
+      <section class="section" id="logo">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="media">
+                <img src="bise-logo.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" id="logobreakdown">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="media">
+                <img src="bise-logobreakdown.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="logoinverted">
+        <div class="layout layout-table">
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="media">
+                <img src="bise-logoinverted.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" id="logosmall">
+        <div class="layout layout-table">
+          <div class="layout-row">
+            <div class="layout-cell">
+              
+              <h2>Smaller logos</h2>
+              <div class="media">
+                <img src="bise-logosmall.png" width="600">
+              </div>
+              <p class="muted">The logo looses complexity on smaller sizes to retain legibility.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" id="lockuphorizontal">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            
+            <div class="layout-cell" style="background-color: #006b47">
+              <div class="media">
+                <img src="bise-logo-lockup-horizontal.png">
+              </div>
+            </div>
+            <div class="layout-cell" style="background-color: #fff">
+              <div class="media">
+                <img src="bise-logo-lockup-horizontal-inverted.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="section" id="lockupvertical">
+        <div class="layout layout-table">
+
+          <div class="layout-row">
+            <div class="layout-cell" style="background-color: #006b47">
+              <div class="media">
+                <img src="bise-logo-lockup-vertical.png">
+              </div>
+            </div>
+          </div>
+          <div class="layout-row">
+            <div class="layout-cell" style="background-color: #fff">
+              <div class="media">
+                <img src="bise-logo-lockup-vertical-inverted.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" id="avatars">
+        <div class="layout layout-table">
+          <div class="layout-row">
+            <div class="layout-cell">
+              <h2>Avatars</h2>
+              <div class="media">
+                <img src="bise-avatars.png" width="360">
+              </div>
+              <p class="container-small muted">To be used in browser tabs, social media, profile picture, mobile devices icons.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="blueprint">
+        <div class="layout layout-table">
+          <div class="layout-row">
+            <div class="layout-cell">
+              <div class="media">
+                <img src="bise-blueprint.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="align-center">
+        <a href="bise-logo-presentation.pdf" class="btn btn-download">
+          Download presentation as PDF
+          <svg enable-background="new 0 0 30 30" height="30px" id="Layer_1" version="1.1" viewBox="0 0 30 30" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.372,4.377  c0.452,0.213,0.358,0.489,0.219,1.793c-0.142,1.345-0.618,3.802-1.535,6.219c-0.918,2.413-2.28,4.784-3.467,6.539  c-1.186,1.756-2.201,2.897-2.975,3.556c-0.777,0.659-1.314,0.835-1.665,0.893c-0.348,0.058-0.506,0-0.6-0.177  c-0.094-0.176-0.127-0.466-0.046-0.82c0.079-0.35,0.268-0.76,0.804-1.285c0.541-0.527,1.426-1.172,2.661-1.771  c1.235-0.6,2.817-1.156,4.116-1.537c1.299-0.379,2.311-0.585,3.197-0.746c0.888-0.162,1.647-0.277,2.391-0.337  c0.744-0.056,1.474-0.056,2.186,0c0.712,0.06,1.408,0.175,2.011,0.323c0.6,0.146,1.108,0.321,1.551,0.601  c0.442,0.276,0.823,0.657,1.012,1.083c0.192,0.423,0.192,0.893,0.033,1.228c-0.158,0.337-0.476,0.541-0.839,0.66  c-0.364,0.115-0.775,0.144-1.267,0c-0.49-0.148-1.062-0.47-1.662-0.894c-0.601-0.425-1.235-0.952-2.057-1.771  c-0.824-0.819-1.838-1.93-2.692-3.013c-0.854-1.083-1.553-2.136-2.028-3.029c-0.473-0.893-0.727-1.624-0.933-2.355  c-0.206-0.733-0.364-1.464-0.427-2.122S13.326,6.17,13.39,5.701c0.063-0.466,0.16-0.82,0.317-1.055  c0.158-0.23,0.381-0.35,0.539-0.408s0.254-0.058,0.348-0.073c0.094-0.015,0.188-0.044,0.333,0c0.138,0.042,0.321,0.154,0.504,0.268" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.4"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- <nav>
+    <ul class="cd-vertical-nav">
+      <li><a href="#0" class="cd-prev inactive">Next</a></li>
+      <li><a href="#0" class="cd-next">Prev</a></li>
+    </ul>
+  </nav> -->
+  
+  <script src="do-slide.js"></script>
+  <script>
+    (function() {
+      // var slide = new DoSlide('#main');
+    }())
+  </script>
+  <!-- // <script src="velocity.min.js"></script> -->
+  <!-- // <script src="velocity.ui.min.js"></script> -->
+  <!-- // <script src="pageScroll.js"></script> -->
+</body>
+</html>

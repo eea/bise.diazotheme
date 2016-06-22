@@ -1,0 +1,6 @@
+<layers>
+    <layer 
+        name="BiseDiazoTheme"
+        interface="bise.diazotheme.interfaces.IBiseDiazoLayer"
+        />
+</layers>
