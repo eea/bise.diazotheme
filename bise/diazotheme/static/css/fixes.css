@@ -40,3 +40,8 @@ dl.actionMenu {
 .portletStaticText li {
     list-style-type: none;
 }
+
+/* Fix main navigation menu */
+#portal-globalnav li {
+    display: inline-block;
+}
