@@ -26,6 +26,8 @@
     <!-- Site header -->
     <replace css:theme-children=".navbar-search" css:content="#searchbar-options form" />
 
+    <append css:content="#portal-personaltools" css:theme="#navbar .navbar-header" />
+
     <!-- Columns -->
     <replace css:content-children="#portal-column-one" css:theme="aside" />
     <replace css:content="#portal-column-content" css:theme=".article-body" />

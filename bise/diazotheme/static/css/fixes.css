@@ -12,6 +12,17 @@ strong {
     font-weight: bolder;
 }
 
+.documentByLine {
+    margin-bottom: 2em;
+}
+
+#content h1.documentFirstHeading {
+    margin-bottom: 0em;
+    margin-top: 1em;
+}
+
+#viewlet-social-like { float: right }
+
 /* Edit bar fixes */
 
 #edit-bar {
