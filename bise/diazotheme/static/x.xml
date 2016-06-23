@@ -1,3 +1,9 @@
+    <replace css:theme-children=".navbar-search" css:content="#searchbar-options form" />
+    <append css:content="#portal-personaltools" css:theme="#navbar .navbar-header" />
+    <replace css:theme="">
+        <xsl:copy-of css:select="#searchbar-options form" />
+    </replace>
+
     <!--Plone.app.toolbar-->
     <append theme="/html/body" content="//div[@data-iframe='toolbar']" />
 

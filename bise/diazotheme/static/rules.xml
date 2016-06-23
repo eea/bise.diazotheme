@@ -24,9 +24,14 @@
     <copy attributes="id dir" css:content="body" css:theme="body" />
 
     <!-- Site header -->
-    <replace css:theme-children=".navbar-search" css:content="#searchbar-options form" />
+
+    <!-- Main navigation menu -->
+    <replace css:theme="#navmenu-primary" css:content="#bise-globalnav" />
 
     <append css:content="#portal-personaltools" css:theme="#navbar .navbar-header" />
+
+    <!-- Site search form -->
+    <merge attributes="action" css:theme="#navbar .navbar-search-form" css:content="#searchbar-options form" />
 
     <!-- Columns -->
     <replace css:content-children="#portal-column-one" css:theme="aside" />
@@ -42,9 +47,6 @@
 
     <!-- Drop the theme H1 title -->
     <drop css:theme="article h1" />
-
-    <!-- Main navigation menu -->
-    <replace css:theme=".navmenus" css:content="#bise-globalnav" />
 
     <!-- Footer work -->
     <replace css:theme-children="#site-footer nav" css:content="#personalbar-options" />
