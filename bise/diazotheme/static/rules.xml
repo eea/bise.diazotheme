@@ -54,4 +54,7 @@
     <!-- TODO: use xslt transformation to get this right -->
     <replace css:theme-children=".footer-logos" css:content="#editable-footer a" />
 
+    <!-- TODO: enable back this, disabled during development -->
+    <drop css:content="#viewlet-social-like" />
+
 </rules>

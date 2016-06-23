@@ -5,7 +5,8 @@
 
     <ul class="navmenu" id="navmenu-primary" tal:define="selected_tab python:view.selected_portal_tab" >
       <tal:tabs tal:repeat="tab python:portal_tabs[:7]">
-        <li tal:define="tid tab/id; name tab/name" tal:attributes="id string:navitem-$tid" 
+
+        <li tal:define="tid tab/id; name tab/name; submenu tab/navmenucode" tal:attributes="id string:navitem-$tid" 
           id="navitem-topics"  class="navitem" tal:condition="python:name!='Home'">
 
           <h4 class="navitem-title" tal:attributes="id string:portaltab-${tid};">
@@ -21,21 +22,18 @@
             <p class="navitem-description" tal:content="tab/description">State and trend of biodiversity.</p>
           </div>
 
+          <div class="navitem-submenu" tal:condition="submenu">
+
+            <div class="submenu-group">
+              <div tal:replace="structure submenu" />
+            </div>
+
+          </div>
+
         </li>
       </tal:tabs>
     </ul>
 
 
-    <!--     <tal:tabs tal:repeat="tab portal_tabs"> -->
-    <!--         <div tal:define="tid tab/id;name tab/name" -->
-    <!--             tal:attributes="id string:portalsubtabs&#45;${tid};class string:portalsubtabs" -->
-    <!--             data&#45;tibi="tibi" -->
-		<!-- tal:condition="tab/navmenucode|nothing" -->
-		<!-- tal:content="structure tab/navmenucode|nothing"> -->
-		<!-- Sub&#45;menu contents  -->
-    <!--         </div> -->
-    <!--          -->
-    <!--     </tal:tabs>             -->
-    <!--   </div> -->
 
 </tal:sections>
