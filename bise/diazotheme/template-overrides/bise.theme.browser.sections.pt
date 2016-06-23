@@ -3,31 +3,39 @@
      i18n:domain="plone">
     <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
 
-    <div id="bise-globalnav">
-    <ul id="portal-globalnav"
-        tal:define="selected_tab python:view.selected_portal_tab"
-        >
-        <tal:tabs tal:repeat="tab portal_tabs"
-        ><li tal:define="tid tab/id;name tab/name"
-             tal:condition="python:name!='Home'"
-            ><div tal:attributes="id string:portaltab-${tid};"><a href=""
-               tal:content="tab/name"
-               tal:attributes="href tab/url;
-                               title tab/description|nothing;">
-            Tab Name
-            </a></div></li></tal:tabs></ul>
+    <ul class="navmenu" id="navmenu-primary" tal:define="selected_tab python:view.selected_portal_tab" >
+      <tal:tabs tal:repeat="tab python:portal_tabs[:7]">
+        <li tal:define="tid tab/id; name tab/name" tal:attributes="id string:navitem-$tid" 
+          id="navitem-topics"  class="navitem" tal:condition="python:name!='Home'">
+
+          <h4 class="navitem-title" tal:attributes="id string:portaltab-${tid};">
+            <a href=""
+              tal:content="tab/name"
+              tal:attributes="href tab/url;
+              title tab/description|nothing;">
+              Tab Name
+            </a>
+          </h4>
+
+          <div class="navitem-body" tal:condition="tab/description|nothing">
+            <p class="navitem-description" tal:content="tab/description">State and trend of biodiversity.</p>
+          </div>
+
+        </li>
+      </tal:tabs>
+    </ul>
 
 
-        <tal:tabs tal:repeat="tab portal_tabs">
-            <div tal:define="tid tab/id;name tab/name"
-                tal:attributes="id string:portalsubtabs-${tid};class string:portalsubtabs"
-                data-tibi="tibi"
-		tal:condition="tab/navmenucode|nothing"
-		tal:content="structure tab/navmenucode|nothing">
-		Sub-menu contents 
-            </div>
-            
-        </tal:tabs>            
-      </div>
+    <!--     <tal:tabs tal:repeat="tab portal_tabs"> -->
+    <!--         <div tal:define="tid tab/id;name tab/name" -->
+    <!--             tal:attributes="id string:portalsubtabs&#45;${tid};class string:portalsubtabs" -->
+    <!--             data&#45;tibi="tibi" -->
+		<!-- tal:condition="tab/navmenucode|nothing" -->
+		<!-- tal:content="structure tab/navmenucode|nothing"> -->
+		<!-- Sub&#45;menu contents  -->
+    <!--         </div> -->
+    <!--          -->
+    <!--     </tal:tabs>             -->
+    <!--   </div> -->
+
 </tal:sections>
-
