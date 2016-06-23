@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules
-  xmlns="http://namespaces.plone.org/diazo" 
-  xmlns:css="http://namespaces.plone.org/diazo/css"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  css:if-content="#visual-portal-wrapper"
-  >
+    xmlns="http://namespaces.plone.org/diazo" 
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    css:if-content="#visual-portal-wrapper"
+    >
 
-    <theme href="folder.html" css:if-content="#visual-portal-wrapper" />
+    <!-- Regular pages: -->
+    <rules if="$is_inside_page" >
+        <theme href="folder.html" />
+    </rules>
 
-    <!--Plone.app.toolbar-->
-    <!-- <append theme="/html/body" content="//div[@data&#45;iframe='toolbar']" /> -->
+    <!-- Homepage -->
+    <rules css:if-content=".template-collage_view">
+        <theme href="homepage.html" />
+    </rules>
+
+    Fallback theme
+    <theme href="folder.html" />
+
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />

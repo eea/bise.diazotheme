@@ -3,6 +3,8 @@
      i18n:domain="plone">
     <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
 
+    <h1 tal:define="plone nocall:context/@@plone" tal:content="plone/navigationRootPath" />
+
     <ul class="navmenu" id="navmenu-primary" tal:define="selected_tab python:view.selected_portal_tab" >
       <tal:tabs tal:repeat="tab python:portal_tabs[:7]">
 
