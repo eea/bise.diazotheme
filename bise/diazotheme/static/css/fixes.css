@@ -56,3 +56,9 @@ dl.actionMenu {
 #portal-globalnav li {
     display: inline-block;
 }
+
+/* Fix cover layout buttons */
+.btn-inverse {
+    background-color: #363636 !important;
+}
+
