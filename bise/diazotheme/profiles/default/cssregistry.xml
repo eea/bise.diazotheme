@@ -9,4 +9,6 @@
     <stylesheet id="public.css" enabled="0" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
     <stylesheet id="bise.theme.css" enabled="0" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
 
+    <stylesheet id="++theme++bise.diazotheme/css/fixes.css" enabled="1" />
+
 </object>
