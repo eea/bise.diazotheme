@@ -62,3 +62,12 @@ dl.actionMenu {
     background-color: #363636 !important;
 }
 
+/* Frontpage fixes */
+@media (min-width: 960px) { 
+.page-homepage .page-header .col-md-4, .page-homepage .page-header .col-md-8 {
+    float: left !important;
+}
+}
+.page-homepage #edit-bar {
+    max-width:100%;
+}
