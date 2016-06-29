@@ -17,6 +17,12 @@
         </replace>
     </rules>
 
+    <rules css:if-content="#catalogue-app">
+        <theme href="catalogue.html" />
+        <replace css:theme-children="#site-body .page" css:content="#portal-column-content" />
+
+    </rules>
+
     <!-- Regular pages: -->
     <rules if="$is_inside_page" >
         <theme href="folder.html" />
@@ -24,7 +30,6 @@
 
     Fallback theme
     <theme href="folder.html" />
-
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />

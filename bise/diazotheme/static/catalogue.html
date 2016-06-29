@@ -9,9 +9,9 @@
 <meta name="description" content="The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
 ">
 
-<link rel="stylesheet" href="./static/css/main.css">
+<link rel="stylesheet" href="./css/main.css">
 <link rel="canonical" href="http://biodiversity.europa.eu/catalogue.html">
-<script src="./static/js/contrib/jquery.min.js"></script>
+<script src="./js/contrib/jquery.min.js"></script>
 
 </head>
 <body style="opacity: 0;">
@@ -332,7 +332,7 @@
 </nav>
 
       <h1 class="page-title">
-        <img src="./static/img/img-bise-catalogue-symbol.png" 
+        <img src="./img/img-bise-catalogue-symbol.png" 
              alt="BISE Catalogue logo"
              height="72" width="120">
         BISE Catalogue
@@ -827,7 +827,7 @@
 
 <div class="container">
 <h4 class="footer-title">
-  <img src="./static/img/bise-logo-small-inverted-lockup-horizontal.png" alt="BISE"
+  <img src="./img/bise-logo-small-inverted-lockup-horizontal.png" alt="BISE"
        width="258" height="36">
 </h4>
 <div class="row">
@@ -849,10 +849,10 @@
   <div class="col-sm-6">
     <div class="footer-logos">
       <ul class="list-footer-logos">
-        <li><a href="#"><img src="./static/img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
-        <li><a href="#"><img src="./static/img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
-        <li><a href="#"><img src="./static/img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
-        <li><a href="#"><img src="./static/img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
+        <li><a href="#"><img src="./img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
+        <li><a href="#"><img src="./img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
+        <li><a href="#"><img src="./img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
+        <li><a href="#"><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
       </ul>
     </div>
   </div>
@@ -877,10 +877,16 @@
     window.bise = bise;
   }())
 </script>
-<script src="./static/js/contrib/minigrid.min.js"></script>
-<script src="./static/js/navbar.js"></script>
+
 <script>
-  (function() {
+requirejs.config({
+        paths: {
+            'minigrid': '/Plone/++theme++bise.diazotheme/js/contrib/minigrid.min'
+            }
+            });
+requirejs(['jquery', 'minigrid'], function($, minigrid) {
+        console.log(minigrid);
+  (function($) {
     $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar-fixed'));
     $('.navitem').each(function() {
       console.log(window.width);
@@ -892,7 +898,29 @@
       }
     });
 
-  }())
+  }(jQuery))
+        });
+
+</script>
+
+<!-- <script src="./js/contrib/minigrid.min.js"></script> -->
+<!-- <script src="https://npmcdn.com/minigrid@3.0.3/dist/minigrid.min.js"></script> -->
+
+<!-- <script src="./js/navbar.js"></script> -->
+<script>
+  // (function($) {
+  //   $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar-fixed'));
+  //   $('.navitem').each(function() {
+  //     console.log(window.width);
+  //     if (window.innerWidth >= 960) {
+  //       minigrid({
+  //         container: $(this).find('.navitem-submenu')[0],
+  //         item: '.submenu-group'
+  //       });
+  //     }
+  //   });
+  //
+  // }(jQuery))
 </script>
 
   <!--
@@ -911,6 +939,6 @@
 
 
 
-  <script> document.body.style.opacity = '1'; </script>
+  <script>document.body.style.opacity = '1'; </script>
 </body>
 </html>
