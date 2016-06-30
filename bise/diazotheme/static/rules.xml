@@ -9,16 +9,12 @@
     <!-- Homepage -->
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
-        <drop css:content="#viewlet-above-content" />
+        <drop css:content="#viewlet-above-content" method="raw" />
         <replace css:theme-children="#site-body .page">
             <div class="container">
                 <xsl:copy-of css:select="#portal-column-content" />
             </div>
         </replace>
-    </rules>
-
-    <rules css:if-content=".catalogue-available-content">
-        <drop css:content=".catalogue-available-content" />
     </rules>
 
     <rules css:if-content="#catalogue-app">
