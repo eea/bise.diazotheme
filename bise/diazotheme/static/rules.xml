@@ -70,6 +70,7 @@
 
     <!-- Move the breadcrumbs -->
     <drop css:theme="nav .breadcrumbs" />
+    <drop css:content="#breadcrumbs-you-are-here" />
 
     <!-- Drop the theme H1 title -->
     <drop css:theme="article h1" />
