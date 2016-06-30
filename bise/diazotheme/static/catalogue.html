@@ -877,51 +877,23 @@
     window.bise = bise;
   }())
 </script>
-
-<script>
-requirejs.config({
-        paths: {
-            'minigrid': '/Plone/++theme++bise.diazotheme/js/contrib/minigrid.min'
-            }
-            });
-requirejs(['jquery', 'minigrid'], function($, minigrid) {
-        console.log(minigrid);
-  (function($) {
-    $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar-fixed'));
-    $('.navitem').each(function() {
-      console.log(window.width);
-      if (window.innerWidth >= 960) {
-        minigrid({
-          container: $(this).find('.navitem-submenu')[0],
-          item: '.submenu-group'
-        });
-      }
-    });
-
-  }(jQuery))
-        });
-
-</script>
-
 <!-- <script src="./js/contrib/minigrid.min.js"></script> -->
-<!-- <script src="https://npmcdn.com/minigrid@3.0.3/dist/minigrid.min.js"></script> -->
-
 <!-- <script src="./js/navbar.js"></script> -->
-<script>
-  // (function($) {
-  //   $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar-fixed'));
-  //   $('.navitem').each(function() {
-  //     console.log(window.width);
-  //     if (window.innerWidth >= 960) {
-  //       minigrid({
-  //         container: $(this).find('.navitem-submenu')[0],
-  //         item: '.submenu-group'
-  //       });
-  //     }
-  //   });
-  //
-  // }(jQuery))
-</script>
+<!-- <script> -->
+<!--   (function($) { -->
+<!--     $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar&#45;fixed')); -->
+<!--     $('.navitem').each(function() { -->
+<!--       console.log(window.width); -->
+<!--       if (window.innerWidth >= 960) { -->
+<!--         minigrid({ -->
+<!--           container: $(this).find('.navitem&#45;submenu')[0], -->
+<!--           item: '.submenu&#45;group' -->
+<!--         }); -->
+<!--       } -->
+<!--     }); -->
+<!--  -->
+<!--   }(jQuery)) -->
+<!-- </script> -->
 
   <!--
   <script>

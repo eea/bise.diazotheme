@@ -33,4 +33,6 @@
         name="BiseDiazoTheme"
         />
 
+    <subscriber handler=".events.disable_diazo_for_templates" />
+
 </configure>
