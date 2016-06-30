@@ -9,8 +9,10 @@
     <!-- Homepage -->
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
-        <drop css:content="#viewlet-above-content" method="raw" />
         <replace css:theme-children="#site-body .page">
+	    <style>
+		#portal-breadcrumbs {display:none}
+            </style>
             <div class="container">
                 <xsl:copy-of css:select="#portal-column-content" />
             </div>
@@ -61,14 +63,13 @@
     <!-- Columns -->
     <replace css:content-children="#portal-column-one" css:theme="aside" />
     <replace css:content="#portal-column-content" css:theme=".article-body" />
-<!-- viewlet&#45;below&#45;content&#45;body -->
+
     <!-- Move the editor bar above the main content (article) -->
     <drop css:content="#edit-bar" />
     <before css:theme="article" css:content="#edit-bar" method="raw" />
 
     <!-- Move the breadcrumbs -->
-    <drop css:content="#portal-breadcrumbs" />
-    <replace css:not-if-content="tile-frontpage" css:theme="nav .breadcrumbs" css:content="#portal-breadcrumbs" method="raw" />
+    <drop css:theme="nav .breadcrumbs" />
 
     <!-- Drop the theme H1 title -->
     <drop css:theme="article h1" />
