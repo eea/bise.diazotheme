@@ -17,18 +17,17 @@
         </replace>
     </rules>
 
-
     <rules css:if-content=".catalogue-available-content">
         <drop css:content=".catalogue-available-content" />
     </rules>
 
-    <!-- <notheme if&#45;path="cat&#45;client" /> -->
-
     <rules css:if-content="#catalogue-app">
-        <drop css:content="head script" />
         <theme href="catalogue.html" />
-        <replace css:theme-children="#site-body .page" css:content="#portal-column-content" />
-        <drop css:content="#socialmedia-viewlet" />
+        <replace css:theme-children="#site-body .page">
+            <div class="container">
+                <xsl:copy-of css:select="#portal-column-content" method="raw" />
+            </div>
+        </replace>
     </rules>
 
     <!-- Regular pages: -->

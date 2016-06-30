@@ -877,6 +877,31 @@
     window.bise = bise;
   }())
 </script>
+
+<script src="./js/contrib/minigrid.min.js"></script>
+<script src="./js/navbar.js"></script>
+<script>
+/* 
+   <![CDATA[
+   */
+(function() {
+ $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar-fixed'));
+ $('.navitem').each(function() {
+     // console.log(window.width);
+     if (window.innerWidth >= 960) {
+     minigrid({
+container: $(this).find('.navitem-submenu')[0],
+item: '.submenu-group'
+});
+     }
+     });
+
+ }())
+/*
+   ]]>
+   */
+</script>
+
 <!-- <script src="./js/contrib/minigrid.min.js"></script> -->
 <!-- <script src="./js/navbar.js"></script> -->
 <!-- <script> -->

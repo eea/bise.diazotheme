@@ -6,9 +6,10 @@ import logging
 
 logger = logging.getLogger('bise.diazotheme')
 
+
 @adapter(IPubAfterTraversal)
 def disable_diazo_for_templates(event):
-    """ Code modeled after
+    """ Code modeled after plone.app.caching.hooks.intercept
     """
     try:
         request = event.request
