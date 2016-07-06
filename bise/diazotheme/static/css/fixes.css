@@ -6,7 +6,9 @@
 
 .article p {
     margin: 0 0 0.5em 0;
+    
 }
+
 
 strong {
     font-weight: bolder;
@@ -14,6 +16,7 @@ strong {
 
 .documentByLine {
     margin-bottom: 2em;
+
 }
 
 #content h1.documentFirstHeading {

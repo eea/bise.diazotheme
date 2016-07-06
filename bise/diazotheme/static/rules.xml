@@ -10,8 +10,8 @@
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
         <replace css:theme-children="#site-body .page">
-	    <style>
-		#portal-breadcrumbs {display:none}
+        <style>
+        #portal-breadcrumbs {display:none}
             </style>
             <div class="container">
                 <xsl:copy-of css:select="#portal-column-content" />
@@ -27,6 +27,7 @@
             </div>
         </replace>
     </rules>
+    
 
     <!-- Regular pages: -->
     <rules if="$is_inside_page" >
@@ -53,12 +54,12 @@
     <!-- Site header -->
 
     <!-- Main navigation menu -->
-    <replace css:theme="#navmenu-primary" css:content="#navmenu-primary" />
+    <replace css:theme="#navmenu-primary" css:content="#navmenu-primary-list" />
 
     <append css:content="#portal-personaltools" css:theme="#navbar .navbar-header" />
 
     <!-- Site search form -->
-    <merge attributes="action" css:theme="#navbar .navbar-search-form" css:content="#searchbar-options form" />
+    <merge attributes="action" css:theme="#navbar .navbar-search-form" css:content=".search-wrapper" />
 
     <!-- Columns -->
     <replace css:content-children="#portal-column-one" css:theme="aside" />
@@ -79,7 +80,7 @@
     <replace css:theme-children="#site-footer nav" css:content="#personalbar-options" />
 
     <!-- TODO: use xslt transformation to get this right -->
-    <replace css:theme-children=".footer-logos" css:content="#editable-footer a" />
+<!--     <replace css:theme-children=".footer-logos" css:content="#editable-footer a" /> -->
 
     <!-- TODO: enable back this, disabled during development -->
     <drop css:content="#viewlet-social-like" />
