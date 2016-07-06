@@ -3715,6 +3715,47 @@ display: none;
     left: -38.4%;
 }*/
 
+.article-wide { 
+
+      max-width: 100%!important;
+      margin-left: 20px;
+      margin-right: 20px;
+}
+
+
+
+.portlet .navTreeItem {
+
+  border-bottom: 0!important;
+  font-size: 14px;
+  margin-bottom: 0;
+  line-height: 1em!important;
+
+}
+
+.portlet.portletNavigationTree .portletHeader {
+
+  background: none;
+  font-weight: 900;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+
+.col-md-9.col-lg-10.col-md-push-3.col-lg-push-2 {
+
+  max-width: 100%;
+
+}
+
+.article #parent-fieldname-text {
+      overflow-x: auto;
+}
+
+.article #parent-fieldname-text table td {
+  padding: 10px;
+}
+
 
 
 

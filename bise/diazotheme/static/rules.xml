@@ -27,14 +27,14 @@
             </div>
         </replace>
     </rules>
-    
+
 
     <!-- Regular pages: -->
     <rules if="$is_inside_page" >
         <theme href="folder.html" />
     </rules>
 
-    Fallback theme
+    <!-- Fallback theme -->
     <theme href="folder.html" />
 
     <!-- =============[ Head ]============= -->
@@ -85,4 +85,17 @@
     <!-- TODO: enable back this, disabled during development -->
     <drop css:content="#viewlet-social-like" />
 
-</rules>
+
+        <rules if="not($have_left_portlets)" >
+      
+            <strip css:theme=".col-md-3" />
+             <strip css:theme=".col-md-push-3" />
+           <!--  <strip attributes=".col-md-push-3" css:theme=".col-md-9" /> -->
+            <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
+            <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
+
+            <merge attributes="class" css:content=".article-wide" css:theme=".article"  />
+
+         </rules>
+
+    </rules>
