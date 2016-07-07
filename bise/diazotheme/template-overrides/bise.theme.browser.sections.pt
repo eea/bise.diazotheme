@@ -1,38 +1,64 @@
+
+
+
+
+
 <tal:sections tal:define="portal_tabs view/portal_tabs"
      tal:condition="portal_tabs"
      i18n:domain="plone">
     <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
 
-    <ul class="navmenu" id="navmenu-primary" tal:define="selected_tab python:view.selected_portal_tab" >
+
+
+        <ul id="navmenu-primary-list" tal:define="selected_tab python:view.selected_portal_tab">
       <tal:tabs tal:repeat="tab python:portal_tabs[:7]">
 
-        <li tal:define="tid tab/id; name tab/name; submenu tab/navmenucode" tal:attributes="id string:navitem-$tid" 
-          id="navitem-topics"  class="navitem" tal:condition="python:name!='Home'">
 
-          <h4 class="navitem-title" tal:attributes="id string:portaltab-${tid};">
-            <a href=""
+          <li
+            tal:define="tid tab/id; name tab/name; submenu tab/navmenucode" tal:attributes="id string:navitem-$tid" 
+            id="navitem-topics"  class="submenu-item-wrapper" tal:condition="python:name!='Home'">
+
+            <div class="submenu">
+
+              <div class="submenu-item" tal:attributes="id string:portaltab-${tid};">
+                <a href=""
               tal:content="tab/name"
               tal:attributes="href tab/url;
               title tab/description|nothing;">
               Tab Name
             </a>
-          </h4>
 
-          <div class="navitem-body" tal:condition="tab/description|nothing">
-            <p class="navitem-description" tal:content="tab/description">State and trend of biodiversity.</p>
-          </div>
+                <i class="fa fa-angle-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown"></i>
+              </div>
 
-          <div class="navitem-submenu" tal:condition="submenu">
 
-            <div class="submenu-group">
-              <div tal:replace="structure submenu" />
+
+
+              <div id="submenu-dropdown" class="submenu-dr-wrapper">
+                <div class="submenu-dr" tal:condition="submenu">
+
+                  <div class="dr-item" tal:replace="structure submenu" />
+          
+
+                  
+                 
+                </div>
+              </div>
             </div>
+          </li>
 
-          </div>
 
-        </li>
-      </tal:tabs>
-    </ul>
+         
+     </tal:tabs>
+        </ul>
+         
+
+
+
+
+    
+
+<div id="backdrop"></div>
 
 
 

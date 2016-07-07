@@ -54,10 +54,10 @@
     <!-- Site header -->
 
     <!-- Main navigation menu -->
-    <replace css:theme="#navmenu-primary" css:content="#navmenu-primary-list" />
-
-    <append css:content="#portal-personaltools" css:theme="#navbar .navbar-header" />
-
+    <replace css:theme="#navmenu-primary-list" css:content="#navmenu-primary-list" />
+<!-- <merge attribute="class" css:theme=".menu-primary-list" css:content=".nav-menu" /> --> 
+    <append css:content="#portal-personaltools" css:theme=".search-and-login" />
+    <!-- <append css:content="#navmenu-primary-list" css:theme=".nav-menu" /> -->
     <!-- Site search form -->
     <merge attributes="action" css:theme="#navbar .navbar-search-form" css:content=".search-wrapper" />
 
@@ -94,7 +94,7 @@
             <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
             <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
 
-            <merge attributes="class" css:content=".article-wide" css:theme=".article"  />
+            <merge attributes="class" css:theme=".article" css:content=".article-wide" />
 
          </rules>
 
