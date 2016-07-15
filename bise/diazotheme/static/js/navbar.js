@@ -70,8 +70,10 @@ $trigger.click(function() {
 $navmenuopen=$("#navmenu-open");
 $navmenuclose=$("#navmenu-close");
 $navmenubody=$(".navmenu-body");
-$asidetrigger=$(".asidetrigger")
-$aside=$("aside")
+$asidetrigger=$(".asidetrigger");
+$aside=$("aside");
+$section=$(".section");
+$asideclass=$(".aside")
 
 $navmenuopen.click(function(){
   // alert('merge');
@@ -115,6 +117,7 @@ $navmenuopen.removeClass('hidden');
         });
   
   });
+
 
 
 

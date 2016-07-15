@@ -20,6 +20,30 @@
         </replace>
     </rules>
 
+<!-- 
+
+   <rules css:if-theme-children=".ondesktop">
+       <drop css:content-children=".section" />
+       <append css:content-children='.section' css:theme=".section-wrapper" method="raw" />
+
+    </rules>
+ -->
+<!-- 
+     <rules css:if-content=".ondesktop">
+
+       <drop css:content-children=".section" />
+       <append css:content-children='.section' css:theme=".section-wrapper" method="raw" />
+
+    
+
+
+</rules> -->
+
+
+
+
+
+
     <rules if="$have_left_portlets" >
          <!-- <theme href="folder.html" /> -->
          <drop css:theme="main.asidefalse" />
@@ -137,3 +161,8 @@
          </rules>
 
     </rules>
+
+
+
+
+
