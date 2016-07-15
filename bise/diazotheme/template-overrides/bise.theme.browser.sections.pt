@@ -10,17 +10,17 @@
 
 
 
-        <ul id="navmenu-primary-list" tal:define="selected_tab python:view.selected_portal_tab">
+        <ul id="navmenu-items" tal:define="selected_tab python:view.selected_portal_tab">
       <tal:tabs tal:repeat="tab python:portal_tabs[:7]">
 
 
           <li
-            tal:define="tid tab/id; name tab/name; submenu tab/navmenucode" tal:attributes="id string:navitem-$tid" 
-            id="navitem-topics"  class="submenu-item-wrapper" tal:condition="python:name!='Home'">
+            tal:define="tid tab/id; name tab/name; navsection tab/navmenucode" tal:attributes="id string:navitem-$tid" 
+            id="navitem-topics"  class="navmenu-item" tal:condition="python:name!='Home'">
 
-            <div class="submenu">
+          
 
-              <div class="submenu-item" tal:attributes="id string:portaltab-${tid};">
+              <div class="navitem-header" tal:attributes="id string:portaltab-${tid};">
                 <a href=""
               tal:content="tab/name"
               tal:attributes="href tab/url;
@@ -28,23 +28,40 @@
               Tab Name
             </a>
 
-                <i class="fa fa-angle-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown"></i>
+                  <button type='button' id="navitem-toggle" class="btn" data-toggle="navmenu" data-target=".navgroup"
+                        title="Toggle submenu"
+                         >
+                  <span class="sr-only">Toggle submenu</span>
+                  <span class="fa fa-angle-down"></span>
+                </button>
+
               </div>
 
 
+                <!-- <div class="navgroups"> -->
 
+              <div class="navgroups-body">
 
-              <div id="submenu-dropdown" class="submenu-dr-wrapper">
-                <div class="submenu-dr" tal:condition="submenu">
+                <!-- aici modificari tibi -->
+                <div class="navgroups" tal:condition="navsection">
 
-                  <div class="dr-item" tal:replace="structure submenu" />
-          
+                  <div class="dr-item" tal:replace="structure navsection" />
+
+          <!-- ar trebui sa devina ceva de genul:
+
+                 <h6 class="navgroup-title">Status</h6>
+                    <ul class="navgroup-items">
+                      <li class="navgroup-item"><a href="#">Ecosystem and habitats</a></li>
+                    </ul>
+
+                  -->
 
                   
                  
-                </div>
-              </div>
-            </div>
+              
+              <!-- </div> -->
+           </div>
+         </div>
           </li>
 
 

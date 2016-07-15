@@ -9,6 +9,7 @@
     <!-- Homepage -->
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
+        <drop css:theme="div#content" />
         <replace css:theme-children="#site-body .page">
         <style>
         #portal-breadcrumbs {display:none}
@@ -19,6 +20,17 @@
         </replace>
     </rules>
 
+    <rules if="$have_left_portlets" >
+         <!-- <theme href="folder.html" /> -->
+         <drop css:theme="main.asidefalse" />
+             <replace css:content="#portal-column-content" css:theme="main.asidetrue article.article .article-content" />
+               <append css:content-children="#portal-column-one" css:theme="aside" />
+                  <append css:content-children="#portal-column-two" css:theme="aside" />
+    </rules>    
+
+
+
+
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />
         <replace css:theme-children="#site-body .page">
@@ -26,6 +38,14 @@
                 <xsl:copy-of css:select="#portal-column-content" method="raw" />
             </div>
         </replace>
+
+
+<!-- <after css:theme-children="head">
+        <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
+</after> -->
+
+
+
     </rules>
 
 
@@ -39,6 +59,9 @@
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />
+
+  
+
     <drop css:theme="head script" />
     <before css:content="head style, head link, head script, head meta" css:theme-children="head" />
     <replace css:content="head title" css:theme="head title" />
@@ -47,6 +70,12 @@
     <drop css:content="head link[rel='shortcut icon']" />
     <drop css:content="head link[rel='apple-touch-icon']" />
 
+<after css:theme-children="head">
+
+<script data-main="++theme++bise.diazotheme/js/appzz.js" src="http://requirejs.org/docs/release/2.1.14/minified/require.js" />
+</after>
+
+
     <!-- ===========[ Content ]============= -->
     <merge attributes="class" css:content="body" css:theme="body" />
     <copy attributes="id dir" css:content="body" css:theme="body" />
@@ -54,23 +83,25 @@
     <!-- Site header -->
 
     <!-- Main navigation menu -->
-    <replace css:theme="#navmenu-primary-list" css:content="#navmenu-primary-list" />
+    <replace css:theme="#navmenu-items" css:content="#navmenu-items" />
 <!-- <merge attribute="class" css:theme=".menu-primary-list" css:content=".nav-menu" /> --> 
-    <append css:content="#portal-personaltools" css:theme=".search-and-login" />
+    <append css:content="#portal-personaltools" css:theme=".login-wrapper" />
     <!-- <append css:content="#navmenu-primary-list" css:theme=".nav-menu" /> -->
     <!-- Site search form -->
-    <merge attributes="action" css:theme="#navbar .navbar-search-form" css:content=".search-wrapper" />
+    <merge attributes="action" css:theme=".navsearch" css:content="#searchbar-options form" />
+
+
 
     <!-- Columns -->
-    <replace css:content-children="#portal-column-one" css:theme="aside" />
+  
     <replace css:content="#portal-column-content" css:theme=".article-body" />
 
     <!-- Move the editor bar above the main content (article) -->
     <drop css:content="#edit-bar" />
-    <before css:theme="article" css:content="#edit-bar" method="raw" />
+    <prepend css:theme=".page" css:content="#edit-bar" method="raw" />
 
     <!-- Move the breadcrumbs -->
-    <drop css:theme="nav .breadcrumbs" />
+    <drop css:theme="article .article-header" />
     <drop css:content="#breadcrumbs-you-are-here" />
 
     <!-- Drop the theme H1 title -->
@@ -87,14 +118,21 @@
 
 
         <rules if="not($have_left_portlets)" >
-      
-            <strip css:theme=".col-md-3" />
+      <drop css:theme="main.asidetrue" />
+            <drop css:theme="aside" />
              <strip css:theme=".col-md-push-3" />
            <!--  <strip attributes=".col-md-push-3" css:theme=".col-md-9" /> -->
             <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
             <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
+         <!--    <append css:content="#portal-column-content" css:theme=".article-wide" /> -->
+         <!--    <replace css:theme=".article" >
+         
 
-            <merge attributes="class" css:theme=".article" css:content=".article-wide" />
+                <div class=".article-wide" css:content="#portal-column-content"> </div>
+     
+        </replace> -->
+
+           
 
          </rules>
 

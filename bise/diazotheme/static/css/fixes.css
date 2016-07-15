@@ -31,11 +31,12 @@ strong {
 #edit-bar {
     min-height: 2.5em;
     margin-bottom: 0em;
-    max-width: 64em;
+    border-radius: 0;
+    /*max-width: 64em;*/
 }
 #edit-bar ul {
     margin: 0em;
-    padding-left: 0.3em;
+    /*padding-left: 0.3em;*/
 }
 #contentActionMenus {
     background: inherit;

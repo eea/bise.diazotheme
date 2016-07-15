@@ -11,19 +11,18 @@
 
 <link rel="stylesheet" href="./css/main.css">
 <link rel="canonical" href="http://biodiversity.europa.eu/catalogue.html">
-<script src="./js/contrib/jquery.min.js"></script>
+<!-- <script src="./js/contrib/jquery.min.js"></script> -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
 </head>
 <body style="opacity: 0;">
-  <script> document.body.style.opacity = '0'; </script>
+
 
   <div id="site">
     <header id="site-header">
    
 <nav id="navbar">
   <div class="container">
-
-
 
 
 
@@ -34,8 +33,14 @@
 
   <div class="nav-container">
     <div class="navmenu-head">
-      <img src="http://biodiversity.europa.eu/BiseLogo.png" class="logo-big" alt="BISE Logo"> <span class="navmenu-head-logo">BISE</span>      <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Menu <i class="fa-angle-double-down"></i></span>
-      <span id="navmenu-close" class="close" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Close <i class="fa-angle-double-down"></i></span>
+
+      <img src="http://biodiversity.europa.eu/BiseLogo.png" class="logo-big" alt="BISE Logo"> 
+
+        <span class="navmenu-head-logo">BISE</span>   
+           <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Menu <i class="fa fa-bars"></i>
+           </span>
+           <span id="navmenu-close" class="close" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Close <i class="fa fa-close"></i>
+           </span>
     </div>
 
 
@@ -43,128 +48,36 @@
 
     <div id="navmenu-dropdown" class="navmenu-body">
       <div class="search-and-login">
-        <div class="search-wrapper">
+         <div class="login-wrapper"></div>
+     <div class="search-wrapper">
           <div class="search-form">
-            <div class="search">
-              <input type="text" id="input-search" />
-              <span> <button>Search</button>
+            <form class="search" method="GET">
+              <input type="search" id="input-search" name='q'/>
+              <span> <button type="submit">Search</button>
                       </span>
-            </div>
+            </form>
           </div>
         </div>
-        <dl class="actionMenu deactivated" id="portal-personaltools">
-          <dt class="actionMenuHeader" data-toggle="navmenu" data-target="#login-data">
-            <a id="user-name" href="#">Valentin Popescu</a>
-          </dt>
-          <dd id="login-data" class="actionMenuContent">
-            <ul>
-              <li id="personaltools-preferences">
-                <a href="http://bise-portal.edw.ro/@@personal-preferences">Preferences</a>
-              </li>
-              <li id="personaltools-logout">
-                <a href="http://bise-portal.edw.ro/logout">Log out</a>
-              </li>
-            </ul>
-          </dd>
-        </dl>
         
       </div>
       <nav class="nav-menu">
-        <ul id="navmenu-primary-list">
+        <ul id="navmenu-primary-list" class="menu-primary-list">
 
 
-
-
-          <li class="submenu-item-wrapper">
+          <li id="navitem-topics" class="submenu-item-wrapper">
             <div class="submenu">
               <div class="submenu-item">
-                <a href="#" class="name">Topics</a>
+                <a href="" class="name">Topics</a>
 
-                <i class="icon-arrow_drop_down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown"></i>
+                <i class="fa fa-angle-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown"></i>
               </div>
               <div id="submenu-dropdown" class="submenu-dr-wrapper">
                 <div class="submenu-dr">
 
                   <div class="dr-item">
-                    <h6 class="title">
-                      SATUS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Ecosystem and habitats</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Species</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Genetic resources</li>
-                      </a>
-                    </ul>
-                  </div>
-
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      THREATS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Climate change</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Invasive species</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Fragmentation</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Land use change</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Pollution</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Overexploitation</li>
-                      </a>
-                    </ul>
-                  </div>
-                  <div class="dr-item">
-                    <h6 class="title">
-                      IMPACTS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Tipping points</li>
-                      </a>
-                    </ul>
-                  </div>
-                  <div class="dr-item">
-                    <h6 class="title">
-                      BENEFITS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Ecosystem services</li>
-                      </a>
-                    </ul>
-                  </div>
-                  <div class="dr-item">
-                    <h6 class="title">
-                      RESPONSES
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Protected areas</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Green infrastructure</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">LIFE+ Nature and Biodiversity Projects</li>
-                      </a>
-                    </ul>
-                  </div>
-
+                  
+                  
+                  </div>   
 
                 </div>
               </div>
@@ -172,267 +85,6 @@
           </li>
 
 
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="#" class="name">Policy</a>
-
-                <i class="fa-angle-double-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown2"></i>
-              </div>
-              <div id="submenu-dropdown2" class="submenu-dr-wrapper">
-                <div class="submenu-dr">
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      EU BIODIVERSITY STRATEGY 2020
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Global Aichi targets to 2020 (CBD)</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">EU strategy to 2020 (EU Commission)</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">EU targets and related Aichi targets</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">EU indicators and related Aichi targets</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">EU indicators and related EU targets</li>
-                      </a>
-
-                    </ul>
-                  </div>
-
-
-
-
-                </div>
-              </div>
-            </div>
-          </li>
-
-
-
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="#" class="name">Data</a>
-
-                <i class="fa-angle-double-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown3"></i>
-              </div>
-              <div id="submenu-dropdown3" class="submenu-dr-wrapper">
-                <div class="submenu-dr">
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      BIODIVERSITY DATA CENTRE (BDC)
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">BDC overview</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Species, habitats and sites (EUNIS)</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">Indicators</li>
-                      </a>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="#" class="name">Knowledge</a>
-
-                <i class="fa-angle-double-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown4"></i>
-              </div>
-
-            </div>
-          </li>
-
-
-
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="#" class="name">Countries</a>
-
-                <i class="fa-angle-double-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown5"></i>
-              </div>
-              <div id="submenu-dropdown5" class="submenu-dr-wrapper">
-                <div class="submenu-dr">
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      EU BIODIVERSITY ACTION PLAN (BAP)
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">BAP 2010 Community report</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">BAP 2010 comparative view</li>
-                      </a>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="#" class="name">Networks</a>
-
-                <i class="fa-angle-double-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown6"></i>
-              </div>
-              <div id="submenu-dropdown6" class="submenu-dr-wrapper">
-                <div class="submenu-dr">
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      BISE- CHMS NETWORK OF EUROPE
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">BISE - Clearing House Mechanism (CHM) network</li>
-                      </a>
-                    </ul>
-                  </div>
-
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      NETWORK OF NGOS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">European Habitats Forum</li>
-                      </a>
-                    </ul>
-                  </div>
-                  <div class="dr-item">
-                    <h6 class="title">
-                      PUBLIC PARTICIPATION
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Grassroots of Changes</li>
-                      </a>
-                    </ul>
-                  </div>
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      EIONET
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item">Forum - NRC Nature and biodiversity</li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item">European Topic Centre on Biological Diversity</li>
-                      </a>
-                    </ul>
-                  </div>
-
-                  <div class="dr-item">
-                    <h6 class="title">
-                      ASSESSMENTS CARRIED BY NGOS AND STAKEHOLDERS
-                    </h6>
-                    <ul class="dr-list">
-                      <a href="#">
-                        <li class="dr-list-item"> Half way there. Mid-term assessment of progress on the EU 2020 biodiversity strategy
-                        </li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item"> Red list of Birds </li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item"> Analysis on the Status of Implementation of the CBD
-                        </li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item"> ICCAs and Aichi Targets </li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item"> Progress towards Aichi targets (FoE Europe and CEEweb)
-                        </li>
-                      </a>
-                      <a href="#">
-                        <li class="dr-list-item"> Safeguarding biological diversity (EPRS)
-                        </li>
-                      </a>
-                    </ul>
-                  </div>
-
-
-
-
-
-                </div>
-              </div>
-            </div>
-          </li>
-
-
-
-
-
-
-          <li class="submenu-item-wrapper">
-            <div class="submenu">
-              <div id="submenu-item-about" class="submenu-item">
-                <a href="#" class="name">About</a>
-
-                <i class="fa-angle-double-down" class="submenu-button"></i>
-  </div>
-                <div id="submenu-dropdown7" class="submenu-dr-wrapper open">
-                  <div class="submenu-dr">
-
-    
-
-                 
-                    <div class="dr-item">
-                      
-                      <ul class="dr-list">
-                        <li class="dr-list-item">The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.</li>
-                        <h6 class="title">
-                       <a href="#">   <button type="button" class="btn" class="dr-list-learnmore">Learn more about BISE</button> </a>
-                      </h6>
-                      </ul>
-                    </div>
-
-
-
-                  </div>
-                </div>
-              </div>
-            </li>
-
-
-<li class="submenu-item-wrapper">
-<div class="submenu-contact">
-              <div class="submenu">
-                <div class="submenu-item">
-                  <a href="#">Contact us</a>
-
-  </div>
-
-              </div>
-</div>
-            </li>
        
 
         </ul>
@@ -1010,48 +662,7 @@
     </footer>
   </div>
 
-  <script>
  
-</script>
-
-<script src="./js/contrib/minigrid.min.js"></script>
-<script src="./js/navbar.js"></script>
-<script>
-
-</script>
-
-<!-- <script src="./js/contrib/minigrid.min.js"></script> -->
-<!-- <script src="./js/navbar.js"></script> -->
-<!-- <script> -->
-<!--   (function($) { -->
-<!--     $(window.bise.dom.siteHeader).append($('#navbar').clone().addClass('navbar&#45;fixed')); -->
-<!--     $('.navitem').each(function() { -->
-<!--       console.log(window.width); -->
-<!--       if (window.innerWidth >= 960) { -->
-<!--         minigrid({ -->
-<!--           container: $(this).find('.navitem&#45;submenu')[0], -->
-<!--           item: '.submenu&#45;group' -->
-<!--         }); -->
-<!--       } -->
-<!--     }); -->
-<!--  -->
-<!--   }(jQuery)) -->
-<!-- </script> -->
-
-  <!--
-  <script>
-    (function() {
-
-      if ( !(document.body.scrollTop || document.documentElement.scrollTop))
-        window.setTimeout(function() {
-          document.body.scrollTop = window.bise.fn.getScrollHeight();
-          document.documentElement.scrollTop = window.bise.fn.getScrollHeight();
-        }, 10);
-        
-    }())
-  </script>
-  -->
-
 
 
   <script>document.body.style.opacity = '1'; </script>
