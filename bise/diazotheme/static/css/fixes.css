@@ -67,6 +67,8 @@ dl.actionMenu {
 }
 .page-homepage #edit-bar {
     max-width:100%;
+    z-index: 999;
+    position: relative;
 }
 
 

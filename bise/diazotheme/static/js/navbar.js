@@ -71,7 +71,6 @@ $(document).ready(function() {
             $navmenuclose.removeClass('hidden');
             $searchandlogin.addClass('open');
             $navbrand.addClass('hidden');
-            // $nav.addClass('greenbg');
             $navbrandtitle.addClass('open');
             $('.page-homepage .navmenu-trigger').addClass('relative');
             $('.page-homepage .navbrand').addClass('relative');
@@ -97,7 +96,6 @@ $(document).ready(function() {
             $navmenuopen.removeClass('hidden');
             $searchandlogin.removeClass('open');
             $navbrand.removeClass('hidden');
-            // $nav.removeClass('greenbg');
             $navbrandtitle.removeClass('open');
              $('.navmenu-trigger').removeClass('relative');
              $('.navbrand').removeClass('relative');

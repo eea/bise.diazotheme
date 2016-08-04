@@ -2609,9 +2609,9 @@ input.navbar-search-input::placeholder {
     float: right;
     width: 40%;
   }
-  #contentActionMenus dl.actionMenu.activated dd {
+/*  #contentActionMenus dl.actionMenu.activated dd {
     bottom: 100%;
-  }
+  }*/
 }
 
 @media screen and (min-width: 800px) {
@@ -3824,14 +3824,11 @@ a.subitem {
 }
 .slider-highlights {
   position: absolute;
-  /*   bottom: 10%;
-  left: 15%;*/
-  
   color: white;
   text-align: left;
-  top: 5%;
-  left: 15%;
-  /*height: 100%;*/
+  bottom: 5rem;
+  width: 500px;
+  left: 1rem;  
 }
 .slider-highlights .slider-description {
   position: absolute;
@@ -3950,13 +3947,13 @@ a.subitem {
   }
   
   .slider-highlights {
-    position: relative!important;
-    /*color: black!important;*/
-    top: auto;
-    left: auto;
+    position: absolute;
+    color: white;
     text-align: center;
-    margin-top: -170px;
-
+    bottom: 2rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
   }
   
   .slider-highlights h1,
@@ -4549,4 +4546,84 @@ aside .portletWrapper    {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+
+
+.page-homepage #portal-breadcrumbs {
+  display: none;
+}
+
+
+@media (min-width: 800px) and (max-width:1200px) {
+   .slider-description p {
+      max-width: 450px;
+    }
+
+   .description-container {
+     height: 176px;
+    }
+
+   .slider-highlights {
+         position: absolute;
+    color: white;
+    text-align: left;
+    bottom: 0rem;
+    width: 700px;
+    left: 1rem;
+   } 
+
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+
+  .slider-highlights {
+    font-size: 20px;
+    bottom: 2rem;
+    width: 900px;
+    left: 1rem;
+  }
+
+  .description-container {
+    width: 100%;
+    height: 296px;
+  }
+
+
+
+  .slider-highlights p {
+    max-width: 720px;
+  }
+
+}
+
+
+@media (min-width: 1440px) and (max-width: 1750px) {
+
+  .description-container {
+    width: 100%;
+      height: 374px;
+  }
+    .slider-highlights h1 {
+    font-size: 50px;
+  }
+
+}
+
+@media (min-width: 1750px) {
+  .description-container {
+  height: 512px;
+}
+
+ .slider-highlights {
+    width: 900px;
+
+  }
+
+
+    .slider-highlights h1 {
+    font-size: 50px;
+  }
 }
