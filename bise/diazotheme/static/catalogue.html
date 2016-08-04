@@ -20,68 +20,87 @@
 
   <div id="site">
     <header id="site-header">
-   
+
 <nav id="navbar">
-  <div class="container">
-
-
-
-  </div>
-
-
-
+ 
 
   <div class="nav-container">
     <div class="navmenu-head">
+      <div class="navbrand">
+      <a href="/" title="BISE Homepage" class="navbrand-logo"> <img src="./img/bise-logo.png" class="logo-big" alt="BISE Logo" /><span class="navbrand-title">Biodiversity Information<br> System for Europe</span>    
+      </a>
+     
 
-      <img src="http://biodiversity.europa.eu/BiseLogo.png" class="logo-big" alt="BISE Logo"> 
+      </div>
 
-        <span class="navmenu-head-logo">BISE</span>   
-           <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Menu <i class="fa fa-bars"></i>
+
+      <div class="navbar-descriptor">
+        <div class="navbar-descriptor-inner">
+          <p class="navbar-descriptor-copy"><strong>BISE</strong> is a single entry point for data and information on biodiversity supporting the implementation of the <strong>EU strategy</strong> and the <strong>Aichi targets</strong> in Europe.
+</p>
+          <div class="navbar-descriptor-cta">
+            <a href="#">Learn More <strong>About BISE</strong></a>
+          </div>
+        </div>
+      </div>
+      <div class="navmenu-trigger">
+           <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">Menu <span class="fa fa-bars"></span>
            </span>
-           <span id="navmenu-close" class="close" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-dropdown">Close <i class="fa fa-close"></i>
+           <span id="navmenu-close" class="hidden" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">Close <span class="fa fa-close"></span>
            </span>
+         </div>
     </div>
 
 
 
-
-    <div id="navmenu-dropdown" class="navmenu-body">
-      <div class="search-and-login">
-         <div class="login-wrapper"></div>
-     <div class="search-wrapper">
+<div class="search-and-login">
+        <div class="login-wrapper">
+        </div>
+        <div class="search-wrapper">
           <div class="search-form">
-            <form class="search" method="GET">
-              <input type="search" id="input-search" name='q'/>
-              <span> <button type="submit">Search</button>
+            <form class="navsearch" method="GET">
+              <input type="search" id="navsearch-input" name='q' placeholder="Search" />
+              <span class="navsearch-addon"> <button type="submit" id="navsearch-submit"><i class="fa fa-search"></i></button>
                       </span>
             </form>
           </div>
         </div>
+       
         
       </div>
+
+
+
+    <div id="navmenu-body" class="navmenu-body">
+      
+
+
+
+
       <nav class="nav-menu">
-        <ul id="navmenu-primary-list" class="menu-primary-list">
+        <ul id="navmenu-items"  class="menu-primary-list">
 
 
-          <li id="navitem-topics" class="submenu-item-wrapper">
-            <div class="submenu">
-              <div class="submenu-item">
-                <a href="" class="name">Topics</a>
+          <li id="navitem-topics" class="navmenu-item">
+          <div id="navitem-topics" class="navitem">
+              <div class="navitem-header">
+                <a href="" class="navitem-title">Topics</a>
 
-                <i class="fa fa-angle-down" class="submenu-button" data-toggle="navmenu" data-target="#submenu-dropdown"></i>
+
+
+                  <button type='button' class="btn" id="navitem-toggle"
+                        data-toggle="navmenu" data-target=".navgroup"
+                        title="Toggle submenu"
+                        >
+                  <span class="sr-only">Toggle submenu</span>
+                  <span class="fa fa-angle-down"></span>
+                </button>
+
+
+
               </div>
-              <div id="submenu-dropdown" class="submenu-dr-wrapper">
-                <div class="submenu-dr">
 
-                  <div class="dr-item">
-                  
-                  
-                  </div>   
-
-                </div>
-              </div>
-            </div>
+           </div>
           </li>
 
 
@@ -620,46 +639,48 @@
       </div>
     </div>
     
-    <footer id="site-footer">
-        
-<!-- <h4 class="footer-title">BISE</h4> -->
+   <footer id="site-footer">
 
-<div class="container">
-<h4 class="footer-title">
-  <img src="./img/bise-logo-small-inverted-lockup-horizontal.png" alt="BISE"
-       width="258" height="36">
-</h4>
-<div class="row">
-  <div class="col-md-6">
-    
-    <p>The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
-</p>
-    <nav class="nav">
-      <ul class="nav-list-inline">
-        <li><a href="">Home</a></li>
-        <li><a href="">About BISE</a></li>
-        <li><a href="">Sitemap</a></li>
-        <li><a href="">Contact us</a></li>
-        <li><a href="">Log in</a></li>
-      </ul>
-    </nav>
-  </div>
+    <!-- <h4 class="footer-title">BISE</h4> -->
 
-  <div class="col-sm-6">
-    <div class="footer-logos">
-   <ul class="list-footer-logos">
-        <li><a href="#"><span>EU</span><img src="{{ site.static }}/img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
-        <li><a href="#"><span>EEA</span><img src="{{ site.static }}/img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
-        <li><a href="#"><span>CHM</span><img src="{{ site.static }}/img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
-        <li><a href="#"><span>UN Decate on Biodeversity</span><img src="{{ site.static }}/img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
+    <div class="container">
+       <div class="footerbrand">
+      <a href="/" title="BISE Homepage" class="navbrand-logo"> <img src="./img/bise-logo.png" class="logo-big" alt="BISE Logo" /><span class="navbrand-title">Biodiversity Information<br> System for Europe</span>    
+      </a>
+     
+
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+
+          <p>The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+          </p>
+          <nav class="nav">
+            <ul class="nav-list-inline">
+              <li><a href="">Home</a></li>
+              <li><a href="">About BISE</a></li>
+              <li><a href="">Sitemap</a></li>
+              <li><a href="">Contact us</a></li>
+              <li><a href="">Log in</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="footer-logos">
+            <ul class="list-footer-logos">
+        <li><a href="#"><span>EU</span><img src="./img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
+        <li><a href="#"><span>EEA</span><img src="./img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
+        <li><a href="#"><span>CHM</span><img src="./img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
+        <li><a href="#"><span>UN Decate on Biodeversity</span><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
       </ul>
+          </div>
+        </div>
+
+      </div>  
     </div>
-  </div>
-  
-</div>  
-</div>
 
-    </footer>
+  </footer>
   </div>
 
  

@@ -19,13 +19,6 @@ strong {
 
 }
 
-#content h1.documentFirstHeading {
-    margin-bottom: 0em;
-    margin-top: 1em;
-}
-
-#viewlet-social-like { float: right }
-
 /* Edit bar fixes */
 
 #edit-bar {
@@ -75,3 +68,19 @@ dl.actionMenu {
 .page-homepage #edit-bar {
     max-width:100%;
 }
+
+
+.template-compose .tile-container {
+overflow: hidden;
+    }
+
+    #content a.edit-tile-link {
+        position:absolute;
+    }
+
+    #content span.tile-type-name  {
+        position:absolute;
+    }
+
+
+

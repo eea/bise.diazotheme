@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rules
+<rules 
     xmlns="http://namespaces.plone.org/diazo" 
-    xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    css:if-content="#visual-portal-wrapper"
-    >
+    xmlns:css="http://namespaces.plone.org/diazo/css" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    css:if-content="#visual-portal-wrapper">
 
     <!-- Homepage -->
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
         <drop css:theme="div#content" />
         <replace css:theme-children="#site-body .page">
-        <style>
-        #portal-breadcrumbs {display:none}
+            <style>
+            #portal-breadcrumbs {
+                display: none
+            }
             </style>
             <div class="container">
                 <xsl:copy-of css:select="#portal-column-content" />
@@ -20,40 +21,41 @@
         </replace>
     </rules>
 
-<!-- 
-
-   <rules css:if-theme-children=".ondesktop">
+    <!-- 
+    <rules css:if-theme-children=".ondesktop">
        <drop css:content-children=".section" />
        <append css:content-children='.section' css:theme=".section-wrapper" method="raw" />
 
     </rules>
- -->
-<!-- 
      <rules css:if-content=".ondesktop">
-
        <drop css:content-children=".section" />
        <append css:content-children='.section' css:theme=".section-wrapper" method="raw" />
+    </rules> -->
 
-    
+    <rules if="$have_left_portlets">
+        <!-- <theme href="folder.html" /> -->
+        <drop css:theme="main.asidefalse" />
+        <replace css:theme="main.asidetrue article.article .article-content">
+            <xsl:copy>
+                <xsl:apply-templates css:select="#portal-column-content" />
+            </xsl:copy>
+        </replace>
+        <append css:content-children="#portal-column-one" css:theme="aside" />
+        <append css:content-children="#portal-column-two" css:theme="aside" />
+    </rules>
 
-
-</rules> -->
-
-
-
-
-
-
-    <rules if="$have_left_portlets" >
-         <!-- <theme href="folder.html" /> -->
-         <drop css:theme="main.asidefalse" />
-             <replace css:content="#portal-column-content" css:theme="main.asidetrue article.article .article-content" />
-               <append css:content-children="#portal-column-one" css:theme="aside" />
-                  <append css:content-children="#portal-column-two" css:theme="aside" />
-    </rules>    
-
-
-
+    <rules if="not($have_left_portlets)">
+        <drop css:theme="main.asidetrue" />
+        <drop css:theme="aside" />
+        <strip css:theme=".col-md-push-3" />
+        <!--  <strip attributes=".col-md-push-3" css:theme=".col-md-9" /> -->
+        <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
+        <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
+        <!--    <append css:content="#portal-column-content" css:theme=".article-wide" /> -->
+        <!--    <replace css:theme=".article" >
+                <div class=".article-wide" css:content="#portal-column-content"> </div>
+        </replace> -->
+    </rules>
 
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />
@@ -62,30 +64,21 @@
                 <xsl:copy-of css:select="#portal-column-content" method="raw" />
             </div>
         </replace>
-
-
-<!-- <after css:theme-children="head">
-        <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
-</after> -->
-
-
-
+        <!-- <after css:theme-children="head">
+            <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
+        </after> -->
     </rules>
 
-
     <!-- Regular pages: -->
-    <rules if="$is_inside_page" >
+    <rules if="$is_inside_page">
         <theme href="folder.html" />
     </rules>
 
-    <!-- Fallback theme -->
-    <theme href="folder.html" />
+    <!-- Fallback theme
+    <theme href="folder.html" /> -->
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />
-
-  
-
     <drop css:theme="head script" />
     <before css:content="head style, head link, head script, head meta" css:theme-children="head" />
     <replace css:content="head title" css:theme="head title" />
@@ -94,75 +87,46 @@
     <drop css:content="head link[rel='shortcut icon']" />
     <drop css:content="head link[rel='apple-touch-icon']" />
 
-<after css:theme-children="head">
-
-<script data-main="++theme++bise.diazotheme/js/appzz.js" src="http://requirejs.org/docs/release/2.1.14/minified/require.js" />
-</after>
-
+    <!-- <after css:theme-children="head">
+    <script data-main="++theme++bise.diazotheme/js/appzz.js" src="http://requirejs.org/docs/release/2.1.14/minified/require.js" />
+    </after>
+     -->
 
     <!-- ===========[ Content ]============= -->
     <merge attributes="class" css:content="body" css:theme="body" />
     <copy attributes="id dir" css:content="body" css:theme="body" />
 
     <!-- Site header -->
-
     <!-- Main navigation menu -->
     <replace css:theme="#navmenu-items" css:content="#navmenu-items" />
-<!-- <merge attribute="class" css:theme=".menu-primary-list" css:content=".nav-menu" /> --> 
+    <!-- <merge attribute="class" css:theme=".menu-primary-list" css:content=".nav-menu" /> -->
+
     <append css:content="#portal-personaltools" css:theme=".login-wrapper" />
     <!-- <append css:content="#navmenu-primary-list" css:theme=".nav-menu" /> -->
+
+    <!-- Move the breadcrumbs -->
+    <drop css:content="#breadcrumbs-you-are-here" />
+    <!-- <drop css:content="#portal-breadcrumbs" /> -->
+    <before css:theme="#content-wrapper" css:content="#portal-breadcrumbs" />
+
     <!-- Site search form -->
     <merge attributes="action" css:theme=".navsearch" css:content="#searchbar-options form" />
 
-
-
     <!-- Columns -->
-  
     <replace css:content="#portal-column-content" css:theme=".article-body" />
 
-    <!-- Move the editor bar above the main content (article) -->
-    <drop css:content="#edit-bar" />
-    <prepend css:theme=".page" css:content="#edit-bar" method="raw" />
-
-    <!-- Move the breadcrumbs -->
-    <drop css:theme="article .article-header" />
-    <drop css:content="#breadcrumbs-you-are-here" />
+    <!-- Plone edit bar -->
+    <replace css:content="#edit-bar" css:theme-children="#site-admin" />
 
     <!-- Drop the theme H1 title -->
     <drop css:theme="article h1" />
-
     <!-- Footer work -->
     <replace css:theme-children="#site-footer nav" css:content="#personalbar-options" />
 
     <!-- TODO: use xslt transformation to get this right -->
-<!--     <replace css:theme-children=".footer-logos" css:content="#editable-footer a" /> -->
+    <!--     <replace css:theme-children=".footer-logos" css:content="#editable-footer a" /> -->
 
-    <!-- TODO: enable back this, disabled during development -->
-    <drop css:content="#viewlet-social-like" />
+    <!-- TODO: enable back this, disabled during development 
+    <drop css:content="#viewlet-social-like" />-->
 
-
-        <rules if="not($have_left_portlets)" >
-      <drop css:theme="main.asidetrue" />
-            <drop css:theme="aside" />
-             <strip css:theme=".col-md-push-3" />
-           <!--  <strip attributes=".col-md-push-3" css:theme=".col-md-9" /> -->
-            <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
-            <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
-         <!--    <append css:content="#portal-column-content" css:theme=".article-wide" /> -->
-         <!--    <replace css:theme=".article" >
-         
-
-                <div class=".article-wide" css:content="#portal-column-content"> </div>
-     
-        </replace> -->
-
-           
-
-         </rules>
-
-    </rules>
-
-
-
-
-
+</rules>
