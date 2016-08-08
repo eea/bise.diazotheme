@@ -8,9 +8,13 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="bise.diazotheme">
 
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <include package=".tiles" />
     <include file="upgrades.zcml"/>
 
-    <cmf:registerDirectory name="bise_diazotheme_custom"/>
+    <!-- <cmf:registerDirectory name="bise_diazotheme_custom"/> -->
+    <plone:static directory="static" type="theme" name="bise.diazotheme" />
 
     <genericsetup:registerProfile
         name="default"
@@ -19,11 +23,6 @@
         description='Extension profile for the "Bise Diazo Theme" Plone theme.'
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
-
-    <plone:static directory="static" type="theme" 
-        name="bise.diazotheme" />
-
-    <include package="z3c.jbot" file="meta.zcml" />
 
     <browser:jbot directory="template-overrides" layer=".interfaces.IBiseDiazoLayer" />
 
