@@ -10,14 +10,10 @@
         <theme href="homepage.html" />
         <drop css:theme="div#content" />
         <replace css:theme-children="#site-body .page">
-            <style>
-            #portal-breadcrumbs {
-                display: none
-            }
-            </style>
             <div class="container">
                 <xsl:copy-of css:select="#portal-column-content" />
             </div>
+            <drop css:theme="#portal-breadcrumbs"/>
         </replace>
     </rules>
 
@@ -59,10 +55,8 @@
 
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />
-        <replace css:theme-children="#site-body .page">
-            <div class="container">
-                <xsl:copy-of css:select="#portal-column-content" method="raw" />
-            </div>
+        <replace css:theme-children="#site-body .page-body .page-container">
+            <xsl:copy-of css:select="#portal-column-content" method="raw" />
         </replace>
         <!-- <after css:theme-children="head">
             <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
@@ -74,8 +68,8 @@
         <theme href="folder.html" />
     </rules>
 
-    <!-- Fallback theme
-    <theme href="folder.html" /> -->
+    <!-- Fallback theme -->
+    <theme href="folder.html" />
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />

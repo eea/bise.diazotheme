@@ -65,15 +65,27 @@ dl.actionMenu {
     float: left !important;
 }
 }
-.page-homepage #edit-bar {
+#edit-bar {
     max-width:100%;
     z-index: 999;
     position: relative;
+    background: black;
+    border-color: black;
+}
+
+#content-views {
+    background-color: inherit;
+}
+
+#contentActionMenus dl.actionMenu.activated dd {
+    border-bottom: none;
 }
 
 
-.template-compose .tile-container {
-overflow: hidden;
+
+
+#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd {
+    background-color: black;
     }
 
     #content a.edit-tile-link {
@@ -86,3 +98,21 @@ overflow: hidden;
 
 
 
+
+/* strategyPlan.css */
+#strategyPlan {
+  width: 100%;
+  min-width: 930px;
+  margin-left: 0;
+}
+.targetDiv {
+  width: 16.666667%;
+  min-width: 155px;
+}
+.targetDiv.expanded {
+  width: 100%;
+}
+
+.targetId {
+  width: auto;
+}

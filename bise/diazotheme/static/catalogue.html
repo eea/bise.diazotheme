@@ -1,691 +1,131 @@
 <!DOCTYPE html>
 <html class="page-catalog">
+
 <head>
-  <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>BISE</title>
-<meta name="description" content="The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BISE</title>
+    <meta name="description" content="The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
 ">
-
-<link rel="stylesheet" href="./css/main.css">
-<link rel="canonical" href="http://biodiversity.europa.eu/catalogue.html">
-<!-- <script src="./js/contrib/jquery.min.js"></script> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="canonical" href="http://biodiversity.europa.eu/catalogue.html">
+    <!-- <script src="./js/contrib/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
 </head>
+
 <body style="opacity: 0;">
-
-
-  <div id="site">
-    <header id="site-header">
-
-<nav id="navbar">
- 
-
-  <div class="nav-container">
-    <div class="navmenu-head">
-      <div class="navbrand">
-      <a href="/" title="BISE Homepage" class="navbrand-logo"> <img src="./img/bise-logo.png" class="logo-big" alt="BISE Logo" /><span class="navbrand-title">Biodiversity Information<br> System for Europe</span>    
-      </a>
-     
-
-      </div>
-
-
-      <div class="navbar-descriptor">
-        <div class="navbar-descriptor-inner">
-          <p class="navbar-descriptor-copy"><strong>BISE</strong> is a single entry point for data and information on biodiversity supporting the implementation of the <strong>EU strategy</strong> and the <strong>Aichi targets</strong> in Europe.
-</p>
-          <div class="navbar-descriptor-cta">
-            <a href="#">Learn More <strong>About BISE</strong></a>
-          </div>
-        </div>
-      </div>
-      <div class="navmenu-trigger">
-           <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">Menu <span class="fa fa-bars"></span>
-           </span>
-           <span id="navmenu-close" class="hidden" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">Close <span class="fa fa-close"></span>
-           </span>
-         </div>
-    </div>
-
-
-
-<div class="search-and-login">
-        <div class="login-wrapper">
-        </div>
-        <div class="search-wrapper">
-          <div class="search-form">
-            <form class="navsearch" method="GET">
-              <input type="search" id="navsearch-input" name='q' placeholder="Search" />
-              <span class="navsearch-addon"> <button type="submit" id="navsearch-submit"><i class="fa fa-search"></i></button>
+    <div id="site">
+        <header id="site-header">
+            <nav id="navbar">
+                <div class="navmenu-head">
+                    <div class="nav-container">
+                        <a href="/" title="BISE Homepage" class="navbrand">
+                            <img src="./img/bise-logo.png" class="navbrand-logo" alt="BISE Logo" />
+                            <span class="navbrand-title">Biodiversity Information<br> System for Europe</span>
+                        </a>
+                        <div class="navbar-descriptor">
+                            <div class="navbar-descriptor-inner">
+                                <p class="navbar-descriptor-copy"><strong>BISE</strong> is a single entry point for data and information on biodiversity supporting the implementation of the <strong>EU strategy</strong> and the <strong>Aichi targets</strong> in Europe. </p>
+                                <div class="navbar-descriptor-cta">
+                                    <a href="#">Learn More <strong>About BISE</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navmenu-trigger">
+                            <span id="navmenu-open" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">
+          Menu
+          <span class="fa fa-bars"></span>
+                            </span>
+                            <span id="navmenu-close" class="hidden" class="navmenu-head-button" data-toggle="navmenu" data-target="#navmenu-body">
+          Close
+          <span class="fa fa-close"></span>
+                            </span>
+                        </div>
+                        <div class="search-and-login">
+                            <div class="login-wrapper">
+                            </div>
+                            <div class="search-wrapper">
+                                <div class="search-form">
+                                    <form class="navsearch" method="GET">
+                                        <input type="search" id="navsearch-input" name='q' placeholder="Search" />
+                                        <span class="navsearch-addon"> <button type="submit" id="navsearch-submit" class=" no-events"><i class="fa fa-search"></i></button>
                       </span>
-            </form>
-          </div>
-        </div>
-       
-        
-      </div>
-
-
-
-    <div id="navmenu-body" class="navmenu-body">
-      
-
-
-
-
-      <nav class="nav-menu">
-        <ul id="navmenu-items"  class="menu-primary-list">
-
-
-          <li id="navitem-topics" class="navmenu-item">
-          <div id="navitem-topics" class="navitem">
-              <div class="navitem-header">
-                <a href="" class="navitem-title">Topics</a>
-
-
-
-                  <button type='button' class="btn" id="navitem-toggle"
-                        data-toggle="navmenu" data-target=".navgroup"
-                        title="Toggle submenu"
-                        >
-                  <span class="sr-only">Toggle submenu</span>
-                  <span class="fa fa-angle-down"></span>
-                </button>
-
-
-
-              </div>
-
-           </div>
-          </li>
-
-
-       
-
-        </ul>
-         </nav>
-
-
-
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-
-
-  </div>
-<div id="backdrop"></div>
-</nav>
-
-    </header>
-
-    <div id="site-body">
-      <div class="page">
-        <header class="page-header">
-
-    <div class="container">
-      <nav id="breadcrumbs">
-  <ul class="breadcrumbs">
-    <li>
-      <a href="/">BISE</a>
-    </li>
-    
-      <li>
-      
-        <strong>BISE Catalogue</strong>
-      
-      </li>
-    
-  </ul>
-</nav>
-
-      <h1 class="page-title">
-        <img src="./img/img-bise-catalogue-symbol.png" 
-             alt="BISE Catalogue logo"
-             height="72" width="120">
-        BISE Catalogue
-      </h1>
-      <p class="page-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel id nisi consequatur, quos veniam ad provident dignissimos laboriosam mollitia autem magni vitae est. Quisquam tempore delectus maiores dolorum tempora!</p>
-      <form action="" class="leading">
-
-        <div class="field field-block field-search" id="bise-catalog-search-field">
-          <span class="input">
-            <label class="input-addon muted no-br" for="bise-catalog">
-              Search BISE Catalog
-            </label>
-            <span class="input-element">
-              <input type="search" id="bise-catalog">
-            </span>
-            <button class="input-btn btn-yellow" type="submit">
-              <span class="uppercase">Search</span>
-            </button>
-          </span>
-        </div>
-
-
-      </form>
-      <nav class="tabmenu">
-        <ul class="tabmenu-tabs">
-          <li>
-            <span class="active">All Libraries</span>
-          </li>
-          <li>
-            <a href="#">EUNIS</a>
-          </li>
-          <li>
-            <a href="#">Green Infrastructure Library</a>
-          </li>
-          <li>
-            <a href="#">BISE</a>
-          </li>
-          <li>
-            <a href="#">MAES Library</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-</header>
-<div class="page-body">
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-md-8">
-        <main>
-          <div id="bise-catalog-card" class="card">
-            <div class="listing">
-              <header class="listing-header">
-                <div class="leading clear">
-                  <span class="align-to-field">409408 results</span>
-                  <span class="float-right">
-                    <span class="field field-select field-no-border">
-                      <span class="input">
-                        <label for="results-per-page" class="input-addon">Results per page</label>
-                        <span class="input-element">
-                          <select id="results-per-page">
-                            <option>10</option>
-                            <option>25</option>
-                            <option>50</option>
-                          </select>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </header>
-              <ul class="listing-body">
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
+                <div id="navmenu-body" class="navmenu-body">
+                    <div class="nav-container">
+                        <nav class="nav-menu">
+                            <ul id="navmenu-items" class="menu-primary-list">
+                                <li id="navitem-topics" class="navmenu-item">
+                                    <div id="navitem-topics" class="navitem">
+                                        <div class="navitem-header">
+                                            <a href="" class="navitem-title">Topics</a>
+                                            <button type='button' class="btn" id="navitem-toggle" data-toggle="navmenu" data-target=".navgroup" title="Toggle submenu">
+                                                <span class="sr-only">Toggle submenu</span>
+                                                <span class="fa fa-angle-down"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">EU 2010 Biodiversity Baseline</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Oct 19, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: MAES Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Valuing Ecosystem Services for Sustainable Landscape Planning in Alpine Regions</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">May 15, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: MAES Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Assessing biodiversity in Europe — the 2010 report</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Oct 4, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: MAES Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">The territorial dimension of environmental sustainability – Potential territorial indicators to support the environmental dimension of territorial cohesion</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Jul 5, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: Green Infrastructure Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Territorial cohesion and water management in Europe: the spatial perspective</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Aug 24, 2012</time>
-                      </div>
-                      <span class="search-result-source">Source: Green Infrastructure Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Biodiversity — SOER 2010 thematic assessment</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Nov 28, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: MAES Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Streamlining European biodiversity indicators 2020: Building a future on lessons learnt from the SEBI 2010 process</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Sep 19, 2010</time>
-                      </div>
-                      <span class="search-result-source">Source: MAES Library</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-                <li class="listing-item">
-                  
-                  <div class="search-result">
-                    <div class="search-result-thumbnail">
-                      <img src="" alt="Thumbnail" width="60" height="60">
-                    </div>
-                    <div class="search-result-body">
-                      <h4 class="search-result-title"><a href="#">Example: Search result title</a></h4>
-                      <div>
-                        <strong>Document </strong> |
-                        <time title="Published on Oct 19, 2010">Publishing date</time>
-                      </div>
-                      <span class="search-result-source">Source: Source</span>
-                    </div>
-                  </div>
-
-                </li>
-                
-              </ul>
-              <footer class="listing-footer">
-
-                <div class="pagination">
-                  <div class="pagination-pager">
-                    <a href="#" class="pagination-next">Next</a>
-                    <span class="pagination-prev">Previous</span>
-                  </div>
-                  <ul class="pagination-pages">
-                    <li>
-                      <a href="#">1</a>
-                    </li>
-                    <li>
-                      <span>&hellip;</span>
-                    </li>
-                    <li>
-                      <a href="#">5</a>
-                    </li>
-                    <li>
-                      <a href="#">6</a>
-                    </li>
-                    <li>
-                      <span class="active">7</span>
-                    </li>
-                    <li>
-                      <a href="#">8</a>
-                    </li>
-                    <li>
-                      <a href="#">9</a>
-                    </li>
-                    <li>
-                      <span>&hellip;</span>
-                    </li>
-                    <li>
-                      <a href="#">214</a>
-                    </li>
-                  </ul>
                 </div>
-
-              </footer>
+                <div id="backdrop"></div>
+            </nav>
+        </header>
+        <div id="site-body">
+            <div class="page">
+                <div class="page-body">
+                    <div class="page-container">
+                   
+                    </div>
+                </div>
             </div>
+        </div>
+        <footer id="site-footer">
+            <!-- <h4 class="footer-title">BISE</h4> -->
+            <div class="page-container">
+                <div class="footerbrand">
+                    <a href="/" title="BISE Homepage" class="navbrand-logo"> <img src="./img/bise-logo.png" class="logo-big" alt="BISE Logo" /><span class="navbrand-title">Biodiversity Information<br> System for Europe</span>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
+                        </p>
+                        <nav class="nav">
+                            <ul class="nav-list-inline">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">About BISE</a></li>
+                                <li><a href="">Sitemap</a></li>
+                                <li><a href="">Contact us</a></li>
+                                <li><a href="">Log in</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="footer-logos">
+                            <ul class="list-footer-logos">
+                                <li><a href="#"><span>EU</span><img src="./img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
+                                <li><a href="#"><span>EEA</span><img src="./img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
+                                <li><a href="#"><span>CHM</span><img src="./img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
+                                <li><a href="#"><span>UN Decate on Biodeversity</span><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </main>
-        </div>
-
-        <div class="col-md-4">
-          <aside>
-          
-            <form action="">
-              
-              <h4>Filter Results</h4>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Categories</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_up"></span>
-                      
-                    </button>
-                  </header>
-                  
-                  <div class="facet-body">
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Documents"> </span>
-                      <label class="field-label" for="Documents">
-                        Documents
-                      </label>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Links"> </span>
-                      <label class="field-label" for="Links">
-                        Links
-                      </label>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Web Pages"> </span>
-                      <label class="field-label" for="Web Pages">
-                        Web Pages
-                      </label>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Species Info"> </span>
-                      <label class="field-label" for="Species Info">
-                        Species Info
-                      </label>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Habitat Types Info"> </span>
-                      <label class="field-label" for="Habitat Types Info">
-                        Habitat Types Info
-                      </label>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="Sites Info"> </span>
-                      <label class="field-label" for="Sites Info">
-                        Sites Info
-                      </label>
-                      
-                    </span>
-                    
-                  </div>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Source Dataset</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_up"></span>
-                      
-                    </button>
-                  </header>
-                  
-                  <div class="facet-body">
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="CDDA_NATIONAL"> </span>
-                      <label class="field-label" for="CDDA_NATIONAL">
-                        CDDA_NATIONAL
-                      </label>
-                      
-                        <span class="field-count">72</span>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="NATURA2000"> </span>
-                      <label class="field-label" for="NATURA2000">
-                        NATURA2000
-                      </label>
-                      
-                        <span class="field-count">77</span>
-                      
-                    </span>
-                    
-                    <span class="field field-block field-checkbox">
-                      <span class="input"> <input type="checkbox" id="DIPLOMA"> </span>
-                      <label class="field-label" for="DIPLOMA">
-                        DIPLOMA
-                      </label>
-                      
-                        <span class="field-count">51</span>
-                      
-                    </span>
-                    
-                  </div>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Country</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Biogeographical Region</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Language</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Species Group</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Taxonomic Rank</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Genus</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Published Year</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-                <fieldset class="facet">
-                  <header class="facet-header">
-                    <h5 class="facet-title">Biodiversity Strategy Targets</h5>
-                    <button class="facet-toggle" type="button">
-                      
-                      <span class="icon icon-arrow_drop_down"></span>
-                      
-                    </button>
-                  </header>
-                  
-                </fieldset>
-              
-
-            </form>
-          </aside>
-        </div>
-      
+        </footer>
     </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-    
-   <footer id="site-footer">
-
-    <!-- <h4 class="footer-title">BISE</h4> -->
-
-    <div class="container">
-       <div class="footerbrand">
-      <a href="/" title="BISE Homepage" class="navbrand-logo"> <img src="./img/bise-logo.png" class="logo-big" alt="BISE Logo" /><span class="navbrand-title">Biodiversity Information<br> System for Europe</span>    
-      </a>
-     
-
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-
-          <p>The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.
-          </p>
-          <nav class="nav">
-            <ul class="nav-list-inline">
-              <li><a href="">Home</a></li>
-              <li><a href="">About BISE</a></li>
-              <li><a href="">Sitemap</a></li>
-              <li><a href="">Contact us</a></li>
-              <li><a href="">Log in</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="footer-logos">
-            <ul class="list-footer-logos">
-        <li><a href="#"><span>EU</span><img src="./img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
-        <li><a href="#"><span>EEA</span><img src="./img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
-        <li><a href="#"><span>CHM</span><img src="./img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
-        <li><a href="#"><span>UN Decate on Biodeversity</span><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
-      </ul>
-          </div>
-        </div>
-
-      </div>  
-    </div>
-
-  </footer>
-  </div>
-
- 
-
-
-  <script>document.body.style.opacity = '1'; </script>
+    <script>
+    document.body.style.opacity = '1';
+    </script>
 </body>
+
 </html>
