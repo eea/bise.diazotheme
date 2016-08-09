@@ -1,8 +1,7 @@
 /* Generic fixes */
 
 #content ul {
-    margin-left: 0.3em;
-}
+    margin-left: 2.3em;}
 
 .article p {
     margin: 0 0 0.5em 0;
@@ -115,4 +114,9 @@ dl.actionMenu {
 
 .targetId {
   width: auto;
+}
+
+.externalLink {
+    background: url("external-link.png") no-repeat scroll right center transparent;
+    padding-right: 15px;
 }

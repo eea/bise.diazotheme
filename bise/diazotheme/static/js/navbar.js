@@ -3,23 +3,25 @@ $(document).ready(function() {
         this.parentElement.parentElement.classList.add('navsearch-open');
     }, false);
 
-    $('.navsearch-addon').on('click', function() {
-                $('.search-form  ').addClass('navsearch-open');
+    $('#navsearch-submit.no-events').on('click', function() {
+        $('.search-form  ').addClass('navsearch-open');
         $('#navsearch-input').focus();
         $('#navsearch-submit').removeClass("no-events");
     });
 
-    $('html').click(function(){
-        if (!($(event.target).hasClass('navsearch-addon'))){
-             $('#navsearch-submit').addClass("no-events");
+    $('html').click(function() {
+        if (!($(event.target).hasClass('navsearch-addon'))) {
+            $('#navsearch-submit').addClass("no-events");
         }
     });
 
     document.getElementById('navsearch-input').addEventListener('blur', function() {
-        this.parentElement.parentElement.classList.remove('navsearch-open');
+        if (!($('#navsearch-submit').hasClass("no-events"))) {
+            this.parentElement.parentElement.classList.remove('navsearch-open');
+        }
     }, false);
 
-    console.log('merge');
+    console.log('test');
 
     $triggers = $('[data-toggle="navmenu"]');
 
@@ -96,8 +98,8 @@ $(document).ready(function() {
             $searchandlogin.removeClass('open');
             $navbrand.removeClass('hidden');
             $navbrandtitle.removeClass('open');
-             $('.navmenu-trigger').removeClass('relative');
-             $('.navbrand').removeClass('relative');
+            $('.navmenu-trigger').removeClass('relative');
+            $('.navbrand').removeClass('relative');
         });
 
         $navmenuitem.each(function() {

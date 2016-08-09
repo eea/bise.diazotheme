@@ -33,7 +33,7 @@ class LiveTile(PersistentCoverTile):
 
     index = ViewPageTemplateFile('pt/live.pt')
 
-    is_configurable = False
+    is_configurable = True
     is_editable = True
     is_droppable = False
     short_name = u'Live Tile'

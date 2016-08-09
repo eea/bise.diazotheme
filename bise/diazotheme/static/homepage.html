@@ -83,42 +83,111 @@
             </nav>
         </header>
         <div id="site-body">
-            <div class="nav-slider">
-                <div>
-                    <img class="imgslider" src="./img/bise-highlights/photo-highlights-chm.jpg" />
-                </div>
-                <div>
-                    <img class="imgslider" src="./img/bise-highlights/photo-highlights-maes.jpg" />
-                </div>
-                <div>
-                    <img class="imgslider" src="./img/bise-highlights/photo-highlights-targets.jpg" />
-                </div>
+
+
+
+
+
+      <div id="highlights-slider">
+        <div class="page-container">
+          <header class="slider-header">
+            <h2 class="slider-title">BISE Highlights</h2>
+            <small class="slider-counter">1/3</small>
+          </header>
+
+          <div class="highlights">
+            <div class="highlight">
+              <h3 class="highlight-title">Towards the 2020 biodiversity targets</h3>
+              <p class="highlight-description">BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy</p>
             </div>
-            <div class="page-container" style="position: relative">
-                <div class="slider-highlights">
-                    <div class="slider-title">BISE Highlights</div>
-                    <div class="slider-counter">1/3</div>
-                    <div class="description-container">
-                        <div class="slider-description">
-                            <h1> Towards the 2020 biodiversity targets </h1>
-                            <p> BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy
-                            </p>
-                        </div>
-                        <div class="slider-description">
-                            <h1> Mapping and Assessment of Ecosystems and their Services (MAES)</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                        </div>
-                        <div class="slider-description">
-                            <h1>BISE - CHMs network of Europe </h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-                        </div>
-                    </div>
-                    <div id="arrows">
-                        <button class="slck-prev btn">Previous</button>
-                        <button class="slck-next btn">Next</button>
-                    </div>
-                </div>
+            <div class="highlight">
+              <h3 class="highlight-title">Mapping and Assessment of Ecosystems and their Services (MAES)</h3>
+              <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
             </div>
+            <div class="highlight">
+              <h3 class="highlight-title">BISE - CHMs network of Europe</h3>
+              <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+
+          <div id="slider-nav">
+            <button class="slider-prev">
+              <span class="fa fa-arrow-left"></span>
+              Previous
+            </button>
+            <button class="slider-next">
+              Next
+              <span class="fa fa-arrow-right"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <style>
+        #highlights-slider {
+          position: relative;
+          overflow: hidden;
+          color: #fff;
+        }
+        .slider-header {
+          overflow: hidden;
+          font-size: large;
+        }
+        .slider-title {
+          display: inline-block;
+          margin: 0;
+          font: inherit;
+          line-height: inherit;
+        }
+        .slider-header,
+        #slider-nav {
+          opacity: .8;
+        }
+        #slider-nav button {
+          border: 0;
+          background: transparent;
+          font: inherit;
+        }
+        .highlight {
+          outline: none;
+          text-shadow: 0 1px 2px rgba(0,0,0,.9);
+        }
+        .highlight-title {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.2;
+        }
+      </style>
+      <script>
+        (function() {
+          var $hlSlider = $('#highlights-slider').find('.highlights').slick({
+            autoplaySpeed: 5000,
+            speed: 1000,
+            adaptiveHeight: false,
+            nextArrow: null,
+            prevArrow: null
+          });
+          var $hlSliderCounter = $('#highlights-slider').find('.slider-counter');
+          var $hlSliderNav = $('#slider-nav');
+
+          var i;
+
+          $hlSlider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+            i = (currentSlide ? currentSlide : 0) + 1;
+            $hlSliderCounter.text(i + '/' + slick.slideCount);
+          });
+
+          $hlSliderNav.find('.slider-prev').click(function() {
+            $hlSlider.slick('slickPrev');
+          });
+
+          $hlSliderNav.find('.slider-next').click(function() {
+            $hlSlider.slick('slickNext');
+          });
+        }())
+      </script>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+
+
             <div class="page">
                 <div class="page-header">
                     <div class="page-container">
@@ -153,7 +222,7 @@
                                 <li><a href="#"><span>EU</span><img src="./img/logo-eu.png" alt="EU flag" height="48" width="auto"></a></li>
                                 <li><a href="#"><span>EEA</span><img src="./img/logo-eea.png" alt="EEA Logo" height="60" width="auto"></a></li>
                                 <li><a href="#"><span>CHM</span><img src="./img/logo-chm.png" alt="CHM Logo" height="66" width="auto"></a></li>
-                                <li><a href="#"><span>UN Decate on Biodeversity</span><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
+                                <li><a href="#"><span>UN Decade on Biodiversity</span><img src="./img/logo-undb.png" alt="United Nations Decade on Biodiversity Logo" height="48" width="auto"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -161,65 +230,119 @@
             </div>
         </footer>
     </div>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script>
+    
 
+    <style>
 
+        .slider-highlights {
+            position: absolute;
+            color: white;
+            bottom: 5rem;
+            width: 500px;
+            left: 1.1rem;
+        }
 
-    var $ion = $('.description-container').slick({
-        // dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        speed: 800,
-        slidesToShow: 1,
-        adaptiveHeight: false,
-        nextArrow: false,
-        prevArrow: false,
-         asNavFor: $vasile
-            // appendArrows: $('#arrows')
-    });
+        .description-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .nav-slider img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        @media (max-width: 800px) {
+            .slider-highlights {
+                position: absolute;
+                color: white;
+                text-align: center;
+                bottom: 2rem;
+                left: 1rem;
+                right: 1rem;
+                width: auto;
+            }
+        }
+        @media (min-width: 800px) {
+            .slider-highlights h1 {
+                font-size: 30px;
+                line-height: 32px;
+            }
+            .nav-slider {
+                height: 400px;
+            }
+            .description-container {
+                height: 140px;
+            }
+            
+            .slider-highlights {
+                position: absolute;
+                color: white;
+                text-align: left;
+                bottom: 2.5rem;
+                width: 700px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .slider-highlights {
+                font-size: 20px;
+                bottom: 5rem;
+                width: 900px;
+            }
+            .description-container {
+                height: 200px;
+            }
+            .nav-slider {
+                height: 600px;
+            }
+            .nav-slider img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .slider-highlights .slider-description {
+            width: 100%;
+            cursor: default;
+        }
+        
+        .slider-highlights h1 {
+            color: white;
+        }
+        .invisibile {
+            visibility: hidden;
+        }
+        #arrows button {
+            color: white;
+            border: none;
+            font-weight: lighter;
+        }
+        .slider-title,
+        .slider-counter {
+            display: inline-block;
+            padding: 10px 10px 10px 0px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .slck-prev:before {
+            font-family: FontAwesome;
+            content: "\f177";
+            padding-right: 5px;
+        }
+        .slck-next:after {
+            font-family: FontAwesome;
+            content: "\f178";
+            padding-left: 5px;
+        }
+        .nav-slider {
+            overflow: hidden;
+            border-bottom: 4px solid #ef8152;
+        }
+        .nav-slider img {
+            width: 100%;
+            /*  height: 300px*/
+        }
+    </style>
 
-
-    var $vasile = $('.nav-slider').slick({
-        // dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        speed: 800,
-        slidesToShow: 1,
-        asNavFor: $ion,
-        adaptiveHeight: false,
-        nextArrow: false,
-        prevArrow: false
-      
-            // appendArrows: $('#arrows')
-    });
-
-
-    var $status = $('.slider-counter');
-
-    $ion.on('afterChange', function(event, slick, currentSlide, nextSlide) {
-        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-        var i = (currentSlide ? currentSlide : 0) + 1;
-        $status.text(i + '/' + slick.slideCount);
-    });
-
-    $('.slck-next').on('click', function() {
-        $vasile.slick('slickNext');
-        $ion.slick('slickNext');
-    });
-
-    $('.slck-prev').on('click', function() {
-        $vasile.slick('slickPrev');
-           $ion.slick('slickPrev');
-    });
-
-
-
-
-
-    </script>
 </body>
 
 </html>
