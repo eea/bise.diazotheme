@@ -11,6 +11,7 @@
     <include package="z3c.jbot" file="meta.zcml" />
 
     <include package=".tiles" />
+    <include package=".browser" />
     <include file="upgrades.zcml"/>
 
     <!-- <cmf:registerDirectory name="bise_diazotheme_custom"/> -->
