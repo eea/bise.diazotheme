@@ -4,7 +4,7 @@
     <div class="news-world" tal:define="collection nocall:context/newsworld">
       <div tal:replace="structure python: view.render_listing(collection)" />
       <div>
-        <a href="" tal:attributes="href collection/absolute_url">More world news</a>
+        <a href="" tal:attributes="href collection/absolute_url">More World News</a>
       </div>
 
     </div>
@@ -15,7 +15,7 @@
     <div class="news-europe" tal:define="collection nocall:context/newseurope">
       <div tal:replace="structure python: view.render_listing(collection)" />
       <div>
-        <a href="" tal:attributes="href collection/absolute_url">More european news</a>
+        <a href="" tal:attributes="href collection/absolute_url">More European News</a>
       </div>
     </div>
   </div>

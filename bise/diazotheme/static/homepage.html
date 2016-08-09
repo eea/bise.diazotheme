@@ -52,8 +52,7 @@
                                 <div class="search-form">
                                     <form class="navsearch" method="GET">
                                         <input type="search" id="navsearch-input" name='q' placeholder="Search" />
-                                        <span class="navsearch-addon"> <button type="submit" id="navsearch-submit" class=" no-events"><i class="fa fa-search"></i></button>
-                      </span>
+                                        <span class="navsearch-addon"> <button type="submit" id="navsearch-submit" class=" no-events"><i class="fa fa-search"></i></button> </span>
                                     </form>
                                 </div>
                             </div>
@@ -87,13 +86,13 @@
 
     <div id="highlights-slider">
         <div class="highlight-photos">
-          <img class="current" src="./img/bise-highlights/photo-highlights-targets.jpg">
+          <img class="current-slide" src="./img/bise-highlights/photo-highlights-targets.jpg">
           <img src="./img/bise-highlights/photo-highlights-maes.jpg">
           <img src="./img/bise-highlights/photo-highlights-chm.jpg">
         </div>
         <div class="page-container">
           <header class="slider-header">
-            <h2 class="slider-title">BISE Highlights</h2>
+            <h2 class="slider-title">BISE Highlights </h2>
             <small class="slider-counter">1/3</small>
           </header>
 
@@ -158,7 +157,7 @@
           width: 100%;
           height: auto;
         }
-        .highlight-photos img.current {
+        .highlight-photos img.current-slide {
           display: block!important;
           z-index: 50;
         }
@@ -182,18 +181,22 @@
           line-height: inherit;
         }
           
-        #slider-nav button {
+        .slider-prev,
+        .slider-next {
+          display: inline-block;
           border: 0;
           background: transparent;
           font: inherit;
           color: inherit;
           opacity: .8;
+          cursor: pointer;
+          user-select: none;
         }
-        #slider-nav button:first-child {
+        .slider-prev {
           margin-right: 1em;
         }
-        #slider-nav button:hover,
-        #slider-nav button:focus {
+        .slider-prev:hover,
+        .slider-next:hover {
           opacity: 1;
         }
         .highlights {
@@ -226,6 +229,20 @@
         .highlight-description {
             font-size: larger;
             line-height: 1.2;
+        }
+        @media (max-width: 800px) {
+          #highlights-slider {
+            text-align: center;
+          }
+          .highlight {
+            padding: 2rem;
+          }
+        }
+        @media (max-width: 680px) {
+          .highlight-photos img {
+            height: 100%;
+            width: auto;
+          }
         }
         @media (min-width: 800px) {
             #highlights-slider {
@@ -299,8 +316,8 @@
             }).animate({
               'left': 0
             }, 1000, 'easeOutQuint', function() {
-              $currentImg.removeClass('current').css({'display': 'none'});
-              $nextImg.addClass('current');
+              $currentImg.removeClass('current-slide').css({'display': 'none'});
+              $nextImg.addClass('current-slide');
             })
           };
 

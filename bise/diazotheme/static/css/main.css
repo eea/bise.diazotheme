@@ -2194,6 +2194,14 @@ ul.pagination-pages {
     overflow: auto;
 }
 
+.article table {
+    border-collapse: collapse;
+}
+
+.article td {
+    border: 1px solid #e5dfd1;
+}
+
 .article {
     margin-left: auto;
     margin-right: auto;
@@ -2846,7 +2854,7 @@ input.navbar-search-input::placeholder {
         width: 16.6666%;
         box-sizing: border-box;
         border-left: 1px solid rgba(0, 0, 0, .2);
-        z-index: 1;
+        z-index: 500;
         background-color: #41b664;
         background-image: linear-gradient(to bottom, #41b664 0%, #349250 100%);
         color: #fff;
@@ -3799,7 +3807,7 @@ a.subitem {
 }
 .navgroup-middle .navgroup {
     display: block;
-    border-top: 1px solid lightgray;
+    border-top: 1px solid #e5dfd1;
 }
 .navgroup-middle .navgroup:nth-child(1) {
     border-top: none;
@@ -3808,8 +3816,8 @@ a.subitem {
     display: table-cell;
     /*padding: 10px;*/
     
-    border-right: 1px solid lightgray;
-    border-left: 1px solid lightgray;
+    border-right: 1px solid #e5dfd1;
+    border-left: 1px solid #e5dfd1;
 }
 .nav-container #navmenu-items:hover .navmenu-item:nth-child(1) {
     border-bottom-left-radius: 0;
@@ -4083,7 +4091,7 @@ a.subitem {
     .nav-container .navmenu-head {
         overflow: hidden;
         /*padding: 10px 10px 10px 10px;*/
-        /*border-bottom: 0.5px solid lightgray;*/
+        /*border-bottom: 0.5px solid #e5dfd1;*/
         color: white;
         font-size: 24px;
     }
@@ -4312,6 +4320,11 @@ time {
 .collection-item {
     margin-bottom: 1rem;
 }
+
+.collection-item span {
+    color: #41b664;
+}
+
 .tile-footer {
     text-align: center;
 }
@@ -4333,7 +4346,7 @@ main {
     overflow: auto;
 }
 aside {
-    border-right: 1px solid lightgrey;
+    border-right: 1px solid #e5dfd1;
     margin-left: 1px;
     margin-right: -1px;
     padding: 2rem;
@@ -4346,7 +4359,7 @@ aside {
         float: left;
         width: 75%;
         left: 25%;
-        border-left: 1px solid lightgray;
+        border-left: 1px solid #e5dfd1;
     }
     
     aside {
@@ -4404,7 +4417,7 @@ aside .portletItem {
     padding: 0!important;
 }
 aside .portletWrapper {
-    border-top: 1px solid lightgray;
+    border-top: 1px solid #e5dfd1;
 }
 aside .portletWrapper:first-of-type {
     border-top: none;
@@ -4431,7 +4444,7 @@ aside .portletWrapper {
     padding-right: 1rem;
 }
 #content-wrapper {
-    border: 1px solid lightgray;
+    border: 1px solid #e5dfd1;
     border-top: solid #EF8152;
     background: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
@@ -4615,18 +4628,33 @@ table.listing tr td:last-of-type {
     padding: 1.5rem;
     overflow: auto;
 }
+
+@media(min-width: 1200px) {
 .news-left {
     box-sizing: border-box;
     width: 50%;
     float: left;
-    padding-left: 1rem;
+    padding-right: 2rem;
+    margin-bottom: 0;
 }
 .news-right {
     box-sizing: border-box;
     width: 50%;
     float: left;
-    padding-left: 1rem;
+    padding-right: 2rem;
+    margin-bottom: 0;
 }
+}
+
+/*.news-left {
+    margin-bottom: 2rem;
+}*/
+
+.news-right {
+    margin-bottom: 2rem;
+}
+
+
 .news h3 {
     color: #ef8152;
 }

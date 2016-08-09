@@ -5,12 +5,12 @@
 
       <tal:def define="obj python:listobj.getObject()">
         <h4>
-          <span tal:content="python:obj.aq_parent.Subject() and obj.aq_parent.Subject()[0] or ''" />
           <a tal:attributes="href listobj/getURL" tal:content="listobj/Title" />
         </h4>
 
         <p class="description" tal:content="listobj/Description" />
 
+	<span tal:content="python:obj.aq_parent.Subject() and obj.aq_parent.Subject()[0] or ''" />
         <time tal:content="python:context.toLocalizedTime(listobj.created)">
           Jul 15, 2015 01:23 PM
         </time>
