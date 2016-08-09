@@ -1,27 +1,28 @@
 $(document).ready(function() {
-    document.getElementById('navsearch-input').addEventListener('focus', function() {
-        this.parentElement.parentElement.classList.add('navsearch-open');
-    }, false);
+    // document.getElementById('navsearch-input').addEventListener('focus', function() {
+    //     this.parentElement.parentElement.classList.add('navsearch-open');
+    // }, false);
 
-    $('#navsearch-submit.no-events').on('click', function() {
+    $('.navsearch-addon').on('click', function() {
         $('.search-form  ').addClass('navsearch-open');
+         $('#navsearch-submit').removeClass("no-events");
         $('#navsearch-input').focus();
-        $('#navsearch-submit').removeClass("no-events");
     });
 
     $('html').click(function() {
         if (!($(event.target).hasClass('navsearch-addon'))) {
+            console.log(event.target);
             $('#navsearch-submit').addClass("no-events");
+            $('.search-form').removeClass('navsearch-open');
         }
+
     });
 
     document.getElementById('navsearch-input').addEventListener('blur', function() {
-        if (!($('#navsearch-submit').hasClass("no-events"))) {
             this.parentElement.parentElement.classList.remove('navsearch-open');
-        }
     }, false);
 
-    console.log('test');
+    console.log('merge');
 
     $triggers = $('[data-toggle="navmenu"]');
 
