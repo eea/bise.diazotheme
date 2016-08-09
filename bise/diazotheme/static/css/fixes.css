@@ -103,6 +103,7 @@ dl.actionMenu {
   width: 100%;
   min-width: 930px;
   margin-left: 0;
+  overflow: hidden;
 }
 .targetDiv {
   width: 16.666667%;

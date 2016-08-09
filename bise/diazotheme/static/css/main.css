@@ -3834,9 +3834,6 @@ a.subitem {
 .invisibile {
     visibility: hidden;
 }
-
-
-
 .page-homepage .nav-menu {
     /* position: absolute; */
 }
@@ -4599,12 +4596,11 @@ table.listing tr td:last-of-type {
     border-radius: 3px;
 }
 #gallery {
-    /*padding: 20px!important;*/
-    
+    max-width: 98%;
     border-radius: 3px;
 }
 #mapSection {
-    /*margin-top: 0!important;*/
+    max-width: 99%;
 }
 #mainMap {
     /*      border-bottom-left-radius: 3px;
@@ -4696,20 +4692,13 @@ main.asidefalse .managePortletsFallback {
     padding: 5px!important;
     margin-bottom: -20px;
 }
-
 .template-compose .section {
     float: none;
-
 }
-
 .template-compose .aside {
     position: relative!important;
     float: none;
 }
-
 .template-compose .aside:nth-child(2) {
     margin-top: 0;
 }
-
-
-

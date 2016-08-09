@@ -86,6 +86,11 @@
 
 
     <div id="highlights-slider">
+        <div class="highlight-photos">
+          <img class="current" src="./img/bise-highlights/photo-highlights-targets.jpg">
+          <img src="./img/bise-highlights/photo-highlights-maes.jpg">
+          <img src="./img/bise-highlights/photo-highlights-chm.jpg">
+        </div>
         <div class="page-container">
           <header class="slider-header">
             <h2 class="slider-title">BISE Highlights</h2>
@@ -93,18 +98,15 @@
           </header>
 
           <div class="highlights">
-            <div class="highlight"
-                 data-photo="./img/bise-highlights/photo-highlights-targets.jpg">
+            <div class="highlight">                 
               <h3 class="highlight-title">Towards the 2020 biodiversity targets</h3>
               <p class="highlight-description">BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy</p>
             </div>
-            <div class="highlight"
-                 data-photo="./img/bise-highlights/photo-highlights-targets.jpg">
+            <div class="highlight">
               <h3 class="highlight-title">Mapping and Assessment of Ecosystems and their Services (MAES)</h3>
               <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
             </div>
-            <div class="highlight"
-                 data-photo="./img/bise-highlights/photo-highlights-targets.jpg">
+            <div class="highlight">
               <h3 class="highlight-title">BISE - CHMs network of Europe</h3>
               <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
@@ -137,11 +139,40 @@
           border-bottom: solid #ef8152;
           background-color: #ef8152;
         }
+        .highlight-photos {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          overflow: hidden;
+          z-index: 0;
+        }
+        .highlight-photos img {
+          /*display: block;*/
+          position: absolute;
+          z-index: 100;
+          top: 0;
+          left: 0;
+          display: none;
+          width: 100%;
+          height: auto;
+        }
+        .highlight-photos img.current {
+          display: block!important;
+          z-index: 50;
+        }
         .slider-header {
           overflow: hidden;
           font-size: large;
           margin-bottom: 1em;
           opacity: .8;
+        }
+        .slider-header,
+        .highlights,
+        #slider-nav {
+          position: relative;
+          z-index: 150;
         }
         .slider-title {
           display: inline-block;
@@ -150,7 +181,7 @@
           color: inherit;
           line-height: inherit;
         }
-
+          
         #slider-nav button {
           border: 0;
           background: transparent;
@@ -209,6 +240,10 @@
             }
         }
         @media (min-width: 1200px) {
+            #highlights-slider {
+              padding-top: 240px;
+              padding-bottom: 60px;
+            }
             .highlight {
                 min-height: 220px;
             }
@@ -217,25 +252,63 @@
                 line-height: 50px;
             }
         }
+
       </style>
       <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
       <script>
         (function() {
+
+          jQuery.extend( jQuery.easing, {
+            'easeOutQuint': function (x, t, b, c, d) {
+              return c*((t=t/d-1)*t*t*t*t + 1) + b;
+            }
+          });
+
           var $hlSlider = $('#highlights-slider').find('.highlights').slick({
             autoplaySpeed: 5000,
             speed: 1000,
+            easing: 'easeOutQuint',
             adaptiveHeight: false,
             nextArrow: null,
-            prevArrow: null
+            prevArrow: null,
+            useCSS: false
           });
           var $hlSliderCounter = $('#highlights-slider').find('.slider-counter');
           var $hlSliderNav = $('#slider-nav');
 
           var i;
 
+          var updateBackgroundPhoto = function(current, next, count) {
+            
+            var dir = next - current;
+            console.log(current, next, count);
+            if (next == 0 && current == count - 1) {
+              dir = 1;
+              console.log('from left');
+            }
+            if (next == count - 1 && current == 0) {
+              dir = -1;
+              console.log('from right');
+            }
+
+            $currentImg = $('.highlight-photos img:nth-child(' + (current + 1) + ')');
+            $nextImg = $('.highlight-photos img:nth-child(' + (next + 1) + ')');
+            $nextImg.css({
+              'display': 'block',
+              'left': dir * 100 + '%'
+            }).animate({
+              'left': 0
+            }, 1000, 'easeOutQuint', function() {
+              $currentImg.removeClass('current').css({'display': 'none'});
+              $nextImg.addClass('current');
+            })
+          };
+
           $hlSlider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
             i = (nextSlide ? nextSlide : 0) + 1;
             $hlSliderCounter.text(i + '/' + slick.slideCount);
+
+            updateBackgroundPhoto(currentSlide, nextSlide, slick.slideCount);
           });
 
           $hlSliderNav.find('.slider-prev').click(function() {

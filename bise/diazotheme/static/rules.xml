@@ -9,8 +9,12 @@
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
         <drop css:theme="div#content" />
+	<!-- <replace css:theme="#highlights-slider" css:content=".frontpage-highlights" />-->
         <replace css:theme-children="#site-body .page">
             <div class="container">
+		    <!-- <xsl:copy>
+			    <xsl:apply-templates select="@*|node()"/>
+		    </xsl:copy> -->
                 <xsl:copy-of css:select="#portal-column-content" />
             </div>
             <drop css:theme="#portal-breadcrumbs"/>
