@@ -9,16 +9,21 @@
     <rules css:if-content=".tile-frontpage">
         <theme href="homepage.html" />
         <drop css:theme="div#content" />
-	<!-- <replace css:theme="#highlights-slider" css:content=".frontpage-highlights" />-->
+
+        <replace css:theme-children="#highlights-slider" css:content-children="#highlights-slider-content" />
+
         <replace css:theme-children="#site-body .page">
             <div class="container">
-		    <!-- <xsl:copy>
-			    <xsl:apply-templates select="@*|node()"/>
-		    </xsl:copy> -->
-                <xsl:copy-of css:select="#portal-column-content" />
+                <xsl:copy>
+                    <xsl:apply-templates css:select="#portal-column-content"/>
+                </xsl:copy>
+                <!-- NOTE: this method is not ok 
+                <xsl:copy-of css:select="#portal-column-content" />-->
             </div>
             <drop css:theme="#portal-breadcrumbs"/>
         </replace>
+
+        <drop css:content="#highlights-slider-content" />
     </rules>
 
     <!-- 
