@@ -14,7 +14,7 @@
         <drop css:content="#highlights-slider-content" />
 
         <replace css:theme-children="#site-body .page">
-            <div class="container">
+            <div class="page-container">
                 <xsl:copy>
                     <xsl:apply-templates css:select="#portal-column-content"/>
                 </xsl:copy>
@@ -59,12 +59,8 @@
 
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />
-        <replace css:theme-children="#site-body main">
-            <xsl:copy>
-                <xsl:apply-templates css:select="#portal-column-content" />
-            </xsl:copy>
-	    <!-- <xsl:copy-of css:select="#portal-column-content" method="raw" /> -->
-        </replace>
+        <replace css:theme-children="#site-body main"
+                 css:content-children="#portal-column-content"/>
         <!-- <after css:theme-children="head">
             <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
         </after> -->

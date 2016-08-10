@@ -132,6 +132,12 @@ dl.actionMenu {
   height: auto!important;
 }
 
+/* remove heading color on assmnt. tables */
+.review h1,
+.overview h1 {
+  color: inherit;
+}
+
 
 /* External link */
 
@@ -154,7 +160,6 @@ dl.actionMenu {
 
 
 /* maesGallery.css */
-
 #map-section {
   height: auto!important;
   max-width: none;
@@ -168,6 +173,113 @@ dl.actionMenu {
 .study .externalLink:after {
   content: none;
 }
+
+#gallery {
+  padding: 0;
+  background: #f5f5f5;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+}
+
+.owl-wrapper-outer {
+  /*padding: 1rem;*/
+  margin-left: 0;
+}
+
+.owl-theme .owl-controls .owl-page span {   background: white!important;
+}
+
+.owl-carousel .owl-item {
+  width: auto!important;
+  padding: 1rem;
+}
+
+.study {
+  width: 205px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,.2);
+}
+.study:hover {
+  border-color: #1f8cc9;
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,.4);
+}
+
+.study a {
+  display: block;
+  overflow: hidden;
+}
+
+.study div {
+  color: #748284;
+  line-height: 1.2;
+  min-height: 2.4em;
+  margin: 0;
+}
+.study img {
+  max-width: 100%!important;
+  height: auto!important;
+  max-height: auto!important;
+  width: 100%!important;
+  border: none!important;
+}
+
+#owl-example {
+  overflow: visible;
+}
+#owl-example .owl-controls .owl-buttons .owl-next,
+#owl-example .owl-controls .owl-buttons .owl-prev {
+  top: 50%;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  box-sizing: content-box;
+  padding: 10px!important;
+  height: 10px;
+  width: 10px;
+  margin-top: -15px;
+  line-height: 10px;
+  font-size: 10px;
+  background: #fff;
+  border-radius: 0;
+  opacity: .75;
+}
+#owl-example .owl-controls .owl-buttons .owl-next i:before,
+#owl-example .owl-controls .owl-buttons .owl-prev i:before {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  background: transparent;
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  border: 5px solid transparent;
+  position: relative;
+}
+#owl-example .owl-controls .owl-buttons .owl-next i:before {
+  left: 3px;
+  border-left-color: #444;
+}
+#owl-example .owl-controls .owl-buttons .owl-prev i:before {
+  right: 3px;
+  border-right-color: #444;
+}
+
+#owl-example .owl-controls .owl-buttons .owl-next {
+  right: -10px;
+}
+#owl-example .owl-controls .owl-buttons .owl-prev {
+  left: -10px;
+}
+
+.owl-pagination {
+  display: none;
+}
+.owl-theme .owl-controls {
+  margin: 0;
+}
+
 
 /* full-width-style.css */
 #center_content {
@@ -258,7 +370,7 @@ dl.actionMenu {
     clear: none;
     width: 25%;
     padding: 0 .75rem;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 }
 
