@@ -11,6 +11,7 @@
         <drop css:theme="div#content" />
 
         <replace css:theme-children="#highlights-slider" css:content-children="#highlights-slider-content" />
+        <drop css:content="#highlights-slider-content" />
 
         <replace css:theme-children="#site-body .page">
             <div class="container">
@@ -23,7 +24,6 @@
             <drop css:theme="#portal-breadcrumbs"/>
         </replace>
 
-        <drop css:content="#highlights-slider-content" />
     </rules>
 
     <!-- 
@@ -40,11 +40,6 @@
     <rules if="$have_left_portlets">
         <!-- <theme href="folder.html" /> -->
         <drop css:theme="main.asidefalse" />
-        <replace css:theme="main.asidetrue article.article .article-content">
-            <xsl:copy>
-                <xsl:apply-templates css:select="#portal-column-content" />
-            </xsl:copy>
-        </replace>
         <append css:content-children="#portal-column-one" css:theme="aside" />
         <append css:content-children="#portal-column-two" css:theme="aside" />
     </rules>
@@ -64,8 +59,11 @@
 
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />
-        <replace css:theme-children="#site-body .page-body .page-container">
-            <xsl:copy-of css:select="#portal-column-content" method="raw" />
+        <replace css:theme-children="#site-body main">
+            <xsl:copy>
+                <xsl:apply-templates css:select="#portal-column-content" />
+            </xsl:copy>
+	    <!-- <xsl:copy-of css:select="#portal-column-content" method="raw" /> -->
         </replace>
         <!-- <after css:theme-children="head">
             <script src="http://requirejs.org/docs/release/2.1.14/minified/require.js" type="text/javascript" data-main="cat-client/catalogue"></script>
@@ -79,6 +77,9 @@
 
     <!-- Fallback theme -->
     <theme href="folder.html" />
+
+    <append css:theme="main .article"
+            css:content-children="#portal-column-content"/>
 
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />
@@ -107,22 +108,17 @@
     <append css:content="#portal-personaltools" css:theme=".login-wrapper" />
     <!-- <append css:content="#navmenu-primary-list" css:theme=".nav-menu" /> -->
 
-    <!-- Move the breadcrumbs -->
-    <drop css:content="#breadcrumbs-you-are-here" />
     <!-- <drop css:content="#portal-breadcrumbs" /> -->
-    <before css:theme="#content-wrapper" css:content="#portal-breadcrumbs" />
+    <prepend css:theme=".page-body .page-container"
+             css:content="#portal-breadcrumbs" />
 
     <!-- Site search form -->
     <merge attributes="action" css:theme=".navsearch" css:content="#searchbar-options form" />
 
-    <!-- Columns -->
-    <replace css:content="#portal-column-content" css:theme=".article-body" />
-
     <!-- Plone edit bar -->
-    <replace css:content="#edit-bar" css:theme-children="#site-admin" />
+    <replace css:content="#edit-bar" css:theme-children="#site-admin" method="raw"/>
+    <drop css:content="#edit-bar" />
 
-    <!-- Drop the theme H1 title -->
-    <drop css:theme="article h1" />
     <!-- Footer work -->
     <replace css:theme-children="#site-footer nav" css:content="#personalbar-options" />
 

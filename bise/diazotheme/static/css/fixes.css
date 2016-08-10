@@ -1,123 +1,281 @@
 /* Generic fixes */
 
 #content ul {
-    margin-left: 2.3em;}
-
-.article p {
-    margin: 0 0 0.5em 0;
-    
+  margin-left: 2.3em;
 }
 
-
 strong {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .documentByLine {
-    margin-bottom: 2em;
-
+  margin-bottom: 2em;
 }
+
 
 /* Edit bar fixes */
 
 #edit-bar {
-    min-height: 2.5em;
-    margin-bottom: 0em;
-    border-radius: 0;
-    /*max-width: 64em;*/
+  min-height: 2.5em;
+  margin-bottom: 0em;
+  border-radius: 0;
+  /*max-width: 64em;*/
 }
+
 #edit-bar ul {
-    margin: 0em;
-    /*padding-left: 0.3em;*/
+  margin: 0em;
+  /*padding-left: 0.3em;*/
 }
+
 #contentActionMenus {
-    background: inherit;
-    top: inherit;
+  background: inherit;
+  top: inherit;
 }
+
 dl.actionMenu {
-    margin-left: 0em;
+  margin-left: 0em;
 }
+
 
 /* Fix /countries */
 
 .portletStaticText ul {
-    margin-left: 0em;
-    padding-left: 0em;
+  margin-left: 0em;
+  padding-left: 0em;
 }
+
 .portletStaticText li {
-    list-style-type: none;
+  list-style-type: none;
 }
+
 
 /* Fix main navigation menu */
+
 #portal-globalnav li {
-    display: inline-block;
+  display: inline-block;
 }
+
 
 /* Fix cover layout buttons */
+
 .btn-inverse {
-    background-color: #363636 !important;
+  background-color: #363636 !important;
 }
 
+
 /* Frontpage fixes */
-@media (min-width: 960px) { 
-.page-homepage .page-header .col-md-4, .page-homepage .page-header .col-md-8 {
+
+@media (min-width: 960px) {
+  .page-homepage .page-header .col-md-4,
+  .page-homepage .page-header .col-md-8 {
     float: left !important;
+  }
 }
-}
+
 #edit-bar {
-    max-width:100%;
-    z-index: 999;
-    position: relative;
-    background: black;
-    border-color: black;
+  max-width: 100%;
+  z-index: 999;
+  position: relative;
+  background: black;
+  border-color: black;
 }
 
 #content-views {
-    background-color: inherit;
+  background-color: inherit;
 }
 
 #contentActionMenus dl.actionMenu.activated dd {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+#contentActionMenus dl.actionMenu a,
+#contentActionMenus dl.actionMenu.activated dd {
+  background-color: black;
+}
+
+#content a.edit-tile-link {
+  position: absolute;
+}
+
+#content span.tile-type-name {
+  position: absolute;
 }
 
 
-
-
-#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd {
-    background-color: black;
-    }
-
-    #content a.edit-tile-link {
-        position:absolute;
-    }
-
-    #content span.tile-type-name  {
-        position:absolute;
-    }
-
-
-
-
 /* strategyPlan.css */
+
 #strategyPlan {
   width: 100%;
+  height: auto!important;
   min-width: 930px;
   margin-left: 0;
   overflow: hidden;
 }
-.targetDiv {
-  width: 16.666667%;
-  min-width: 155px;
+
+#strategyPlan a:after {
+  content: none;
 }
-.targetDiv.expanded {
+
+#strategyPlan .targetDiv.expanded {
   width: 100%;
 }
 
-.targetId {
+#strategyPlan .targetId {
   width: auto;
 }
 
-.externalLink {
-    background: url("/external-link.png") no-repeat scroll right center transparent;
-    padding-right: 15px;
+.mtrAssesment {
+    margin-left: auto;
+    margin-right: auto;
+}
+.mtrMemberState {
+  height: auto!important;
+}
+
+
+/* External link */
+
+
+/* 1. Negative margin prevents it from becoming an orphan
+   (the only one to break line) */
+
+.externalLink:after {
+  content: url("/external-link.png");
+  display: inline-block;
+  width: 12px;
+  height: 11px;
+  margin-left: 3px;
+}
+
+#navbar .externalLink:after {
+  margin-right: -12px;
+  /* 1 */
+}
+
+
+/* maesGallery.css */
+
+#map-section {
+  height: auto!important;
+  max-width: none;
+}
+
+#mainMap {
+  border: 0;
+  box-sizing: border-box;
+}
+
+.study .externalLink:after {
+  content: none;
+}
+
+/* full-width-style.css */
+#center_content {
+  /* width: 900px; */
+  width: auto;
+}
+/* the only 2 rules in full-width-style.css */
+/*table.datatable {
+    width: 99% !important;
+}*/
+
+/* bap_style.css */
+.bap-action-holder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+.compare-form-holder {
+  border: 1px solid #e5dfd1;
+  border-radius: 4px;
+  background: transparent;
+  padding: 1.5rem;
+  box-shadow: none;
+  width: auto;
+}
+
+.compare-form-holder p {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  margin-top: 0;
+}
+
+#compare-form {
+  float: none!important;
+  border-top: 1px solid #e5dfd1;
+  padding-top: 1.5rem;
+}
+
+#compare-form:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#compare-form .field {
+  margin: 0;
+  float: none;
+}
+
+#compare-form .field label {
+  cursor: pointer;
+}
+#compare-form .field input,
+#compare-form .field select  {
+  display: block;
+  width: 100%;
+}
+
+#compare-form .field input[type="submit"] {
+  display: inline-block;
+  padding: 0.4em 0.6em;
+  border: 1px solid;
+  font-weight: 700;
+  border-color: transparent;
+  border-radius: .25em;
+  background-color: #1f8cc9;
+  background-repeat: no-repeat;
+  color: #fff !important;
+}
+/*#compare-form .field input[type="submit"]:hover {
+  background-color: #d8d8d8;
+}*/
+
+
+@media (max-width: 799px) {
+  #compare-form .field {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 800px) {
+  #compare-form {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+  }
+  #compare-form .field {
+    float: left;
+    clear: none;
+    width: 25%;
+    padding: 0 .75rem;
+    box-sizing: border-box
+  }
+}
+
+
+
+.cleaner {
+  display: none;
+}
+
+.bap-action {
+  box-shadow: none;
+  border: 1px solid #e5dfd1;
+}
+
+
+/* cifChart.css */
+#cifChart {
+  min-width: 600px;
+  width: 100%!important;
 }

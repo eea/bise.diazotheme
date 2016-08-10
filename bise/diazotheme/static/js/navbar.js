@@ -1,7 +1,16 @@
 $(document).ready(function() {
-    // document.getElementById('navsearch-input').addEventListener('focus', function() {
-    //     this.parentElement.parentElement.classList.add('navsearch-open');
-    // }, false);
+   
+
+$(window).resize(function(){
+    if ($(window).width() <= 800){  
+       
+        document.getElementById('navsearch-input').addEventListener('focus', function() {
+        this.parentElement.parentElement.classList.add('navsearch-open');
+         console.log("yep");
+    }, false);
+    }   
+}).resize();
+   
 
     $('.navsearch-addon').on('click', function() {
         $('.search-form  ').addClass('navsearch-open');
@@ -11,9 +20,12 @@ $(document).ready(function() {
 
     $('html').click(function() {
         if (!($(event.target).hasClass('navsearch-addon'))) {
-            console.log(event.target);
+            // console.log(event.target);
             $('#navsearch-submit').addClass("no-events");
+
+        if ($(window).width() >= 800){  
             $('.search-form').removeClass('navsearch-open');
+            }   
         }
 
     });
@@ -132,8 +144,6 @@ $(document).ready(function() {
     var q = getURLParameter("q");
     q = q.replace("+", " ");
     if (q != '') { $("#catalogue-app").attr("data-query", q); }
-
-
 
 
 
