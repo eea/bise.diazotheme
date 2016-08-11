@@ -3495,6 +3495,13 @@ dl#portal-personaltools dt.actionMenuHeader a {
 .search-and-login i {
     font-size: large;
 }
+
+@media (max-width: 800px) {
+    .search-and-login i {
+    font-size: 19px;
+    }
+}
+
 .search-and-login input::-webkit-input-placeholder {
     color: white;
 }
@@ -4553,4 +4560,12 @@ main.asidefalse .managePortletsFallback {
 
 #viewlet-below-content-title #viewlet-social-like {
     display: none;
+}
+
+
+@media (max-width: 400) {
+#navmenu-close {
+    padding: 0;
+    padding-top: 27px;
+    }
 }
