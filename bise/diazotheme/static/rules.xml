@@ -26,6 +26,8 @@
 
     </rules>
 
+
+<!-- button in catalogue -->
     <!-- 
     <rules css:if-theme-children=".ondesktop">
        <drop css:content-children=".section" />

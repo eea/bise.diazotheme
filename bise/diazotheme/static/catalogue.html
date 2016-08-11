@@ -86,12 +86,17 @@
       </nav>
     </header>
     <div id="site-body">
-      <div class="page">
+
         <div class="page-body">
+           <div class="page">
+              <span class="asidetrigger" id="catalogue-trigger">
+                <button type="button" class="btn btn-sidebar">Toggle filters</button>
+              </span>
           <div class="page-container">
             <div class="page-content">
+               
               <main>
-                
+              
               </main>
             </div>
           </div>
@@ -407,7 +412,12 @@
     }
   </style>
 
+<script> 
+setTimeout(function(){
+ sidebarplugin($('.asidetrigger'), $('.catalogue-sidebar'), $('.aside-button'));
+},3000);
 
+</script>
 
 
 

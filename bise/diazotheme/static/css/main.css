@@ -3034,7 +3034,7 @@ input.navbar-search-input::placeholder {
 .timer-wrapper-wrapper:before { left: 25%; }
 .timer-wrapper-wrapper:after { right: 25%; }
 #countdown {
-    font-size: 6em;
+    font-size: 5em;
     font-family: 'Roboto condensed', Arial, sans-serif;
     font-weight: 300;
     color: #ef8152 ;
@@ -3493,7 +3493,7 @@ dl#portal-personaltools dt.actionMenuHeader a {
     padding-bottom: 20px;
 }
 .search-and-login i {
-    font-size: large;
+    font-size: 19px;
 }
 
 @media (max-width: 800px) {
@@ -4254,8 +4254,13 @@ aside {
     .asidetrigger {
         float: right;
         display: block;
+        padding-right: 24px;
     }
     
+    #aside-button {
+        float: right;
+    }
+
     #navbar {
         background: #36b76d;
     }
@@ -4276,8 +4281,8 @@ aside {
         overflow: scroll;
     }
     
-    aside.triggered {
-        display: block;
+    .triggered {
+        display: block!important;
     }
 }
 aside .portletHeader {
@@ -4546,9 +4551,11 @@ main.asidefalse .managePortletsFallback {
 
 @media (max-width: 800px) {
 .catalogue-cell .label-success {
-
     display: none;
+}
 
+#catalogue-search-form button {
+         background-image: none!important;
 }
 }
 
@@ -4567,5 +4574,57 @@ main.asidefalse .managePortletsFallback {
 #navmenu-close {
     padding: 0;
     padding-top: 27px;
+
     }
+}
+
+
+.btn.btn-sidebar {
+    padding: 0.4em 0.6em;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 0.3em;
+    text-align: center;
+}
+
+.btn.btn-sidebar:hover {
+        background-color: #f4d13b;
+    background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
+    color: #444;
+}
+
+@media (max-width: 800px) {
+    .catalogue-sidebar {
+    display: none;
+    padding: 10px;
+    position: fixed;
+    top: -2%;
+    left: 0;
+    bottom: 0;
+    z-index: 300;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    overflow: auto;
+    width: 60%!important;
+}
+}
+
+
+#catalogue-trigger{
+  /*  position: absolute;
+    right: 0;
+    bottom: 74%;*/
+        position: relative;
+    z-index: 100;
+        margin-top: -20px;
+}
+
+
+#catalogue-app .catalogue-toolbar #catalogue-search-form button { 
+height: auto!important;
+    background: #41b664!important;
 }

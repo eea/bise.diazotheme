@@ -30,6 +30,7 @@ $(window).resize(function(){
 
     });
 
+
     document.getElementById('navsearch-input').addEventListener('blur', function() {
             this.parentElement.parentElement.classList.remove('navsearch-open');
     }, false);
@@ -65,13 +66,13 @@ $(window).resize(function(){
         $navbrandtitle = $('.navbrand-title');
         $navcontainer = $(".nav-container");
         $navbrand = $(".navbrand .navbrand-logo");
-        $body = $("body");
         $searchandlogin = $('.search-and-login');
+        $body = $("body");
         $backdrop = $('#backdrop');
         $navmenuopen = $("#navmenu-open");
         $navmenuclose = $("#navmenu-close");
         $navmenubody = $(".navmenu-body");
-        $asidetrigger = $(".asidetrigger");
+        $asidetrigger = $(".folder .asidetrigger");
         $aside = $("aside");
         $section = $(".section");
         $asideclass = $(".aside")
@@ -90,20 +91,25 @@ $(window).resize(function(){
             $('.page-homepage .navbrand').addClass('relative');
         });
 
-        $asidetrigger.click(function() {
-            $aside.addClass("triggered")
-            $body.addClass('sidebaropen');
-        });
+        $cataloguesidebar=$('.catalogue-container .catalogue-sidebar');
+       
+        sidebarplugin($asidetrigger, $aside, $asidebutton);
+        
+        // sidebarplugin();
+        // $asidetrigger.click(function() {
+        //     $aside.addClass("triggered")
+        //     $body.addClass('sidebaropen');
+        // });
 
-        $backdrop.click(function() {
-            $aside.removeClass("triggered")
-            $body.removeClass('sidebaropen');
-        });
+        // $backdrop.click(function() {
+        //     $aside.removeClass("triggered")
+        //     $body.removeClass('sidebaropen');
+        // });
 
-        $asidebutton.click(function() {
-            $aside.removeClass("triggered")
-            $body.removeClass('sidebaropen');
-        });
+        // $asidebutton.click(function() {
+        //     $aside.removeClass("triggered")
+        //     $body.removeClass('sidebaropen');
+        // });
 
         $navmenuclose.click(function() {
             $navmenuclose.addClass('hidden');
