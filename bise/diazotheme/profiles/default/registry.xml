@@ -10,5 +10,21 @@
             <element>bise.diazotheme.tiles.live</element>
         </value>
     </record>
+    <record
+        field="styles"
+        interface="collective.cover.controlpanel.ICoverSettings"
+        name="collective.cover.controlpanel.ICoverSettings.styles">
+        <value purge="false">
+            <element>-Default-|tile-default</element>
+            <element>Border|tile-edge</element>
+            <element>Dark Background|tile-dark</element>
+            <element>Shadow|tile-shadow</element>
+            <element>aside aside|aside</element>
+            <element>aside-wrapper aside-wrapper|aside-wrapper</element>
+            <element>main | main</element>
+            <element>section section|section</element>
+            <element>section-wrapper section-wrapper|section-wrapper</element>
+        </value>
+    </record>
 
 </registry>
