@@ -3437,8 +3437,8 @@ body.sidebaropen {
     /*padding-bottom: 35px;*/
 }
 .search-and-login #navsearch-input {
-    padding: 0.5rem;
-    padding-left: 0;
+    padding: 0.6rem;
+    padding-left: 10px;
     padding-right: 0;
     border: none;
 }
@@ -3449,7 +3449,7 @@ body.sidebaropen {
     pointer-events: none;
 }
 .search-and-login .login-wrapper {
-    padding-top: 0.14rem;
+    padding: 0.1rem;
 }
 ul#portal-personaltools {
     margin: 0;
@@ -3951,15 +3951,7 @@ a.subitem {
     #navmenu-item-header-about .navgroups-body {
         border-bottom: 0px solid white;
     }
-    
-    .search-and-login #navsearch-submit {
-        border-radius: 0;
-    }
-    
-    .search-and-login .login-wrapper {
-        border-radius: 0;
-    }
-    
+        
     .submenu-contact .navitem-header {
         border-top: 0px solid white;
     }
@@ -4543,4 +4535,22 @@ main.asidefalse .managePortletsFallback {
 #information-systems .externalLink:after {
   margin-right: -12px;
   /* 1 */
+}
+
+@media (max-width: 800px) {
+.catalogue-cell .label-success {
+
+    display: none;
+
+}
+}
+
+.documentActions .hiddenStructure {
+    margin: 0;
+    padding: 0;
+}
+
+
+#viewlet-below-content-title #viewlet-social-like {
+    display: none;
 }

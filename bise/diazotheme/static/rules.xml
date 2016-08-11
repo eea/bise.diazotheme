@@ -108,6 +108,9 @@
     <prepend css:theme=".page-body .page-container"
              css:content="#portal-breadcrumbs" />
 
+             <prepend css:theme=".article" 
+                       css:content="#viewlet-below-content-title #viewlet-social-like" />
+
     <!-- Site search form -->
     <merge attributes="action" css:theme=".navsearch" css:content="#searchbar-options form" />
 
