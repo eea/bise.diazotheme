@@ -88,9 +88,50 @@
         <div id="site-body">
             <div id="highlights-slider">
                 <div class="highlight-photos">
-                    <img class="current-slide" src="./img/bise-highlights/photo-highlights-targets.jpg">
+
+<picture class="current-slide">
+  <source 
+    media="(min-width: 800px)"
+    srcset="images/kitten-stretching.png">
+  <source 
+    media="(min-width: 1200px)"
+    srcset="images/kitten-sitting.png">
+  <img 
+    src="./img/bise-highlights/photo-highlights-targets.jpg"
+    alt="a cute kitten">
+</picture>
+
+<picture>
+  <source 
+    media="(min-width: 800px)"
+    srcset="images/kitten-stretching.png">
+  <source 
+    media="(min-width: 1200px)"
+    srcset="images/kitten-sitting.png">
+  <img 
+    src="./img/bise-highlights/photo-highlights-maes.jpg"
+    alt="a cute kitten">
+</picture>
+
+
+<picture>
+ <source 
+    media="(min-width: 800px)"
+    srcset="images/kitten-stretching.png">
+  <source 
+    media="(min-width: 1200px)"
+    srcset="images/kitten-sitting.png">
+  <img 
+    src="./img/bise-highlights/photo-highlights-chm.jpg"
+    alt="a cute kitten">
+</picture>
+
+                    <!-- <img class="current-slide" src="./img/bise-highlights/photo-highlights-targets.jpg">
                     <img src="./img/bise-highlights/photo-highlights-maes.jpg">
-                    <img src="./img/bise-highlights/photo-highlights-chm.jpg">
+                    <img src="./img/bise-highlights/photo-highlights-chm.jpg"> -->
+
+
+
                 </div>
                 <div class="page-container">
                     <header class="slider-header">
@@ -387,7 +428,7 @@ var countdown = document.getElementById("countdown");
     days = parseInt(seconds_left / 86400);
     seconds_left = seconds_left % 86400;
         
-        
+
 
     // format countdown string + set tag value
     countdown.innerHTML = days;  
