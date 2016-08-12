@@ -4628,3 +4628,53 @@ main.asidefalse .managePortletsFallback {
 height: auto!important;
     background: #41b664!important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.portaltype-biodiversityfactsheet .fact-contents .data-source{
+text-align: right;
+}
+.portaltype-biodiversityfactsheet .fact-contents .data-source .data-source-title{
+font-weight: bold;
+}
+.portaltype-biodiversityfactsheet .fact-contents .legendContainer{
+left: 748px;
+overflow: auto;
+}
+.esriBasemapIcon {
+background-image: url("Basemap16.png");
+background-repeat: no-repeat;
+display: inline-block;
+height: 16px;
+width: 16px;
+margin: 4px 0 4px 4px;
+}
+.dijitMenuItemIcon {
+width: 40px;
+}
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts{
+border-collapse: collapse;
+border-spacing: 0px;
+border: 1px solid lightgray;
+margin-top: 5px;
+}
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(even){
+}
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(odd){
+background: #eee;
+}
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr td{
+padding: 5px;
+}
+
+
+

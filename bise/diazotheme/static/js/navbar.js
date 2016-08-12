@@ -6,7 +6,6 @@ $(window).resize(function(){
        
         document.getElementById('navsearch-input').addEventListener('focus', function() {
         this.parentElement.parentElement.classList.add('navsearch-open');
-         console.log("yep");
     }, false);
     }   
 }).resize();
@@ -20,7 +19,7 @@ $(window).resize(function(){
 
     $('html').click(function() {
         if (!($(event.target).hasClass('navsearch-addon'))) {
-            // console.log(event.target);
+
             $('#navsearch-submit').addClass("no-events");
 
         if ($(window).width() >= 800){  
@@ -34,8 +33,6 @@ $(window).resize(function(){
     document.getElementById('navsearch-input').addEventListener('blur', function() {
             this.parentElement.parentElement.classList.remove('navsearch-open');
     }, false);
-
-    console.log('merge');
 
     $triggers = $('[data-toggle="navmenu"]');
 
@@ -121,24 +118,78 @@ $(window).resize(function(){
             $('.navbrand').removeClass('relative');
         });
 
-        $navmenuitem.each(function() {
 
-            var $navmenuitem = $(this),
-                $target1 = $(this).closest($navmenuitem)
-                .find($noeventstablet)
-                .first();
-            $navmenuitem.click(function() {
-                $target1.removeClass('noevents');
-                console.log("lololo");
-            });
+//noevents
+        // $navmenuitem.each(function() {
 
-            $navmenuitem.click(function(evt) {
-                if ($(evt.target).is($target1)) {
-                    $target1.addClass('noevents');
-                }
-            });
+        //     var $navmenuitem = $(this),
+        //         $target1 = $(this).closest($navmenuitem)
+        //         .find($noeventstablet)
+        //         .first();
+        //     $navmenuitem.click(function() {
+        //         $target1.removeClass('noevents');
+        //     });
 
-        });
+        //     $navmenuitem.click(function(evt) {
+        //         if ($(evt.target).is($target1)) {
+        //             $target1.addClass('noevents');
+        //         }
+        //     });
+
+        // });
+//end of noevents
+
+
+
+  // var $btn = $('#themaca');
+  
+  // $(btn).click(function() {
+  //   alert('ai dat click');
+  // });
+  
+  // btn = new Hammer($btn[0]);
+  var tap = 0;
+  var onclick;
+  
+  
+  var navmenuitemx = document.getElementsByClassName('navmenu-item');
+   
+   console.log(navmenuitemx[0]);
+
+  wasTapped = 1;
+  var checkTap;
+  var tapped = function() {
+    wasTapped = 0;
+  }
+
+   for (var i=0;i<navmenuitemx.length;i++){
+        // addEvent(aTags[i], 'click', alertWinner);
+        navmenuitemx[i].addEventListener("touchstart",function() {
+    checkTap = setTimeout(tapped, 299);
+    navmenuitemx[0].onclick = function() { return false; };
+  });
+
+    }
+  
+ 
+  navmenuitemx[0].addEventListener('touchend', function() {
+    clearTimeout(checkTap);
+    if (wasTapped === 1) {
+      alert('tap');
+    } else {
+      navmenuitemx[0].onclick = function() {
+        return true;
+      };
+    }
+  });
+  
+
+  // tapHandler = function() {
+  //   alert('tap');
+  // }
+
+
+
 
     });
 
