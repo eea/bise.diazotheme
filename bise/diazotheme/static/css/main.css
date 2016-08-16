@@ -2905,21 +2905,6 @@ input.navbar-search-input::placeholder {
     margin-left: auto;
     margin-right: auto;
 }
-#demo-header {
-    padding: 0.95rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    color: #fff;
-    border-radius: 0.5em;
-    background-color: #109e13;
-}
-#demo-header h1,
-#demo-header h2,
-#demo-header h3 {
-    color: inherit;
-    font-weight: 300;
-    font-family: Helvetica, Arial, sans-serif;
-}
 .page-homepage .page-header {
     border-bottom: solid #f4ce62;
 }
@@ -4677,4 +4662,46 @@ padding: 5px;
 }
 
 
+.portaltype-biodiversityfactsheet #targetFilter { display: none; }
 
+
+
+
+.collapse-close:after {
+        content: "\f067";
+        font-family: FontAwesome;
+        float: right;
+        font-size: 1.2rem;
+}
+
+.collapse-open:after {
+        content: "\f068";
+        font-family: FontAwesome;
+        float: right;
+        font-size: 1.2rem;
+}
+
+.portaltype-biodiversityfactsheet h2.collapsible {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.portaltype-biodiversityfactsheet h3.collapsible {
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+
+.portaltype-biodiversityfactsheet .collapsible:hover {
+    text-shadow: -1px 1px 3px rgba(0, 0, 0, .2);
+}
+
+.fact {
+    overflow: auto;
+}
+
+.fact-contents {
+    margin-left: 1.2rem;
+}

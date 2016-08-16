@@ -21,7 +21,7 @@ $(window).resize(function(){
         if (!($(event.target).hasClass('navsearch-addon'))) {
 
             $('#navsearch-submit').addClass("no-events");
-
+            
         if ($(window).width() >= 800){  
             $('.search-form').removeClass('navsearch-open');
             }   
@@ -120,75 +120,24 @@ $(window).resize(function(){
 
 
 //noevents
-        // $navmenuitem.each(function() {
+        $navmenuitem.each(function() {
 
-        //     var $navmenuitem = $(this),
-        //         $target1 = $(this).closest($navmenuitem)
-        //         .find($noeventstablet)
-        //         .first();
-        //     $navmenuitem.click(function() {
-        //         $target1.removeClass('noevents');
-        //     });
+            var $navmenuitem = $(this),
+                $target1 = $(this).closest($navmenuitem)
+                .find($noeventstablet)
+                .first();
+            $navmenuitem.click(function() {
+                $target1.removeClass('noevents');
+            });
 
-        //     $navmenuitem.click(function(evt) {
-        //         if ($(evt.target).is($target1)) {
-        //             $target1.addClass('noevents');
-        //         }
-        //     });
+            $navmenuitem.click(function(evt) {
+                if ($(evt.target).is($target1)) {
+                    $target1.addClass('noevents');
+                }
+            });
 
-        // });
+        });
 //end of noevents
-
-
-
-  // var $btn = $('#themaca');
-  
-  // $(btn).click(function() {
-  //   alert('ai dat click');
-  // });
-  
-  // btn = new Hammer($btn[0]);
-  var tap = 0;
-  var onclick;
-  
-  
-  var navmenuitemx = document.getElementsByClassName('navmenu-item');
-   
-   console.log(navmenuitemx[0]);
-
-  wasTapped = 1;
-  var checkTap;
-  var tapped = function() {
-    wasTapped = 0;
-  }
-
-   for (var i=0;i<navmenuitemx.length;i++){
-        // addEvent(aTags[i], 'click', alertWinner);
-        navmenuitemx[i].addEventListener("touchstart",function() {
-    checkTap = setTimeout(tapped, 299);
-    navmenuitemx[0].onclick = function() { return false; };
-  });
-
-    }
-  
- 
-  navmenuitemx[0].addEventListener('touchend', function() {
-    clearTimeout(checkTap);
-    if (wasTapped === 1) {
-      alert('tap');
-    } else {
-      navmenuitemx[0].onclick = function() {
-        return true;
-      };
-    }
-  });
-  
-
-  // tapHandler = function() {
-  //   alert('tap');
-  // }
-
-
 
 
     });
