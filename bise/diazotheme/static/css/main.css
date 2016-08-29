@@ -4615,16 +4615,6 @@ height: auto!important;
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .portaltype-biodiversityfactsheet .fact-contents .data-source{
 text-align: right;
 }
@@ -4663,9 +4653,6 @@ padding: 5px;
 
 
 .portaltype-biodiversityfactsheet #targetFilter { display: none; }
-
-
-
 
 .collapse-close:after {
         content: "\f067";
