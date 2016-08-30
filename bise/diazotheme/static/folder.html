@@ -57,19 +57,27 @@
             </span>
           </div>
 
-          <div class="search-and-login">
-            <div class="login-wrapper">
-            </div>
-            <div class="search-wrapper">
-              <div class="search-form">
-                <form class="navsearch" method="GET">
-                  <input type="search" id="navsearch-input" name='q' placeholder="Search" />
-                  <span class="navsearch-addon"> <button type="submit" id="navsearch-submit" class=" no-events"><i class="fa fa-search"></i></button>
-                          </span>
-                </form>
-              </div>
-            </div>
-          </div>
+                     <div class="search-and-login">
+                            <div class="login-wrapper">
+                            </div>
+                            <div class="search">
+                                <label class="search-label" for="search-input"><i class="fa fa-search"></i></label>
+                                <div class="search-field">
+
+                                    <form class="input-group" method="GET" action="/search">
+                                       <div class="input-element">
+                                             <input type="search" id="search-input" class="search-input" name='q' placeholder="Search" />
+                                        </div>
+                                        <span class="input-addon">
+                                                 <button type="submit" id="search-submit" class="search-submit">
+                                                        <i class="fa fa-search"></i>
+                                                 </button>
+                                         </span>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
         </div>
       </div>
 
