@@ -43,18 +43,22 @@ var input = document.getElementById('search-input');
 
 input.addEventListener('focus', function() {
   search.classList.add('open');
+  submit.classList.add('noradius');
 })
 
 var onBlur = function() {
   console.log(document.activeElement);
   if (document.activeElement !== submit ||
       document.activeElement !== input) {
-    search.classList.remove('open'); }
+    search.classList.remove('open');
+      submit.classList.remove('noradius');
+    }
 }
 
 input.addEventListener('blur', onBlur);
 submit.addEventListener('focus', function() {
   search.classList.add('open');
+  submit.classList.add('noradius');
 });
 
 

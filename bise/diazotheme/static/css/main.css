@@ -429,7 +429,6 @@ input[type="number"]::-webkit-outer-spin-button {
 //     -webkit-appearance: textfield;
 // }
 
-
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
@@ -2016,13 +2015,17 @@ ul.pagination-pages {
     color: #333;
 }
 
+
 /* table from base.css */
+
 .article table {
     border-collapse: collapse;
 }
+
 .article .plain td {
     border: 1px solid #e5dfd1;
 }
+
 .article .listing {
     border-left: 1px solid #e5dfd1;
     border-bottom: 1px solid #e5dfd1;
@@ -2477,15 +2480,6 @@ input.navbar-search-input::placeholder {
     .page-homepage .aside:nth-child(2) {
         margin-top: -200px;
     }
-    .search-and-login .navsearch-open {
-        margin-left: -400%!important;
-    }
-    .search-and-login .search-wrapper {
-        float: right;
-        width: 20%;
-        position: relative;
-        z-index: 100;
-    }
     .login-wrapper {
         width: 80%;
     }
@@ -2496,12 +2490,6 @@ input.navbar-search-input::placeholder {
     }
     #navitem-about .navgroups-body .navgroup {
         margin-right: 10px;
-    }
-    #navbar {
-        /*padding: 10px 10px 10px 10px;*/
-    }
-    .navmenu-head {
-        /*padding-top: 0.5em;*/
     }
     .navgroups-body {
         box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
@@ -2523,11 +2511,6 @@ input.navbar-search-input::placeholder {
         display: block;
         /*columns: 2;*/
     }
-    /*  .navgroup-item:hover {
-  background-color: rgba(200, 200, 200, 0.3);
-  border-radius: 5px;
- 
-  }*/
     .navgroup-item {
         max-width: 200px;
         padding-left: 5px;
@@ -2680,9 +2663,6 @@ input.navbar-search-input::placeholder {
         color: inherit;
         transition: color .3s;
     }
-    .search-and-login .search-wrapper .search-and-login .login {
-        float: right;
-    }
     /*TODO */
     .search-and-login {
         position: relative;
@@ -2712,64 +2692,11 @@ input.navbar-search-input::placeholder {
     color: #fff;
 }
 
-.search-and-login .navsearch {
-    display: table;
-    table-layout: auto;
-    border-collapse: separate;
-}
-
-// .search-and-login input,
-// .search-and-login button {
-//     box-sizing: border-box;
-//     /*padding: .5em;*/
-//     display: table-cell;
-//     vertical-align: middle;
-//     /*padding: 0.4em 0.6em;*/
-//     border: 1px solid transparent;
-//     background: rgba(0, 130, 50, 0.3);
-//     font: inherit;
-//     line-height: inherit;
-// }
-
-// .search-and-login input {
-//     float: left;
-//     /*border-radius: 0.3em 0 0 0.3em;*/
-//     width: 100%;
-// }
-
-// .search-and-login input::placeholder {
-//     font-style: italic;
-//     color: rgba(255, 255, 255, 0.5);
-//     transition: background .1s, color .1s;
-// }
-
-// .search-and-login input:focus {
-//     background-color: white!important;
-// }
-
-// .search-and-login span {
-//     display: table-cell;
-//     width: 1%;
-//     white-space: nowrap;
-//     vertical-align: middle;
-// }
-
-// .search-and-login button {
-//     border-bottom-right-radius: 3px;
-//     border-top-right-radius: 3px;
-//     color: white;
-// }
 
 
 }
 @media screen and (min-width: 1200px) {
     .nav-menu ul {
-        /*width: auto!important;*/
-        /*display: block!important;*/
-    }
-    
-    .navgroups {
-        /*columns: 3!important;*/
     }
 }
 .breadcrumbs {
@@ -2972,16 +2899,17 @@ input.navbar-search-input::placeholder {
     border-radius: 5px;
 }
 @media (min-width: 600px) {
-  #card-bise-catalogue {
-    text-align: left;
-    overflow: hidden;
-  }
-   #card-bise-catalogue img {
-    float: left;
-    margin-top: -.5rem;
-    margin-right: 2rem;
-    margin-bottom: 0!important;
-  }
+    #card-bise-catalogue {
+        text-align: left;
+        overflow: hidden;
+    }
+    
+    #card-bise-catalogue img {
+        float: left;
+        margin-top: -.5rem;
+        margin-right: 2rem;
+        margin-bottom: 0!important;
+    }
 }
 #card-bise-catalogue h3,
 #card-bise-catalogue h4,
@@ -3032,13 +2960,17 @@ input.navbar-search-input::placeholder {
     position: absolute;
     top: -20px;
 }
-.timer-wrapper-wrapper:before { left: 25%; }
-.timer-wrapper-wrapper:after { right: 25%; }
+.timer-wrapper-wrapper:before {
+    left: 25%;
+}
+.timer-wrapper-wrapper:after {
+    right: 25%;
+}
 #countdown {
     font-size: 5em;
     font-family: 'Roboto condensed', Arial, sans-serif;
     font-weight: 300;
-    color: #ef8152 ;
+    color: #ef8152;
     float: left;
     margin-right: 1rem;
     line-height: .9;
@@ -3059,7 +2991,7 @@ input.navbar-search-input::placeholder {
     line-height: 1;
     font-family: 'Roboto condensed', Arial, sans-serif;
     font-weight: 400;
-    color: #ef8152 ;
+    color: #ef8152;
     text-transform: uppercase;
 }
 #card-timer .meet {
@@ -3077,7 +3009,6 @@ input.navbar-search-input::placeholder {
     clear: left;
     line-height: 1.2;
 }
-
 #eu-enviromental-policy {
     text-align: center;
     padding: 2rem;
@@ -3386,7 +3317,7 @@ aside .portlet .navTreeItem {
 
 }
 #site-footer a {
-  color: #41b664;
+    color: #41b664;
 }
 .footerbrand {
     padding-left: 1rem;
@@ -3405,8 +3336,10 @@ aside .portlet .navTreeItem {
 }
 .login-wrapper {
     /*background-color:  rgb(33, 72, 94);*/
-    
-    background: rgba(0, 130, 50, 0.3);
+    background: rgba(0,
+    130,
+    50,
+    0.3);
 }
 #backdrop {
     position: fixed;
@@ -3425,12 +3358,8 @@ body.sidebaropen {
     overflow: hidden;
 }
 .navgroups .btn {
-    /*position: absolute;*/
-    
     bottom: 0;
     left: 0;
-    /*right: 0;*/
-    
     background-color: #fedf90;
     padding: 10px;
     margin: 10px;
@@ -3440,25 +3369,17 @@ body.sidebaropen {
 .navgroups {
     position: relative;
 }
-.navgroup {
-    /*padding-bottom: 35px;*/
-}
-.search-and-login #navsearch-input {
-    padding: 0.6rem;
-    padding-left: 10px;
-    padding-right: 0;
-    border: none;
-}
-.search-and-login #navsearch-submit {
-    padding: 0.5rem;
-}
+
 .no-events {
     pointer-events: none;
 }
 .search-and-login .login-wrapper {
     // padding: 0.1rem;
     padding: 0.07rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,
+    255,
+    255,
+    0.1);
 }
 ul#portal-personaltools {
     margin: 0;
@@ -3506,13 +3427,11 @@ dl#portal-personaltools dt.actionMenuHeader a {
 .search-and-login i {
     font-size: 19px;
 }
-
 @media (max-width: 800px) {
     .search-and-login i {
-    font-size: 19px;
+        font-size: 19px;
     }
 }
-
 .search-and-login input::-webkit-input-placeholder {
     color: white;
 }
@@ -3538,14 +3457,13 @@ dl#portal-personaltools dt.actionMenuHeader a {
     position: absolute;
     right: 2px;
 }
-.search-wrapper .search-form {
-    border-left: 1px solid white;
-    /*clear: both;*/
-}
+
 #navbar dd.actionMenuContent {
     /*  background: #21485e;*/
-    
-    background: rgba(0, 130, 50, 0.8);
+    background: rgba(0,
+    130,
+    50,
+    0.8);
 }
 #navbar ul li#personaltools-dashboard a:after {
     content: "";
@@ -3554,7 +3472,10 @@ dl#portal-personaltools dt.actionMenuHeader a {
 .page-homepage .cover-collection-tile {
     padding: 1.5rem;
     background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 4px rgba(0,
+    0,
+    0,
+    0.25);
     width: 50%;
 }
 @media (max-width: 600px) {
@@ -3572,13 +3493,10 @@ dl#portal-personaltools dt.actionMenuHeader a {
         float: right!important;
         margin-top: -9rem!important;
     }
-    
     .review-title {
         width: 70%;
     }
 }
-
-
 .interactive-image-wrapper {
     width: 140px;
     float: right;
@@ -3588,12 +3506,16 @@ dl#portal-personaltools dt.actionMenuHeader a {
     overflow: hidden;
 }
 #card-review h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto',
+    sans-serif;
     font-weight: 600;
 }
 .page-homepage #card-review {
     background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 4px rgba(0,
+    0,
+    0,
+    0.25);
     border-radius: 5px;
 }
 .page-homepage #card-review:before {
@@ -3601,7 +3523,6 @@ dl#portal-personaltools dt.actionMenuHeader a {
     display: block;
     position: relative;
     /* width: 100%; */
-    
     background: url('++theme++bise.diazotheme/img/bg-interactive-presentation-card.jpg') no-repeat;
     background-size: 100%;
     height: 10px;
@@ -3673,7 +3594,6 @@ a.subitem {
 }
 .navmenu-head .navbar-descriptor-inner {
     /*max-width: 30%;*/
-    
     display: inline-block;
 }
 @media (max-width: 1000px) {
@@ -3686,7 +3606,6 @@ a.subitem {
         max-width: 100%;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
-    
     .navbar-descriptor {
         width: 40%;
         display: inline-block;
@@ -3727,7 +3646,6 @@ a.subitem {
 .navgroup-middle {
     display: table-cell;
     /*padding: 10px;*/
-    
     border-right: 1px solid #e5dfd1;
     border-left: 1px solid #e5dfd1;
 }
@@ -3770,105 +3688,82 @@ a.subitem {
         border-left: 0;
         border-right: 0;
     }
-    
     #catalogue-app .catalogue-libraries ul li a.active {
         border: none!important;
         padding: 0!important;
     }
-    
     #catalogue-app .catalogue-libraries ul li a {
         padding: 0!important;
     }
-    
     #catalogue-app .catalogue-libraries ul li a:hover {
         background: none!important;
         color: inherit!important;
     }
-    
     #site-header {
         margin-bottom: 2.2rem;
     }
-    
     .page-homepage #site-header {
         margin-bottom: 0;
     }
-    
     .navmenu-trigger {
         display: inline;
         color: white;
     }
-    
     .page-homepage .navmenu-trigger {
         position: absolute;
         right: 0;
     }
-    
     .page-homepage .navbrand {
         position: absolute;
     }
-    
     #navmenu-items {
         margin-left: -14px;
         margin-right: -14px;
     }
-    
     .description-container {
         position: relative;
         width: 100%;
     }
-    
     .page-homepage .section {
         position: relative;
         float: left;
         width: 100%;
     }
-    
     .page-homepage .aside {
         position: relative;
         float: left;
         width: 100%;
     }
-    
     .description-container {
         height: 100px;
     }
-    
     .login-wrapper dl.actionMenu.activated dd {
         position: relative;
         text-align: center;
         width: 199%;
     }
-    
-    .search-and-login .navsearch-open {
-        margin-left: -100%!important;
-    }
-    
+
     .search-and-login {
         display: none;
     }
-    
     .login-wrapper {
         width: 50%!important;
     }
-    
     .page-homepage .section {
         float: none;
         width: 100%;
         margin-left: 0!important;
         margin-right: 0!important;
     }
-    
     .page-homepage .aside {
         float: none;
         width: 100%;
         margin-left: 0!important;
         margin-right: 0!important;
     }
-    
     #navitem-about p {
         color: white;
     }
-    
     #navitem-about .navgroups .btn {
         display: block;
         position: relative;
@@ -3879,48 +3774,38 @@ a.subitem {
         margin-left: auto;
         margin-right: auto;
     }
-    
     #navitem-about .navgroups h6 {
         color: white;
     }
-    
     #navitem-about .navgroup-title {
         display: block;
     }
-    
     .logo-big {
         max-width: 80%;
     }
-    
     .navgroups .btn {
         display: none;
     }
-    
     .second-level > li {
         display: block!important;
     }
-    
     .row .column.col-md-8 {
         padding-left: 1.98rem!important;
         padding-right: 1.98rem;
     }
-    
     .navgroup,
     .navgroup-middle {
         display: table-cell;
         white-space: nowrap;
         padding: 10px;
     }
-    
     .navbar-header {
         display: none;
     }
-    
     .navitem-header a.navitem-title {
         font-size: 24px;
     }
     /* chestia mica cu manage portlets */
-    
     .navbrand-title {
         display: none;
         font-size: 16px;
@@ -3928,12 +3813,10 @@ a.subitem {
         padding: 10px;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
-    
     article {
         margin-left: auto;
         margin-right: auto;
     }
-    
     .navitem-header button {
         float: none;
         position: absolute;
@@ -3943,100 +3826,82 @@ a.subitem {
         min-width: 1.4em;
         text-align: center;
     }
-    
     .navitem-header a {
         display: block;
         padding: 1em;
     }
-    
     .navitem-header button {
         display: block;
         padding: 1em;
     }
-    
     .navitem-header {
         position: relative!important;
     }
-    
     .navitem-header::after {
         content: '';
         display: block;
         clear: both;
     }
-    
     #navmenu-item-header-about {
         display: none;
     }
-    
     #navmenu-item-header-about .navgroups-body {
         border-bottom: 0px solid white;
     }
-        
     .submenu-contact .navitem-header {
         border-top: 0px solid white;
     }
-    
     .nav-container .navmenu-item {
         display: block;
         color: #eee;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
-    
     .nav-container .navmenu-head {
         overflow: hidden;
         /*padding: 10px 10px 10px 10px;*/
         /*border-bottom: 0.5px solid #e5dfd1;*/
+        
         color: white;
         font-size: 24px;
     }
-    
     .nav-container .navmenu-head-button,
     .nav-container #navitem-toggle {
         float: right;
     }
-    
     .nav-container #navitem-toggle {
         float: right;
     }
-    
     .nav-container .navitem-header {
         margin-left: auto;
         margin-right: auto;
     }
-    
     .nav-container #navitem-toggle {
         padding-left: 5px;
         background: inherit;
         border: none;
         box-shadow: none;
     }
-    
     .nav-container .navitem-header #navitem-toggle span {
         border-left: 1px solid rgba(255, 255, 255, 0.3);
         line-height: 2em;
         padding-left: 1em;
         color: white;
     }
-    
     .nav-container .navbar-search {
         box-sizing: border-box;
         float: right;
         width: 50%;
     }
-    
     .navitem-header {
         font-size: 1.3em;
         color: white;
     }
-    
     .navitem-header a {
         color: white;
     }
-    
     h6.title {
         color: #f4ce62;
     }
-    
     .navgroups-body {
         overflow-x: scroll;
         width: 100%;
@@ -4044,142 +3909,64 @@ a.subitem {
         border-bottom: 1px solid white;
         background-color: white;
     }
-    
     .submenu-contact .navitem-header {
         width: 50%;
         margin: 0 auto;
         text-align: center;
     }
-    
     .navgroups {
         display: inline-table;
         table-layout: fixed;
         padding: 10px 10px 0px 10px;
     }
-    
     .navgroups .navsection-item {
         display: table-cell;
         white-space: nowrap;
     }
-    
     .navmenu-body {
         display: none;
         background-color: #36b76d;
     }
-    
     #navmenu-close {
         background-color: #36b76d;
         float: right;
         /*width: 50%;*/
         /*padding-bottom: 16px;*/
         /*padding-top: 16px;*/
+        
         padding: 1rem;
     }
-    
     .navmenu-body.open {
         display: block;
     }
-    
     .open {
         display: block;
     }
-    
     .navgroups-body {
         display: none;
     }
-    
     .navgroups-body.open {
         display: block;
     }
-    
     #navmenu-close {
         float: right;
         padding: 2rem;
     }
-    
     #navmenu-open {
         padding: 2rem;
     }
-    
     .search-and-login {
         overflow: hidden;
         /*padding: 10px 10px 10px 10px;*/
     }
-    
     .search-and-login #portal-personaltools {
         display: block;
     }
-    
     .search-and-login .login {
         float: left;
         width: 50%;
     }
-    
-    .search-and-login .search-wrapper {
-        float: right;
-        width: 50%;
-        position: relative;
-        z-index: 100;
-    }
-    
-    .search-and-login .search-form {
-        margin-left: 0;
-        /*padding: 5px;*/
-        transition: margin .2s;
-        font: inherit;
-        color: #fff;
-    }
-    
-    .search-and-login .navsearch {
-        display: table;
-        table-layout: auto;
-        width: 100%;
-        border-collapse: separate;
-    }
-    
-    // .search-and-login input,
-    // .search-and-login button {
-    //     box-sizing: border-box;
-    //     /*padding: .5em;*/
-    //     display: table-cell;
-    //     vertical-align: middle;
-    //     /*padding: 0.4em 0.6em;*/
-    //     border: 1px solid transparent;
-    //     background: rgba(255, 255, 255, 0.3);
-    //     /*background-color: rgba(255, 255, 255, 0.25);*/
-    //     font: inherit;
-    //     line-height: inherit;
-    // }
-    
-    // .search-and-login input {
-    //     float: left;
-    //     /*border-radius: 0.3em 0 0 0.3em;*/
-    //     width: 100%;
-    // }
-    
-    // .search-and-login input::placeholder {
-    //     font-style: italic;
-    //     color: rgba(255, 255, 255, 0.5);
-    //     transition: background .1s, color .1s;
-    // }
-    
-    // .search-and-login input:focus {
-    //     background-color: white!important;
-    // }
-    
-    // .search-and-login span {
-    //     display: table-cell;
-    //     width: 1%;
-    //     white-space: nowrap;
-    //     vertical-align: middle;
-    // }
-    
-    // .search-and-login button {
-    //     border-bottom-right-radius: 3px;
-    //     border-top-right-radius: 3px;
-    //     color: white;
-    // }
-    
+ 
     .search-and-login a {
         color: white;
     }
@@ -4201,7 +3988,6 @@ a.subitem {
     text-overflow: ellipsis;
     white-space: nowrap;
     /*width: 12em;*/
-    
     overflow: hidden;
 }
 time:before {
@@ -4231,7 +4017,8 @@ main,
 aside {
     position: relative;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto',
+    sans-serif;
 }
 main {
     padding: 2.4rem;
@@ -4252,13 +4039,11 @@ aside {
         left: 25%;
         border-left: 1px solid #e5dfd1;
     }
-    
     aside {
         float: left;
         width: 25%;
         left: -75%;
     }
-    
     #aside-button {
         display: none;
     }
@@ -4269,19 +4054,15 @@ aside {
         display: block;
         padding-right: 24px;
     }
-    
     #aside-button {
         float: right;
     }
-
     #navbar {
         background: #36b76d;
     }
-    
     .page-folder #navbar {
         z-index: : 100;
     }
-    
     aside {
         display: none;
         position: fixed;
@@ -4293,7 +4074,6 @@ aside {
         background-color: #fff;
         overflow: scroll;
     }
-    
     .triggered {
         display: block!important;
     }
@@ -4379,7 +4159,6 @@ aside .portletWrapper {
     display: block;
     /* margin-top: -20px; */
     /* width: 100%; */
-    
     clear: both;
 }
 #viewlet-social-like iframe {
@@ -4400,7 +4179,10 @@ aside .portletWrapper {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip: rect(0,
+    0,
+    0,
+    0);
     border: 0;
 }
 .page-homepage #portal-breadcrumbs {
@@ -4428,7 +4210,10 @@ aside .portletWrapper {
 }
 .page-homepage .news {
     background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 4px rgba(0,
+    0,
+    0,
+    0.25);
     border-radius: 5px;
     padding: 1.5rem;
     overflow: auto;
@@ -4441,7 +4226,6 @@ aside .portletWrapper {
         padding-right: 2rem;
         margin-bottom: 0;
     }
-    
     .news-right {
         box-sizing: border-box;
         width: 50%;
@@ -4465,7 +4249,8 @@ aside .portletWrapper {
     padding: 0 0 5px 0;
     font-size: large;
     font-weight: 400;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed",
+    sans-serif;
 }
 body.section-policy #content table.targetDesc tr {
     border: 1px solid #748284;
@@ -4473,7 +4258,6 @@ body.section-policy #content table.targetDesc tr {
 table.targetDesc td {
     padding: 5px;
 }
-
 dl.portlet dt {
     background: none;
 }
@@ -4497,7 +4281,6 @@ main.asidefalse .managePortletsFallback {
     color: #1f8cc9 !important;
     padding: 3px 5px;
     /*clear: both;*/
-    
     box-shadow: none!important;
 }
 .targetId >:first-child + div + div {
@@ -4521,310 +4304,286 @@ main.asidefalse .managePortletsFallback {
 .template-compose .aside:nth-child(2) {
     margin-top: 0;
 }
-
 @media (max-width: 799px) {
-    /* Remove certain feature for authenticated users on mobile */    
+    /* Remove certain feature for authenticated users on mobile */
     #edit-bar,
     .managePortletsFallback,
     .documentByLine {
         display: none!important;
     }
 }
-
 .map .container {
     border-radius: 5px!important;
 }
-
-.article img { 
+.article img {
     max-width: 100%;
     height: auto;
 }
-
-
 #information-systems a {
     display: block;
     font-size: medium;
     padding: 0;
 }
-
 #information-systems li {
     margin-top: 1rem;
 }
-
 #information-systems {
     padding: 2rem;
     border-radius: 5px;
     border: 1px solid #e5dfd1;
     text-align: left;
 }
-
 #information-systems .externalLink:after {
-  margin-right: -12px;
-  /* 1 */
+    margin-right: -12px;
+    /* 1 */
 }
-
 @media (max-width: 800px) {
-.catalogue-cell .label-success {
-    display: none;
+    .catalogue-cell .label-success {
+        display: none;
+    }
+    #catalogue-search-form button {
+        background-image: none!important;
+    }
 }
-
-#catalogue-search-form button {
-         background-image: none!important;
-}
-}
-
 .documentActions .hiddenStructure {
     margin: 0;
     padding: 0;
 }
-
-
 #viewlet-below-content-title #viewlet-social-like {
     display: none;
 }
-
-
 @media (max-width: 400) {
-#navmenu-close {
-    padding: 0;
-    padding-top: 27px;
-
+    #navmenu-close {
+        padding: 0;
+        padding-top: 27px;
     }
 }
-
-
 .btn.btn-sidebar {
     padding: 0.4em 0.6em;
     border: none;
     background: transparent;
     font-weight: 700;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed',
+    sans-serif;
     vertical-align: middle;
     display: inline-block;
     border-radius: 0.3em;
     text-align: center;
 }
-
 .btn.btn-sidebar:hover {
-        background-color: #f4d13b;
-    background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
+    background-color: #f4d13b;
+    background-image: linear-gradient(to bottom,
+    #f4d13b 0%,
+    #f4b331 100%);
     color: #444;
 }
-
 @media (max-width: 800px) {
     .catalogue-sidebar {
-    display: none;
-    padding: 10px;
-    position: fixed;
-    top: -2%;
-    left: 0;
-    bottom: 0;
-    z-index: 300;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-    background-color: #fff;
-    overflow: auto;
-    width: 60%!important;
+        display: none;
+        padding: 10px;
+        position: fixed;
+        top: -2%;
+        left: 0;
+        bottom: 0;
+        z-index: 300;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        overflow: auto;
+        width: 60%!important;
+    }
 }
-}
-
-
-#catalogue-trigger{
-  /*  position: absolute;
+#catalogue-trigger {
+    /*  position: absolute;
     right: 0;
     bottom: 74%;*/
-        position: relative;
+    position: relative;
     z-index: 100;
-        margin-top: -20px;
+    margin-top: -20px;
 }
-
-
-#catalogue-app .catalogue-toolbar #catalogue-search-form button { 
-height: auto!important;
+#catalogue-app .catalogue-toolbar #catalogue-search-form button {
+    height: auto!important;
     background: #41b664!important;
 }
-
-
-.portaltype-biodiversityfactsheet .fact-contents .data-source{
-text-align: right;
+.portaltype-biodiversityfactsheet .fact-contents .data-source {
+    text-align: right;
 }
-.portaltype-biodiversityfactsheet .fact-contents .data-source .data-source-title{
-font-weight: bold;
+.portaltype-biodiversityfactsheet .fact-contents .data-source .data-source-title {
+    font-weight: bold;
 }
-.portaltype-biodiversityfactsheet .fact-contents .legendContainer{
-left: 748px;
-overflow: auto;
+.portaltype-biodiversityfactsheet .fact-contents .legendContainer {
+    left: 748px;
+    overflow: auto;
 }
 .esriBasemapIcon {
-background-image: url("Basemap16.png");
-background-repeat: no-repeat;
-display: inline-block;
-height: 16px;
-width: 16px;
-margin: 4px 0 4px 4px;
+    background-image: url("Basemap16.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 4px 0 4px 4px;
 }
 .dijitMenuItemIcon {
-width: 40px;
+    width: 40px;
 }
-.portaltype-biodiversityfactsheet .fact-contents table.basic-facts{
-border-collapse: collapse;
-border-spacing: 0px;
-border: 1px solid lightgray;
-margin-top: 5px;
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 1px solid lightgray;
+    margin-top: 5px;
 }
-.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(even){
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(even) {}
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(odd) {
+    background: #eee;
 }
-.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(odd){
-background: #eee;
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr td {
+    padding: 5px;
 }
-.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr td{
-padding: 5px;
+.portaltype-biodiversityfactsheet #targetFilter {
+    display: none;
 }
-
-
-.portaltype-biodiversityfactsheet #targetFilter { display: none; }
-
 .collapse-close:after {
-        content: "\f067";
-        font-family: FontAwesome;
-        float: right;
-        font-size: 1.2rem;
+    content: "\f067";
+    font-family: FontAwesome;
+    float: right;
+    font-size: 1.2rem;
 }
-
 .collapse-open:after {
-        content: "\f068";
-        font-family: FontAwesome;
-        float: right;
-        font-size: 1.2rem;
+    content: "\f068";
+    font-family: FontAwesome;
+    float: right;
+    font-size: 1.2rem;
 }
-
 .portaltype-biodiversityfactsheet h2.collapsible {
     border-bottom: 1px solid #ddd;
     cursor: pointer;
     margin-top: 1rem;
 }
-
 .portaltype-biodiversityfactsheet h3.collapsible {
     font-size: 1.3rem;
     cursor: pointer;
     margin: 1rem;
 }
-
-
 .portaltype-biodiversityfactsheet .collapsible:hover {
-    text-shadow: -1px 1px 3px rgba(0, 0, 0, .2);
+    text-shadow: -1px 1px 3px rgba(0,
+    0,
+    0,
+    .2);
 }
-
 .fact {
     overflow: auto;
 }
-
 .fact-contents {
     margin-left: 1.2rem;
 }
-
-
-
-
-
-
-
-
-   .search {
-        position: relative;
-        display: inline-block;
-        box-sizing: border-box;
-    }
-    .input-group {
-        display: table;
-        border-collapse: collapse;
-        width: 182px;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-    .input-element,
-    .input-addon {
-        display: table-cell;
-        box-sizing: border-box;
-        white-space: nowrap;
-        width: 1%;
-        vertical-align: top;
-    }
-    .input-element {
-        width: 100%;
-    }
-    .search-input,
-    .search-submit {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        padding: .5em;
-        line-height: .9;
-        border: 1px solid rgba(255,255,255,0.1);
-        font: inherit;
-        z-index: 60;
-        position: relative;
-    }
-    .search-submit i,
-    .search-label i {
-        font-size: inherit;
-    }
-    .search-label,
-    .search-submit {
-        display: block;
-        padding: .7em;
-        border: 1px solid rgba(255,255,255,0.1);
-        box-sizing: border-box;
-        width: 3rem;
-        text-align: center;
-        background: rgba(0, 130, 50, 0.3);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    .search-label {
-        position: relative;
-        z-index: 100;
-        border: none;
-        background: none;
-        // background-color: yellow;
-    }
-    .search-field {
-        width: 3rem;
-        height: calc(3rem + 4px);
-        position: absolute;
-        overflow: hidden;
-        top: 0;
-        right: 0;
-        transition: width .1s;
-    }
-    .search.open .search-label {
-        z-index: 0;
-    }
-    .search.open .search-field {
-        width: 200px;
-    }
-    .search i {
-        color: white;
-    }
-
-
+.search {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.input-group {
+    display: table;
+    border-collapse: collapse;
+    width: 182px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.input-element,
+.input-addon {
+    display: table-cell;
+    box-sizing: border-box;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: top;
+}
+.input-element {
+    width: 100%;
+}
+.search-input,
+.search-submit {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5em;
+    line-height: .9;
+    border: 1px solid rgba(255,
+    255,
+    255,
+    0.1);
+    font: inherit;
+    z-index: 60;
+    position: relative;
+}
+.search-submit i,
+.search-label i {
+    font-size: inherit;
+}
+.search-label,
+.search-submit {
+    display: block;
+    padding: .7em;
+    border: 1px solid rgba(255,
+    255,
+    255,
+    0.1);
+    box-sizing: border-box;
+    width: 3rem;
+    text-align: center;
+    background: rgba(0,
+    130,
+    50,
+    0.3);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.search-label {
+    position: relative;
+    z-index: 100;
+    border: none;
+    background: none!important;
+    // background-color: yellow;
+}
+.search-field {
+    width: 3rem;
+    height: calc(3rem + 4px);
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    transition: width .1s;
+}
+.search.open .search-label {
+    z-index: 0;
+}
+.search.open .search-field {
+    width: 200px;
+}
+.search i {
+    color: white;
+}
 @media (max-width: 800px) {
     .search {
         float: right;
     }
-
-    .search-label, .search-submit{
+    .search-label {
         background: rgba(0, 0, 0, 0.01);
-        border: 1px solid rgba(255,255,255,0.01);
+    }
+    .search-submit {
+        background: rgba(0, 0, 0, 0.01);
         border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .login-wrapper {
-        border: 1px solid rgba(255,255,255,0.01)!important;
-    border-radius: 5px;
-    background: none;
+        border: 1px solid rgba(255, 255, 255, 0.01)!important;
+        border-radius: 5px;
+        background: none;
     }
     .login-wrapper a:after {
         right: auto!important;
         float: none!important;
+    }
+    .noradius {
+        border-top-left-radius: 0!important;
+        border-bottom-left-radius: 0!important;
     }
 }
