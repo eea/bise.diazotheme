@@ -4824,6 +4824,7 @@ padding: 5px;
     background: none;
     }
     .login-wrapper a:after {
-            right: auto!important;
+        right: auto!important;
+        float: none!important;
     }
 }
