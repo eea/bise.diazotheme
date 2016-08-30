@@ -425,9 +425,9 @@ input[type="number"]::-webkit-outer-spin-button {
  * Address `appearance` set to `searchfield` in Safari and Chrome.
  */
 
-input[type="search"] {
-    -webkit-appearance: textfield;
-}
+// input[type="search"] {
+//     -webkit-appearance: textfield;
+// }
 
 
 /**
@@ -2687,7 +2687,8 @@ input.navbar-search-input::placeholder {
     .search-and-login {
         position: relative;
         float: right;
-        max-width: 150px;
+        // max-width: 150px;
+        width: 200px;
         margin-top: -62px;
         margin-right: 22px;
         z-index: 600;
@@ -2717,47 +2718,47 @@ input.navbar-search-input::placeholder {
     border-collapse: separate;
 }
 
-.search-and-login input,
-.search-and-login button {
-    box-sizing: border-box;
-    /*padding: .5em;*/
-    display: table-cell;
-    vertical-align: middle;
-    /*padding: 0.4em 0.6em;*/
-    border: 1px solid transparent;
-    background: rgba(0, 130, 50, 0.3);
-    font: inherit;
-    line-height: inherit;
-}
+// .search-and-login input,
+// .search-and-login button {
+//     box-sizing: border-box;
+//     /*padding: .5em;*/
+//     display: table-cell;
+//     vertical-align: middle;
+//     /*padding: 0.4em 0.6em;*/
+//     border: 1px solid transparent;
+//     background: rgba(0, 130, 50, 0.3);
+//     font: inherit;
+//     line-height: inherit;
+// }
 
-.search-and-login input {
-    float: left;
-    /*border-radius: 0.3em 0 0 0.3em;*/
-    width: 100%;
-}
+// .search-and-login input {
+//     float: left;
+//     /*border-radius: 0.3em 0 0 0.3em;*/
+//     width: 100%;
+// }
 
-.search-and-login input::placeholder {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.5);
-    transition: background .1s, color .1s;
-}
+// .search-and-login input::placeholder {
+//     font-style: italic;
+//     color: rgba(255, 255, 255, 0.5);
+//     transition: background .1s, color .1s;
+// }
 
-.search-and-login input:focus {
-    background-color: white!important;
-}
+// .search-and-login input:focus {
+//     background-color: white!important;
+// }
 
-.search-and-login span {
-    display: table-cell;
-    width: 1%;
-    white-space: nowrap;
-    vertical-align: middle;
-}
+// .search-and-login span {
+//     display: table-cell;
+//     width: 1%;
+//     white-space: nowrap;
+//     vertical-align: middle;
+// }
 
-.search-and-login button {
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
-    color: white;
-}
+// .search-and-login button {
+//     border-bottom-right-radius: 3px;
+//     border-top-right-radius: 3px;
+//     color: white;
+// }
 
 
 }
@@ -2788,11 +2789,12 @@ input.navbar-search-input::placeholder {
     content: '';
 }
 .breadcrumbs a {
-    color: #12724B;
+    color: #41b664;
 }
 #site-footer {
     padding: 2rem 0;
     color: #748284;
+    border-bottom: 5px solid #41b664;
 }
 #site-footer h2,
 #site-footer h3,
@@ -2969,6 +2971,18 @@ input.navbar-search-input::placeholder {
     padding: 2rem;
     border-radius: 5px;
 }
+@media (min-width: 600px) {
+  #card-bise-catalogue {
+    text-align: left;
+    overflow: hidden;
+  }
+   #card-bise-catalogue img {
+    float: left;
+    margin-top: -.5rem;
+    margin-right: 2rem;
+    margin-bottom: 0!important;
+  }
+}
 #card-bise-catalogue h3,
 #card-bise-catalogue h4,
 #card-bise-catalogue h5 {
@@ -2976,11 +2990,13 @@ input.navbar-search-input::placeholder {
 }
 #card-bise-catalogue img {
     display: block;
-    width: auto;
+    width: 120px;
     height: auto;
-    margin-right: auto;
     margin-left: auto;
     margin-bottom: 2rem;
+}
+#card-bise-catalogue p {
+    margin-top: .75rem;
 }
 #card-timer {
     position: relative;
@@ -3309,7 +3325,7 @@ aside .portlet .navTreeItem {
     float: left;
     position: relative;
     z-index: 50;
-    width: 80%;
+    width: 70%;
     box-sizing: border-box;
 }
 .login-wrapper .actionMenu {
@@ -3365,6 +3381,12 @@ aside .portlet .navTreeItem {
     position: relative;
     z-index: 1;
     border-top: 1px solid #e5dfd1;
+    border-bottom: 5px solid #41b664;
+}
+
+}
+#site-footer a {
+  color: #41b664;
 }
 .footerbrand {
     padding-left: 1rem;
@@ -3434,7 +3456,9 @@ body.sidebaropen {
     pointer-events: none;
 }
 .search-and-login .login-wrapper {
-    padding: 0.1rem;
+    // padding: 0.1rem;
+    padding: 0.07rem;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 ul#portal-personaltools {
     margin: 0;
@@ -3444,6 +3468,8 @@ dl#portal-personaltools {
 }
 dl#portal-personaltools dt.actionMenuHeader a {
     padding: 0.5rem;
+    overflow: hidden;
+    width: 72%;
 }
 .page-homepage main:before,
 .page-homepage main:after {
@@ -3509,6 +3535,8 @@ dl#portal-personaltools dt.actionMenuHeader a {
 }
 .actionMenu a#user-name:after {
     float: right;
+    position: absolute;
+    right: 2px;
 }
 .search-wrapper .search-form {
     border-left: 1px solid white;
@@ -4109,48 +4137,48 @@ a.subitem {
         border-collapse: separate;
     }
     
-    .search-and-login input,
-    .search-and-login button {
-        box-sizing: border-box;
-        /*padding: .5em;*/
-        display: table-cell;
-        vertical-align: middle;
-        /*padding: 0.4em 0.6em;*/
-        border: 1px solid transparent;
-        background: rgba(255, 255, 255, 0.3);
-        /*background-color: rgba(255, 255, 255, 0.25);*/
-        font: inherit;
-        line-height: inherit;
-    }
+    // .search-and-login input,
+    // .search-and-login button {
+    //     box-sizing: border-box;
+    //     /*padding: .5em;*/
+    //     display: table-cell;
+    //     vertical-align: middle;
+    //     /*padding: 0.4em 0.6em;*/
+    //     border: 1px solid transparent;
+    //     background: rgba(255, 255, 255, 0.3);
+    //     /*background-color: rgba(255, 255, 255, 0.25);*/
+    //     font: inherit;
+    //     line-height: inherit;
+    // }
     
-    .search-and-login input {
-        float: left;
-        /*border-radius: 0.3em 0 0 0.3em;*/
-        width: 100%;
-    }
+    // .search-and-login input {
+    //     float: left;
+    //     /*border-radius: 0.3em 0 0 0.3em;*/
+    //     width: 100%;
+    // }
     
-    .search-and-login input::placeholder {
-        font-style: italic;
-        color: rgba(255, 255, 255, 0.5);
-        transition: background .1s, color .1s;
-    }
+    // .search-and-login input::placeholder {
+    //     font-style: italic;
+    //     color: rgba(255, 255, 255, 0.5);
+    //     transition: background .1s, color .1s;
+    // }
     
-    .search-and-login input:focus {
-        background-color: white!important;
-    }
+    // .search-and-login input:focus {
+    //     background-color: white!important;
+    // }
     
-    .search-and-login span {
-        display: table-cell;
-        width: 1%;
-        white-space: nowrap;
-        vertical-align: middle;
-    }
+    // .search-and-login span {
+    //     display: table-cell;
+    //     width: 1%;
+    //     white-space: nowrap;
+    //     vertical-align: middle;
+    // }
     
-    .search-and-login button {
-        border-bottom-right-radius: 3px;
-        border-top-right-radius: 3px;
-        color: white;
-    }
+    // .search-and-login button {
+    //     border-bottom-right-radius: 3px;
+    //     border-top-right-radius: 3px;
+    //     color: white;
+    // }
     
     .search-and-login a {
         color: white;
@@ -4515,18 +4543,19 @@ main.asidefalse .managePortletsFallback {
 
 #information-systems a {
     display: block;
-    font-size: large;
-    padding: 10px;
+    font-size: medium;
+    padding: 0;
 }
 
-#information-systems h2 {
-    color: #ef8152;
+#information-systems li {
+    margin-top: 1rem;
 }
 
 #information-systems {
-    text-align: center;
     padding: 2rem;
     border-radius: 5px;
+    border: 1px solid #e5dfd1;
+    text-align: left;
 }
 
 #information-systems .externalLink:after {
@@ -4691,4 +4720,110 @@ padding: 5px;
 
 .fact-contents {
     margin-left: 1.2rem;
+}
+
+
+
+
+
+
+
+
+   .search {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .input-group {
+        display: table;
+        border-collapse: collapse;
+        width: 182px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .input-element,
+    .input-addon {
+        display: table-cell;
+        box-sizing: border-box;
+        white-space: nowrap;
+        width: 1%;
+        vertical-align: top;
+    }
+    .input-element {
+        width: 100%;
+    }
+    .search-input,
+    .search-submit {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .5em;
+        line-height: .9;
+        border: 1px solid rgba(255,255,255,0.1);
+        font: inherit;
+        z-index: 60;
+        position: relative;
+    }
+    .search-submit i,
+    .search-label i {
+        font-size: inherit;
+    }
+    .search-label,
+    .search-submit {
+        display: block;
+        padding: .7em;
+        border: 1px solid rgba(255,255,255,0.1);
+        box-sizing: border-box;
+        width: 3rem;
+        text-align: center;
+        background: rgba(0, 130, 50, 0.3);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .search-label {
+        position: relative;
+        z-index: 100;
+        border: none;
+        background: none;
+        // background-color: yellow;
+    }
+    .search-field {
+        width: 3rem;
+        height: calc(3rem + 4px);
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        transition: width .1s;
+    }
+    .search.open .search-label {
+        z-index: 0;
+    }
+    .search.open .search-field {
+        width: 200px;
+    }
+    .search i {
+        color: white;
+    }
+
+
+@media (max-width: 800px) {
+    .search {
+        float: right;
+    }
+
+    .search-label, .search-submit{
+        background: rgba(0, 0, 0, 0.01);
+        border: 1px solid rgba(255,255,255,0.01);
+        border-radius: 5px;
+    }
+    .login-wrapper {
+        border: 1px solid rgba(255,255,255,0.01)!important;
+    border-radius: 5px;
+    background: none;
+    }
+    .login-wrapper a:after {
+            right: auto!important;
+    }
 }

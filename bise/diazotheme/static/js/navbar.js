@@ -1,38 +1,65 @@
 $(document).ready(function() {
    
 
-$(window).resize(function(){
-    if ($(window).width() <= 800){  
+
+// $(window).resize(function(){
+//     if ($(window).width() <= 800){  
        
-        document.getElementById('navsearch-input').addEventListener('focus', function() {
-        this.parentElement.parentElement.classList.add('navsearch-open');
-    }, false);
-    }   
-}).resize();
+//         document.getElementById('navsearch-input').addEventListener('focus', function() {
+//         this.parentElement.parentElement.classList.add('navsearch-open');
+//     }, false);
+//     }   
+// }).resize();
    
 
-    $('.navsearch-addon').on('click', function() {
-        $('.search-form  ').addClass('navsearch-open');
-         $('#navsearch-submit').removeClass("no-events");
-        $('#navsearch-input').focus();
-    });
+//     $('.navsearch-addon').on('click', function() {
+//         $('.search-form  ').addClass('navsearch-open');
+//          $('#navsearch-submit').removeClass("no-events");
+//         $('#navsearch-input').focus();
+//     });
 
-    $('html').click(function() {
-        if (!($(event.target).hasClass('navsearch-addon'))) {
+//     $('html').click(function() {
+//         if (!($(event.target).hasClass('navsearch-addon'))) {
 
-            $('#navsearch-submit').addClass("no-events");
+//             $('#navsearch-submit').addClass("no-events");
             
-        if ($(window).width() >= 800){  
-            $('.search-form').removeClass('navsearch-open');
-            }   
-        }
+//         if ($(window).width() >= 800){  
+//             $('.search-form').removeClass('navsearch-open');
+//             }   
+//         }
 
-    });
+//     });
 
 
-    document.getElementById('navsearch-input').addEventListener('blur', function() {
-            this.parentElement.parentElement.classList.remove('navsearch-open');
-    }, false);
+//     document.getElementById('navsearch-input').addEventListener('blur', function() {
+//             this.parentElement.parentElement.classList.remove('navsearch-open');
+//     }, false);
+
+
+var search = document.querySelector('.search');
+
+var submit = document.querySelector('.search-submit');
+var input = document.getElementById('search-input');
+
+input.addEventListener('focus', function() {
+  search.classList.add('open');
+})
+
+var onBlur = function() {
+  console.log(document.activeElement);
+  if (document.activeElement !== submit ||
+      document.activeElement !== input) {
+    search.classList.remove('open'); }
+}
+
+input.addEventListener('blur', onBlur);
+submit.addEventListener('focus', function() {
+  search.classList.add('open');
+});
+
+
+
+
 
     $triggers = $('[data-toggle="navmenu"]');
 
