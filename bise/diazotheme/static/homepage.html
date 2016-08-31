@@ -95,6 +95,42 @@
         </header>
         
         <div id="site-body">
+            
+            <div id="highlights-slider">
+                <div class="highlight-photos">
+                    <!-- <img class="current" src="./img/bise-highlights/photo-highlights-targets.jpg"> -->
+                    <!-- <img src="./img/bise-highlights/photo-highlights-maes.jpg"> -->
+                    <!-- <img src="./img/bise-highlights/photo-highlights-chm.jpg"> -->
+                </div>
+                <div class="page-container">
+                    <header class="slider-header">
+                        <h2 class="slider-title">BISE Highlights</h2>
+                        <small class="slider-counter">1/3</small>
+                    </header>
+                    <div class="highlights">
+                        <div class="highlight">
+                            <h3 class="highlight-title">Towards the 2020 biodiversity targets</h3>
+                            <p class="highlight-description">BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy</p>
+                        </div>
+                        <div class="highlight">
+                            <h3 class="highlight-title">Mapping and Assessment of Ecosystems and their Services (MAES)</h3>
+                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        </div>
+                        <div class="highlight">
+                            <h3 class="highlight-title">BISE - CHMs network of Europe</h3>
+                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                    <div id="slider-nav">
+                        <button class="slider-prev">
+                            &larr; Previous
+                        </button>
+                        <button class="slider-next">
+                            Next &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
             <style>
             #highlights-slider {
                 padding-bottom: 3rem!important;
@@ -277,42 +313,6 @@
                 }
             }
             </style>
-            <div id="highlights-slider">
-                <div class="highlight-photos">
-                    <!-- <img class="current" src="./img/bise-highlights/photo-highlights-targets.jpg"> -->
-                    <!-- <img src="./img/bise-highlights/photo-highlights-maes.jpg"> -->
-                    <!-- <img src="./img/bise-highlights/photo-highlights-chm.jpg"> -->
-                </div>
-                <div class="page-container">
-                    <header class="slider-header">
-                        <h2 class="slider-title">BISE Highlights</h2>
-                        <small class="slider-counter">1/3</small>
-                    </header>
-                    <div class="highlights">
-                        <div class="highlight">
-                            <h3 class="highlight-title">Towards the 2020 biodiversity targets</h3>
-                            <p class="highlight-description">BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy</p>
-                        </div>
-                        <div class="highlight">
-                            <h3 class="highlight-title">Mapping and Assessment of Ecosystems and their Services (MAES)</h3>
-                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                        </div>
-                        <div class="highlight">
-                            <h3 class="highlight-title">BISE - CHMs network of Europe</h3>
-                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        </div>
-                    </div>
-                    <div id="slider-nav">
-                        <button class="slider-prev">
-                            &larr; Previous
-                        </button>
-                        <button class="slider-next">
-                            Next &rarr;
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
             <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
             <script>
             (function() {
@@ -393,6 +393,7 @@
                             duration: 1000,
                             easing: 'easeOutQuint',
                             step: function(now) {
+                                console.log(now);
                                 $nextImg.css({
                                     'transform': 'translate3d(' + now + '%, 0, 0)'
                                 });
