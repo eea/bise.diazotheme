@@ -2903,11 +2903,6 @@ input.navbar-search-input::placeholder {
     display: block;
     margin-bottom: 2rem;
 }
-@media (min-width: 800px) {
-    #eu-enviromental-policy {
-        margin-top: -100px;
-    }
-}
 #interactive-presentation {
     text-align: center;
     padding: 2rem;
