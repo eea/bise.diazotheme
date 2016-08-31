@@ -1895,71 +1895,6 @@ ul.tabmenu-tabs {
     color: #444;
 }
 
-@font-face {
-    font-family: 'bise';
-    src: url('../fonts/bise.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'bise' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-arrow_back::before {
-    content: "\e5c4";
-}
-
-.icon-arrow_downward::before {
-    content: "\e5db";
-}
-
-.icon-arrow_drop_down::before {
-    content: "\e5c5";
-}
-
-.icon-arrow_drop_up::before {
-    content: "\e5c7";
-}
-
-.icon-arrow_forward::before {
-    content: "\e5c8";
-}
-
-.icon-arrow_upward::before {
-    content: "\e5d8";
-}
-
-.icon-check::before {
-    content: "\e5ca";
-}
-
-.icon-navigate_before::before {
-    content: "\e408";
-}
-
-.icon-navigate_next::before {
-    content: "\e409";
-}
-
-.icon-open_in_new::before {
-    content: "\e89e";
-}
-
-.icon-search::before {
-    content: "\e8b6";
-}
-
 .pagination {
     text-align: center;
 }
@@ -2401,43 +2336,14 @@ input.navbar-search-input::placeholder {
 }
 
 @media screen and (min-width: 800px) {
-    .section-topics #navitem-topics {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    .section-policy #navitem-policy {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
-    .section-data #navitem-data {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
-    .section-research #navitem-research {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
-    .section-countries #navitem-countries {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
-    .section-networks #navitem-networks {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
-    .section-chm-network #navitem-networks {
-        background-color: #f4d13b;
-        background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
-        color: #444;
-    }
+    /* Active section highlight */
+    .section-topics #navitem-topics,
+    .section-policy #navitem-policy,
+    .section-data #navitem-data,
+    .section-research #navitem-research,
+    .section-countries #navitem-countries,
+    .section-networks #navitem-networks,
+    .section-chm-network #navitem-networks,
     .section-grassroots-of-changes #navitem-networks {
         background-color: #f4d13b;
         background-image: linear-gradient(to bottom, #f4d13b 0%, #f4b331 100%);
@@ -2459,15 +2365,11 @@ input.navbar-search-input::placeholder {
     }
     .navgroup-middle .navgroup {
         padding-right: 0;
-        /*padding: 10px;*/
         margin: 0;
     }
 }
 
 @media screen and (min-width: 800px) {
-/*    .page-homepage .aside:nth-child(2) {
-        margin-top: -200px;
-    }*/
     .login-wrapper {
         width: 80%;
     }
@@ -2497,7 +2399,6 @@ input.navbar-search-input::placeholder {
     .navgroups {
         white-space: nowrap;
         display: block;
-        /*columns: 2;*/
     }
     .navgroup-item {
         max-width: 200px;
@@ -2514,9 +2415,7 @@ input.navbar-search-input::placeholder {
     }
     .nav-menu {
         width: 100%;
-        /*height: 500px;*/
         display: block;
-        /*padding-top: 30px;*/
     }
     .navmenu-head {
         background-color: #91b267;
@@ -2533,8 +2432,6 @@ input.navbar-search-input::placeholder {
     .navitem-header {
         margin-left: auto;
         margin-right: auto;
-        /*   padding: 10px 10px 10px 0px;*/
-        /*color: white;*/
         font-size: 18px;
     }
     .navitem-header #navitem-toggle {
@@ -2563,10 +2460,7 @@ input.navbar-search-input::placeholder {
         display: none;
     }
     .navgroups {
-        /*  display: inline-table;
-  table-layout: fixed;*/
         padding: 0px 10px 0px 10px;
-        /*width: 100%;*/
         max-width: 1069px;
         margin-left: auto;
         margin-right: auto;
@@ -2639,11 +2533,8 @@ input.navbar-search-input::placeholder {
     }
     .navitem-header a {
         color: white;
-        /* padding: 10px;*/
-        /*padding: 10px 30px 10px 30px;*/
         text-align: center;
         min-width: 120px;
-        /* padding: 10px; */
         padding: 10px 0px 10px 0px;
     }
     .navitem-header a {
@@ -2655,7 +2546,6 @@ input.navbar-search-input::placeholder {
     .search-and-login {
         position: relative;
         float: right;
-        // max-width: 150px;
         width: 200px;
         margin-top: -62px;
         margin-right: 22px;
@@ -2680,13 +2570,6 @@ input.navbar-search-input::placeholder {
     color: #fff;
 }
 
-
-
-}
-@media screen and (min-width: 1200px) {
-    .nav-menu ul {
-    }
-}
 .breadcrumbs {
     padding-left: 0;
     list-style: none;
@@ -3116,83 +2999,6 @@ input.navbar-search-input::placeholder {
 .align-justify {
     text-align: justify;
 }
-.icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    
-    font-family: 'bise-icons' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    /* Better Font Rendering =========== */
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-@font-face {
-    font-family: 'bise-icons';
-    src: url('fonts/bise-icons.ttf?se41bq') format('truetype'), url('fonts/bise-icons.woff?se41bq') format('woff'), url('fonts/bise-icons.svg?se41bq#bise-icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-.icon-add::before {
-    content: "\e145";
-}
-.icon-arrow_drop_down::before {
-    content: "\e5c5";
-}
-.icon-arrow_drop_up::before {
-    content: "\e5c7";
-}
-.icon-attachment::before {
-    content: "\e2bc";
-}
-.icon-check::before {
-    content: "\e5ca";
-}
-.icon-close::before {
-    content: "\e5cd";
-}
-.icon-insert_invitation::before {
-    content: "\e24f";
-}
-.icon-radio::before {
-    content: "\e061";
-}
-.icon-link::before {
-    content: "\e157";
-}
-.icon-keyboard_arrow_down::before {
-    content: "\e313";
-}
-.icon-keyboard_arrow_left::before {
-    content: "\e314";
-}
-.icon-keyboard_arrow_right::before {
-    content: "\e315";
-}
-.icon-keyboard_arrow_up::before {
-    content: "\e316";
-}
-.icon-room::before {
-    content: "\e8b4";
-}
-.icon-menu::before {
-    content: "\e5d2";
-}
-.icon-person::before {
-    content: "\e7fd";
-}
-.icon-remove::before {
-    content: "\e15b";
-}
-.icon-search::before {
-    content: "\e8b6";
-}
-
-/*# sourceMappingURL=./source.css.map */
 
 /*Incep de aici*/
 .section#intro img {
@@ -3226,9 +3032,6 @@ aside .portlet .navTreeItem {
     max-width: 100%;
 }
 #portal-personaltools .actionMenuContent {
-    /*background: rgba(65, 183, 100, 1);*/
-    /*border-radius: 5px;*/
-    
     min-width: auto;
     border-radius: 5px;
     top: 110%;
@@ -3318,15 +3121,8 @@ aside .portlet .navTreeItem {
     padding-bottom: 20px;
     padding-right: 10px;
 }
-.login-wrapper .actionMenuHeader {
-    /*border-right: 1px solid white;*/
-}
 .login-wrapper {
-    /*background-color:  rgb(33, 72, 94);*/
-    background: rgba(0,
-    130,
-    50,
-    0.3);
+    background: rgba(0, 130, 50, 0.3);
 }
 #backdrop {
     position: fixed;
@@ -3336,7 +3132,6 @@ aside .portlet .navTreeItem {
     right: 0;
     bottom: 0;
     z-index: 101;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 body.sidebaropen #backdrop {
     display: block;
@@ -3361,12 +3156,7 @@ body.sidebaropen {
     pointer-events: none;
 }
 .search-and-login .login-wrapper {
-    // padding: 0.1rem;
-    padding: 0.07rem;
-    border: 1px solid rgba(255,
-    255,
-    255,
-    0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 ul#portal-personaltools {
     margin: 0;
@@ -3438,11 +3228,7 @@ dl#portal-personaltools dt.actionMenuHeader a {
 }
 
 #navbar dd.actionMenuContent {
-    /*  background: #21485e;*/
-    background: rgba(0,
-    130,
-    50,
-    0.8);
+    background: rgba(0, 130, 50, 0.8);
 }
 #navbar ul li#personaltools-dashboard a:after {
     content: "";
@@ -3451,10 +3237,7 @@ dl#portal-personaltools dt.actionMenuHeader a {
 .page-homepage .cover-collection-tile {
     padding: 1.5rem;
     background-color: white;
-    box-shadow: 0 1px 4px rgba(0,
-    0,
-    0,
-    0.25);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
     width: 50%;
 }
 @media (max-width: 600px) {
@@ -3491,17 +3274,13 @@ dl#portal-personaltools dt.actionMenuHeader a {
 }
 .page-homepage #card-review {
     background-color: white;
-    box-shadow: 0 1px 4px rgba(0,
-    0,
-    0,
-    0.25);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 }
 .page-homepage #card-review:before {
     content: '';
     display: block;
     position: relative;
-    /* width: 100%; */
     background: url('++theme++bise.diazotheme/img/bg-interactive-presentation-card.jpg') no-repeat;
     background-size: 100%;
     height: 10px;
@@ -3554,7 +3333,6 @@ a.subitem-head {
 }
 .navgroup-item a.internal-link {
     display: block;
-    /*color: #1f8cc9;*/
 }
 a.subitem {
     display: block;
@@ -3562,17 +3340,11 @@ a.subitem {
     color: #748284;
 }
 
-/*a.subitem:before {
-  content: "- ";
-}
-*/
 .navgroup-item span.description {
     color: #748284;
     display: block;
-    /*padding-left: 10px;*/
 }
 .navmenu-head .navbar-descriptor-inner {
-    /*max-width: 30%;*/
     display: inline-block;
 }
 @media (max-width: 1000px) {
@@ -3624,7 +3396,6 @@ a.subitem {
 }
 .navgroup-middle {
     display: table-cell;
-    /*padding: 10px;*/
     border-right: 1px solid #e5dfd1;
     border-left: 1px solid #e5dfd1;
 }
@@ -3650,9 +3421,6 @@ a.subitem {
 /* REVIEW */
 .invisibile {
     visibility: hidden;
-}
-.page-homepage .nav-menu {
-    /* position: absolute; */
 }
 @media (max-width: 330px) {
     .page-container {
@@ -3831,9 +3599,6 @@ a.subitem {
     }
     .nav-container .navmenu-head {
         overflow: hidden;
-        /*padding: 10px 10px 10px 10px;*/
-        /*border-bottom: 0.5px solid #e5dfd1;*/
-        
         color: white;
         font-size: 24px;
     }
@@ -3903,10 +3668,6 @@ a.subitem {
     #navmenu-close {
         background-color: #36b76d;
         float: right;
-        /*width: 50%;*/
-        /*padding-bottom: 16px;*/
-        /*padding-top: 16px;*/
-        
         padding: 1rem;
     }
     .navmenu-body.open {
@@ -3930,7 +3691,6 @@ a.subitem {
     }
     .search-and-login {
         overflow: hidden;
-        /*padding: 10px 10px 10px 10px;*/
     }
     .search-and-login #portal-personaltools {
         display: block;
@@ -4152,10 +3912,7 @@ aside .portletWrapper {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,
-    0,
-    0,
-    0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
 }
 .page-homepage #portal-breadcrumbs {
@@ -4428,10 +4185,7 @@ main.asidefalse .managePortletsFallback {
     margin: 1rem;
 }
 .portaltype-biodiversityfactsheet .collapsible:hover {
-    text-shadow: -1px 1px 3px rgba(0,
-    0,
-    0,
-    .2);
+    text-shadow: -1px 1px 3px rgba(0, 0, 0, .2);
 }
 .fact {
     overflow: auto;
@@ -4470,10 +4224,7 @@ main.asidefalse .managePortletsFallback {
     box-sizing: border-box;
     padding: .5em;
     line-height: .9;
-    border: 1px solid rgba(255,
-    255,
-    255,
-    0.1);
+    border: 1px solid transparent;
     font: inherit;
     z-index: 60;
     position: relative;
@@ -4486,17 +4237,11 @@ main.asidefalse .managePortletsFallback {
 .search-submit {
     display: block;
     padding: .7em;
-    border: 1px solid rgba(255,
-    255,
-    255,
-    0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
     width: 3rem;
     text-align: center;
-    background: rgba(0,
-    130,
-    50,
-    0.3);
+    background: rgba(0, 130, 50, 0.3);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -4505,7 +4250,6 @@ main.asidefalse .managePortletsFallback {
     z-index: 100;
     border: none;
     background: none!important;
-    // background-color: yellow;
 }
 .search-field {
     width: 3rem;
@@ -4545,9 +4289,5 @@ main.asidefalse .managePortletsFallback {
     .login-wrapper a:after {
         right: auto!important;
         float: none!important;
-    }
-    .noradius {
-        border-top-left-radius: 0!important;
-        border-bottom-left-radius: 0!important;
     }
 }
