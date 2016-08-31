@@ -93,19 +93,23 @@
                 <div id="backdrop"></div>
             </nav>
         </header>
+        <style>
+         .highlight-photos {
+            background-image: url('/++theme++bise.diazotheme/img/bise-highlights/highlights-placeholder.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+         }
+        </style>
         <div id="site-body">
             <div id="highlights-slider">
                 <div class="highlight-photos">
                     <img class="current-slide" src="./img/bise-highlights/photo-highlights-targets.jpg">
                     <img src="./img/bise-highlights/photo-highlights-maes.jpg">
                     <img src="./img/bise-highlights/photo-highlights-chm.jpg">
-
-
-
                 </div>
                 <div class="page-container">
                     <header class="slider-header">
-                        <h2 class="slider-title">BISE Highlights </h2>
+                        <h2 class="slider-title">BISE Highlights</h2>
                         <small class="slider-counter">1/3</small>
                     </header>
                     <div class="highlights">
@@ -325,100 +329,117 @@
                     }
                 });
 
-                var $hlSlider = $('#highlights-slider').find('.highlights').slick({
-                    autoplay: true,
-                    autoplaySpeed: 6000,
-                    speed: 1000,
-                    easing: 'easeOutQuint',
-                    adaptiveHeight: false,
-                    nextArrow: null,
-                    prevArrow: null,
-                    useCSS: false
-                });
-                var $hlSliderCounter = $('#highlights-slider').find('.slider-counter');
-                var $hlSliderNav = $('#slider-nav');
+                var initSlider = function() {
+                    
+                    var $hlSlider = $('#hlslider-slides'),
+                        $hlSliderCounter = $('#hlslider-counter'),
+                        $hlSliderPrev = $('#hlslider-prev'),
+                        $hlSliderNext = $('#hlslider-next');
 
-                $('.highlight').each(function() {
-                    url = $(this).find('a').attr('href');
-                    $(this).click(function() {
-                        window.location = url;
+                    $hlSlider.slick({
+                        autoplay: true,
+                        autoplaySpeed: 6000,
+                        speed: 1000,
+                        easing: 'easeOutQuint',
+                        adaptiveHeight: false,
+                        nextArrow: null,
+                        prevArrow: null,
+                        useCSS: false
                     });
-                })
 
-                var i;
+                    var updateBackgroundPhoto = function(current, next, count) {
 
-                var updateBackgroundPhoto = function(current, next, count) {
+                        var dir = next - current;
+                        console.log(current, next, count);
+                        if (next == 0 && current == count - 1) {
+                            dir = 1;
+                            console.log('from left');
+                        }
+                        if (next == count - 1 && current == 0) {
+                            dir = -1;
+                            console.log('from right');
+                        }
 
-                    var dir = next - current;
-                    console.log(current, next, count);
-                    if (next == 0 && current == count - 1) {
-                        dir = 1;
-                        console.log('from left');
-                    }
-                    if (next == count - 1 && current == 0) {
-                        dir = -1;
-                        console.log('from right');
-                    }
+                        $currentImg = $('.highlight-photos img:nth-child(' + (current + 1) + ')');
+                        $nextImg = $('.highlight-photos img:nth-child(' + (next + 1) + ')');
+                        $nextImg.show();
 
-                    $currentImg = $('.highlight-photos img:nth-child(' + (current + 1) + ')');
-                    $nextImg = $('.highlight-photos img:nth-child(' + (next + 1) + ')');
-                    $nextImg.css({
-                        'display': 'block',
-                        'left': dir * 100 + '%'
-                    }).animate({
-                        'left': 0
-                    }, 1000, 'easeOutQuint', function() {
-                        $currentImg.removeClass('current-slide').css({
-                            'display': 'none'
+                        var percent = dir * 100 + '%';
+
+                        $nextImg.css({
+                            'display': 'block',
+                            'transform': 'translate3d(' + percent + ', 0, 0)'
+                        })
+
+                        $({ 'percent': dir * 100 }).animate({
+                            'percent': 0
+                        }, {
+                            duration: 1000,
+                            easing: 'easeOutQuint',
+                            step: function(now) {
+                                $nextImg.css({
+                                    'transform': 'translate3d(' + now + '%, 0, 0)'
+                                });
+                            },
+                            done: function() {
+                                $currentImg.removeClass('current-slide').hide();
+                                $nextImg.addClass('current-slide');
+                            }
                         });
-                        $nextImg.addClass('current-slide');
-                    })
+                    };
+
+                    var i;
+
+                    $hlSlider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+                        i = (nextSlide ? nextSlide : 0) + 1;
+                        $hlSliderCounter.text(i + '/' + slick.slideCount);
+
+                        updateBackgroundPhoto(currentSlide, nextSlide, slick.slideCount);
+                    });
+
+                    $hlSliderNext.click(function() { $hlSlider.slick('slickNext'); });
+                    $hlSliderPrev.click(function() { $hlSlider.slick('slickPrev'); });
+
                 };
 
-                $hlSlider.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
-                    i = (nextSlide ? nextSlide : 0) + 1;
-                    $hlSliderCounter.text(i + '/' + slick.slideCount);
+                initSlider();
 
-                    updateBackgroundPhoto(currentSlide, nextSlide, slick.slideCount);
-                });
 
-                $hlSliderNav.find('.slider-prev').click(function() {
-                    $hlSlider.slick('slickPrev');
-                });
+                // $('.highlight').each(function() {
+                //     url = $(this).find('a').attr('href');
+                //     $(this).click(function() {
+                //         window.location = url;
+                //     });
+                // })
 
-                $hlSliderNav.find('.slider-next').click(function() {
-                    $hlSlider.slick('slickNext');
-                });
+                
+
             }())
             </script>
+
             <script>
-$(document).ready(function() {
-// set the date we're counting down to
-var target_date = new Date("Jan 2, 2021").getTime();
- 
-// variables for time units
-var days;
- 
-// get tag element
-var countdown = document.getElementById("countdown");
- 
-// update the tag with id "countdown" every 1 second
+            $(document).ready(function() {
 
- 
-    // find the amount of "seconds" between now and target
-    var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
+                // set the date we're counting down to
+                var target_date = new Date("Jan 2, 2021").getTime();
+                 
+                // variables for time units
+                var days;
+                 
+                // get tag element
+                var countdown = document.getElementById("countdown");
+                 
+                // find the amount of "seconds" between now and target
+                var current_date = new Date().getTime();
+                var seconds_left = (target_date - current_date) / 1000;
 
+                // do some time calculations
+                days = parseInt(seconds_left / 86400);
+                seconds_left = seconds_left % 86400;
 
-    // do some time calculations
-    days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
-        
-
-
-    // format countdown string + set tag value
-    countdown.innerHTML = days;  
- });
+                // format countdown string + set tag value
+                countdown.innerHTML = days;  
+            });
             </script>
 
 
