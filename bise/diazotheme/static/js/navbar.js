@@ -6,7 +6,7 @@ $(document).ready(function() {
 //     if ($(window).width() <= 800){  
        
 //         document.getElementById('navsearch-input').addEventListener('focus', function() {
-//         this.parentElement.parentElement.classList.add('navsearch-open');
+//         this.parentElement.parentElement.classList.add('navsearch-opene
 //     }, false);
 //     }   
 // }).resize();
@@ -36,30 +36,18 @@ $(document).ready(function() {
 //     }, false);
 
 
-var search = document.querySelector('.search');
+    var search = document.querySelector('.search');
+    var submit = document.querySelector('.search-submit');
+    var input = document.getElementById('search-input');
 
-var submit = document.querySelector('.search-submit');
-var input = document.getElementById('search-input');
-
-input.addEventListener('focus', function() {
-  search.classList.add('open');
-  submit.classList.add('noradius');
-})
-
-var onBlur = function() {
-  console.log(document.activeElement);
-  if (document.activeElement !== submit ||
-      document.activeElement !== input) {
-    search.classList.remove('open');
-      submit.classList.remove('noradius');
+    var toggleSearch = function() {
+        search.classList.toggle('open');
     }
-}
 
-input.addEventListener('blur', onBlur);
-submit.addEventListener('focus', function() {
-  search.classList.add('open');
-  submit.classList.add('noradius');
-});
+    input.addEventListener('focus', toggleSearch);
+    input.addEventListener('blur', toggleSearch);
+    submit.addEventListener('focus', toggleSearch);
+    submit.addEventListener('blur', toggleSearch);
 
 
 
