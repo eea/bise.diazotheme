@@ -27,6 +27,10 @@ strong {
   /*padding-left: 0.3em;*/
 }
 
+#contentActionMenus dl.actionMenu a {
+  background: none!important;
+}
+
 #contentActionMenus {
   background: inherit;
   top: inherit;
@@ -76,8 +80,9 @@ dl.actionMenu {
   max-width: 100%;
   z-index: 999;
   position: relative;
-  background: black;
-  border-color: black;
+  background: transparent!important;
+  margin: 0;
+  border: 0!important;
 }
 
 #content-views {
@@ -392,3 +397,68 @@ dl.actionMenu {
   width: 100%!important;
 }
 
+
+
+
+
+
+
+
+/* I dont't even know where this comes from */
+/* but it need to overriden */
+/*
+ 
+  * h1, h2, h3, h4, h5, h6, pre, code {
+    font-size: 1em;
+  } 
+
+*/
+
+h1  { font-size: 2rem!important; }
+h2  { font-size: 1.8rem!important; }
+h3  { font-size: 1.6rem!important; }
+h4  { font-size: 1.4rem!important; }
+h5  { font-size: 120%!important; }
+h6  { font-size: 1em!important; }
+pre, code {
+    font-size: inherit!important;
+}
+
+
+
+
+
+/* tinymce */
+.mceEditor {
+  display: block;
+}
+.ploneSkin .mceToolbar > div {
+  width: auto!important;
+  max-width: 100%!important;
+}
+.ploneSkin table.mceLayout td.mceToolbar {
+  height: auto!important;
+  padding-bottom: .5em!important;
+}
+
+/* tinymce in overlay */
+.overlay .mceEditor {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+.overlay .ploneSkin .mceIframeContainer,
+.overlay .ploneSkin table.mceLayout td.mceStatusbar {
+  border: 0!important;
+  padding: 1rem 2rem;
+  border-top: 1px solid #e5dfd1!important;
+}
+.overlay .ploneSkin table.mceLayout td.mceStatusbar {
+  border-top: 0!important;
+  border-bottom: 1px solid #e5dfd1!important;
+  padding-top: 0;
+}
+
+/* formControls in overflow */
+.overlay .formControls {
+  margin: 0;
+}

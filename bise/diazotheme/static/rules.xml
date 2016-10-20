@@ -82,7 +82,7 @@
     <!-- =============[ Head ]============= -->
     <copy css:content="html" css:theme="html" attributes="lang dir" />
     <drop css:theme="head script" />
-    <before css:content="head style, head link, head script, head meta" css:theme-children="head" />
+    <after css:content="head style, head link, head script, head meta" css:theme-children="head" />
     <replace css:content="head title" css:theme="head title" />
     <copy css:content="head base" css:theme="head base" />
     <drop css:content="head link[rel='canonical']" />
@@ -117,7 +117,7 @@
     <merge attributes="action" css:theme=".navsearch" css:content="#searchbar-options form" />
 
     <!-- Plone edit bar -->
-    <replace css:content="#edit-bar" css:theme-children="#site-admin" method="raw"/>
+    <replace css:content="#edit-bar" css:theme="#edit-bar" method="raw"/>
     <drop css:content="#edit-bar" />
 
     <!-- Footer work -->

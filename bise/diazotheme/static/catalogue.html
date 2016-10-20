@@ -20,7 +20,9 @@
 <body>
   <div id="site">
     <div id="site-admin">
-        <!-- this is where the edit bar will end up -->
+      <div class="page-container">
+          <div id="edit-bar"><!-- this is where the edit bar will end up --></div>
+      </div>
     </div>
     <header id="site-header">
       <nav id="navbar">
@@ -174,68 +176,42 @@
     }
     @keyframes dots-loader {
       0% {
-        -moz-box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
       8.33% {
-        -moz-box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
       16.67% {
-        -moz-box-shadow: #f86 16px 16px 0 8px, #fc6 16px 16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 16px 16px 0 8px, #fc6 16px 16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 16px 16px 0 8px, #fc6 16px 16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
       25% {
-        -moz-box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
       33.33% {
-        -moz-box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae -16px -16px 0 8px;
-        -webkit-box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae -16px -16px 0 8px;
         box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae -16px -16px 0 8px;
       }
       41.67% {
-        -moz-box-shadow: #f86 16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
-        -webkit-box-shadow: #f86 16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
         box-shadow: #f86 16px -16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
       }
       50% {
-        -moz-box-shadow: #f86 16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
-        -webkit-box-shadow: #f86 16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
         box-shadow: #f86 16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
       }
       58.33% {
-        -moz-box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
-        -webkit-box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
         box-shadow: #f86 -16px 16px 0 8px, #fc6 -16px 16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
       }
       66.67% {
-        -moz-box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px -16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
-        -webkit-box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px -16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
         box-shadow: #f86 -16px -16px 0 8px, #fc6 -16px -16px 0 8px, #6d7 -16px -16px 0 8px, #4ae 16px -16px 0 8px;
       }
       75% {
-        -moz-box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px -16px 0 8px, #4ae 16px -16px 0 8px;
-        -webkit-box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px -16px 0 8px, #4ae 16px -16px 0 8px;
         box-shadow: #f86 16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px -16px 0 8px, #4ae 16px -16px 0 8px;
       }
       83.33% {
-        -moz-box-shadow: #f86 16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae 16px 16px 0 8px;
-        -webkit-box-shadow: #f86 16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae 16px 16px 0 8px;
         box-shadow: #f86 16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae 16px 16px 0 8px;
       }
       91.67% {
-        -moz-box-shadow: #f86 -16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 -16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 -16px 16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
       100% {
-        -moz-box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
-        -webkit-box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
         box-shadow: #f86 -16px -16px 0 8px, #fc6 16px -16px 0 8px, #6d7 16px 16px 0 8px, #4ae -16px 16px 0 8px;
       }
     }
@@ -258,14 +234,6 @@
       height: 8px;
       background: transparent;
       border-radius: 100%;
-      -moz-box-shadow: #f86 -16px -16px 0 8px,
-                       #fc6 16px -16px 0 8px,
-                       #6d7 16px 16px 0 8px,
-                       #4ae -16px 16px 0 8px;
-      -webkit-box-shadow: #f86 -16px -16px 0 8px,
-                       #fc6 16px -16px 0 8px,
-                       #6d7 16px 16px 0 8px,
-                       #4ae -16px 16px 0 8px;
       box-shadow: #f86 -16px -16px 0 8px,
                        #fc6 16px -16px 0 8px,
                        #6d7 16px 16px 0 8px,
@@ -295,128 +263,6 @@
         display: table-cell;
         padding: .5em 1em;
       }
-    }
-
-
-    #catalogue-app .catalogue-toolbar {
-      margin: 0;
-      padding: 0;
-    }
-    #catalogue-app .catalogue-toolbar #catalogue-search-form {
-      display: table;
-      border-collapse: collapse;
-    }
-    #catalogue-app .catalogue-toolbar #catalogue-search-form input,
-    #catalogue-app .catalogue-toolbar #catalogue-search-form button {
-      box-sizing: border-box;
-      display: table-cell;
-    }
-
-    #catalogue-app .catalogue-toolbar #catalogue-search-form input {
-      float: left;
-    }
-    #catalogue-app .catalogue-toolbar #catalogue-search-form button {
-      width: 30%!important;
-      float: left;
-    }
-
-    #catalogue-app .catalogue-toolbar #catalogue-search-form {
-      margin-bottom: 1rem;
-    }
-    .catalogue-facet {
-      font-size: inherit;
-      /*border: 1px solid #e5dfd1;*/
-    }
-    .catalogue-facet .facet-header legend {
-      font-size: inherit;
-    }
-    .catalogue-facet .facet-header .triangle {
-      margin-top: -12px;
-    }
-    .catalogue-facet ul {
-      border: 0;
-    }
-    .catalogue-facet ul li {
-      border-top: 1px solid #e5dfd1;
-    }
-    .catalogue-facet ul li a {
-      border: 0;
-      color: #444;
-    }
-    .catalogue-facet ul li a:hover {
-      /*background: #f7f4ed;*/
-      color: #444;
-    }
-    .catalogue-facet ul li.show-more a {
-      background: transparent;
-      color: #748284;
-      font-size: inherit;
-    }
-    .catalogue-facet ul li.show-more a:hover {
-      /*background: #f7f4ed;*/
-      color: #748284;
-    }
-    .catalogue-facet ul li .facet-count {
-      margin-top: 8px;
-      border-radius: 3px;
-      padding: 1px 7px;
-      background: #fff;
-      font-size: smaller;
-      font-weight: normal;
-      color: #748284;
-      /*border-color: #e5dfd1;*/
-    }
-    /*
-    .catalogue-facet:first-of-type .facet-header {
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-    }
-    .catalogue-facet:last-of-type .facet-header {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-    }
-    .catalogue-facet ul {
-      background-color: darkcyan;
-      border-top: none!important;
-    }
-    .catalogue-facet .facet-count {
-      color: white!important;
-    }
-    .catalogue-facet a {
-      color: white!important;
-    }
-    .catalogue-facet ul li.show-more a {
-      background: #41b664!important;
-    }
-    #catalogue-app .catalogue-toolbar #catalogue-search-form button {
-      background: #41b664!important;
-    }*/
-    #catelogue-categories-menu {
-      border-radius: 3px;
-    }
-
-    .catalogue-cell .cell-title {
-      font-size: large;
-      color: #222;
-    }
-    .catalogue-cell .cell-title a {
-      font: inherit;
-      color: #1f8cc9;
-    }
-
-    /* results per page dropwdown */
-    /* snap to right so it doesn't overflow on mobile */
-    #catalogue-per-page {
-      left: auto;
-      right: 0;
-      min-width: 85px;
-    }
-
-    /* .row from catalogue.css messes up the layout */
-    #viewlet-after-content .row,
-    #viewlet-below-content .row,
-    #site-footer .row {
-      margin: 0;
     }
   </style>
 
