@@ -407,10 +407,10 @@ dl.actionMenu {
 /* I dont't even know where this comes from */
 /* but it need to overriden */
 /*
- 
+
   * h1, h2, h3, h4, h5, h6, pre, code {
     font-size: 1em;
-  } 
+  }
 
 */
 
@@ -461,4 +461,7 @@ pre, code {
 /* formControls in overflow */
 .overlay .formControls {
   margin: 0;
+}
+#content form ul {
+    margin-left: 0em;
 }

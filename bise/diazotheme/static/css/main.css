@@ -2368,7 +2368,7 @@ input.navbar-search-input::placeholder {
     .list-footer-logos {
         margin-left: 1rem;
     }
-    
+
     .list-footer-logos > li {
         display: inline-block;
         vertical-align: middle;
@@ -2382,7 +2382,7 @@ input.navbar-search-input::placeholder {
         margin-left: auto;
         table-layout: auto;
     }
-    
+
     .list-footer-logos > li {
         display: table-cell;
         vertical-align: middle;
@@ -2390,11 +2390,11 @@ input.navbar-search-input::placeholder {
         padding-left: 1.1rem;
         padding-right: 1.1rem;
     }
-    
+
     .list-footer-logos > li:first-child {
         padding-left: 0;
     }
-    
+
     .list-footer-logos > li:last-child {
         border-right: 0;
         padding-right: 0;
@@ -2409,7 +2409,7 @@ input.navbar-search-input::placeholder {
     .col-sm-6 .footer-logos img {
         display: list-item;
     }
-    
+
     .col-sm-6 .footer-logos span {
         display: none;
     }
@@ -2457,7 +2457,7 @@ input.navbar-search-input::placeholder {
         display: table;
         table-layout: fixed;
     }
-    
+
     .page-homepage .page-header .col-md-4,
     .page-homepage .page-header .col-md-8 {
         float: none;
@@ -2526,7 +2526,7 @@ input.navbar-search-input::placeholder {
         text-align: left;
         overflow: hidden;
     }
-    
+
     #card-bise-catalogue img {
         float: left;
         margin-top: -.5rem;
@@ -3444,7 +3444,7 @@ a.subitem {
         float: left;
         width: 50%;
     }
- 
+
     .search-and-login a {
         color: white;
     }
@@ -4004,7 +4004,7 @@ main.asidefalse .managePortletsFallback {
     border: none;
     background: none!important;
 }
-.search-field {
+#navbar .search-field {
     width: 3rem;
     height: calc(3rem + 4px);
     position: absolute;
