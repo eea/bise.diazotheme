@@ -42,17 +42,16 @@
     <!-- full width on edit pages -->
     <rules css:if-content=".template-edit">
         <theme href="edit.html" />
-        <append css:content-children="#portal-column-content" css:theme=".asidefalse" />
     </rules>
 
     <!-- full width on edit pages -->
     <rules css:if-content="#content-core form">
         <theme href="edit.html" />
-        <append css:content-children="#portal-column-content" css:theme=".asidefalse" />
     </rules>
 
     <rules if="$have_left_portlets">
         <!-- <theme href="folder.html" /> -->
+        <!-- we want full width on edit pages -->
         <rules css:if-not-content=".template-edit">
             <rules css:if-not-content="#content-core form">
                 <drop css:theme="main.asidefalse" />
