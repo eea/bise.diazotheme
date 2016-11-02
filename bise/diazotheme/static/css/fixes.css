@@ -83,7 +83,13 @@ dl.actionMenu {
   background: transparent!important;
   margin: 0;
   border: 0!important;
+  font-size: .9rem;
 }
+
+#content-views li.selected a {
+    margin-top: .2rem;
+    }
+
 
 #content-views {
   background-color: inherit;

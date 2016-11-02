@@ -629,6 +629,12 @@ dt {
     max-width: 1200px;
 }
 
+@media (max-width: 800px) {
+    .page-container {
+        width: 85%;
+    }
+}
+
 .page-homepage .container {
     margin-left: auto;
     margin-right: auto;
@@ -989,6 +995,7 @@ dt {
         box-sizing: border-box;
         padding-left: 1rem;
         padding-right: 1rem;
+        z-index: 50;
     }
     .col-md-1 {
         width: 8.33333333%;
@@ -2004,6 +2011,13 @@ input.navbar-search-input::placeholder {
     }
 }
 
+
+@media (max-width: 1128px) {
+    .navbar-descriptor-inner {
+        max-width: 85%;
+    }
+}
+
 @media (min-width: 1360px) {
     .navbar-descriptor-inner {
         display: table;
@@ -2520,6 +2534,11 @@ input.navbar-search-input::placeholder {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
+}
+
+#card-bise-catalogue .btn strong {
+    font-size: 1.6rem;
+    color: #166592;
 }
 @media (min-width: 600px) {
     #card-bise-catalogue {
@@ -3179,6 +3198,7 @@ a.subitem {
         margin-right: -1.5rem;
         border-left: 0;
         border-right: 0;
+        overflow: auto;
     }
     #catalogue-app .catalogue-libraries ul li a.active {
         border: none!important;
@@ -3729,7 +3749,7 @@ aside .portletWrapper {
 }
 .news h4 {
     margin: 0;
-    font-size: medium;
+    font-size: medium!important;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
 }
@@ -4017,7 +4037,7 @@ main.asidefalse .managePortletsFallback {
     z-index: 0;
 }
 .search.open .search-field {
-    width: 200px;
+    width: 200px!important;
 }
 .search i {
     color: white;
@@ -4045,6 +4065,15 @@ main.asidefalse .managePortletsFallback {
     }
 }
 
+@media (min-width: 768px) {
+    .aside-wrapper {
+        margin-top: -230px;
+    }
+
+    .template-compose .aside-wrapper {
+        margin-top: 0;
+    }
+}
 
 /* Forms */
 #buttons-save,
@@ -4070,3 +4099,39 @@ main.asidefalse .managePortletsFallback {
   color: #444;
   text-shadow: 0 1px 0 #e5dfd1;
 }
+
+
+.template-edit .field {
+        /* border: 1px solid #aaa; */
+        padding: 1rem;
+        border-radius: 1rem;
+        background: #eaeaea;
+}
+
+.template-edit tr.mceFirst {
+    background: white!important;
+}
+
+.template-edit .ploneSkin table.mceLayout td.mceToolbar {
+    border: 1px solid #ddd!important;
+    padding: .5rem;
+}
+
+.template-edit .mceLayout tbody {
+    background: white!important;
+}
+
+.template-edit .ploneSkin .mceIframeContainer {
+    border-color: #ddd!important;
+    padding: .5rem;
+}
+
+.template-edit .ploneSkin table.mceLayout td.mceStatusbar {
+    border-color: #ddd!important;
+    padding: .5rem;
+}
+
+.template-edit .selectivity-multiple-input-container {
+    background: white;
+}
+
