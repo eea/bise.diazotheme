@@ -1,41 +1,5 @@
 $(document).ready(function() {
    
-
-
-// $(window).resize(function(){
-//     if ($(window).width() <= 800){  
-       
-//         document.getElementById('navsearch-input').addEventListener('focus', function() {
-//         this.parentElement.parentElement.classList.add('navsearch-opene
-//     }, false);
-//     }   
-// }).resize();
-   
-
-//     $('.navsearch-addon').on('click', function() {
-//         $('.search-form  ').addClass('navsearch-open');
-//          $('#navsearch-submit').removeClass("no-events");
-//         $('#navsearch-input').focus();
-//     });
-
-//     $('html').click(function() {
-//         if (!($(event.target).hasClass('navsearch-addon'))) {
-
-//             $('#navsearch-submit').addClass("no-events");
-            
-//         if ($(window).width() >= 800){  
-//             $('.search-form').removeClass('navsearch-open');
-//             }   
-//         }
-
-//     });
-
-
-//     document.getElementById('navsearch-input').addEventListener('blur', function() {
-//             this.parentElement.parentElement.classList.remove('navsearch-open');
-//     }, false);
-
-
     var search = document.querySelector('.search');
     var submit = document.querySelector('.search-submit');
     var input = document.getElementById('search-input');
@@ -63,8 +27,6 @@ $(document).ready(function() {
         $trigger.click(function() {
             $target.toggleClass('open');
 
-            // $target.delay( 100 ).scrollTo(150, 200);
-
         });
     });
 
@@ -78,7 +40,6 @@ $(document).ready(function() {
 
         });
 
-        // $links = $(".col-md-3.col-md-pull-9.col-lg-2.col-lg-pull-10")
         $navbrandtitle = $('.navbrand-title');
         $navcontainer = $(".nav-container");
         $navbrand = $(".navbrand .navbrand-logo");
@@ -110,22 +71,6 @@ $(document).ready(function() {
         $cataloguesidebar=$('.catalogue-container .catalogue-sidebar');
        
         sidebarplugin($asidetrigger, $aside, $asidebutton);
-        
-        // sidebarplugin();
-        // $asidetrigger.click(function() {
-        //     $aside.addClass("triggered")
-        //     $body.addClass('sidebaropen');
-        // });
-
-        // $backdrop.click(function() {
-        //     $aside.removeClass("triggered")
-        //     $body.removeClass('sidebaropen');
-        // });
-
-        // $asidebutton.click(function() {
-        //     $aside.removeClass("triggered")
-        //     $body.removeClass('sidebaropen');
-        // });
 
         $navmenuclose.click(function() {
             $navmenuclose.addClass('hidden');
