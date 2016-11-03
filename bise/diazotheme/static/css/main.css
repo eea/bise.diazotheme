@@ -2014,7 +2014,7 @@ input.navbar-search-input::placeholder {
 
 @media (max-width: 1128px) {
     .navbar-descriptor-inner {
-        max-width: 85%;
+        max-width: 85%!important;
     }
 }
 
@@ -3206,6 +3206,7 @@ a.subitem {
     }
     #catalogue-app .catalogue-libraries ul li a {
         padding: 0!important;
+        white-space: nowrap;
     }
     #catalogue-app .catalogue-libraries ul li a:hover {
         background: none!important;
@@ -3518,9 +3519,23 @@ aside {
     font-family: 'Roboto',
     sans-serif;
 }
-main {
+
+@media (min-width:800px) {
+    main {
     padding: 2.4rem;
 }
+
+}
+
+@media (max-width:800px) {
+
+    main {
+    padding: 1rem;
+}
+}
+
+
+
 aside {
     border-right: 1px solid #e5dfd1;
     margin-left: 1px;
@@ -3562,10 +3577,9 @@ aside {
         z-index: : 100;
     }
     aside {
-        display: none;
         position: fixed;
         top: 0;
-        left: 0;
+        left: 100%;
         bottom: 0;
         z-index: 300;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
@@ -4155,4 +4169,38 @@ tr.mceFirst {
 .catalogue-container ol {
     margin-left: 0!important;
     margin-top: 0!important;
+}
+
+@media (max-width: 799px){
+#catalogue-app .catalogue-libraries ul {
+    display: flex!important;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+}
+.catalogue-libraries {
+    overflow: hidden!important;
+}
+.catalogue-libraries .count {
+    bottom: 0!important;
+}
+}
+
+.selectivity-dropdown {
+    max-width: 300px!important;
+    top: 35%!important;
+}
+
+.selectivity-results-container:first-of-type > .selectivity-result-item {
+    font-weight: 600;
+}
+
+.selectivity-multiple-input-container input {
+    width: auto!important;
+}
+
+
+.selectivity-multiple-input-container {
+    background: white!important;
+    border: 1px solid #aaa;
 }
