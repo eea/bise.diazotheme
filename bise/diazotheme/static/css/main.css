@@ -4101,37 +4101,58 @@ main.asidefalse .managePortletsFallback {
 }
 
 
-.template-edit .field {
-        /* border: 1px solid #aaa; */
+form .field {
         padding: 1rem;
         border-radius: 1rem;
         background: #eaeaea;
 }
 
-.template-edit tr.mceFirst {
+tr.mceFirst {
     background: white!important;
 }
 
-.template-edit .ploneSkin table.mceLayout td.mceToolbar {
-    border: 1px solid #ddd!important;
+.ploneSkin table.mceLayout td.mceToolbar {
+    border: 1px solid #eee!important;
     padding: .5rem;
 }
 
-.template-edit .mceLayout tbody {
+.mceLayout tbody {
     background: white!important;
 }
 
-.template-edit .ploneSkin .mceIframeContainer {
-    border-color: #ddd!important;
+.ploneSkin .mceIframeContainer {
+    border-color: #eee!important;
     padding: .5rem;
 }
 
-.template-edit .ploneSkin table.mceLayout td.mceStatusbar {
-    border-color: #ddd!important;
+.ploneSkin table.mceLayout td.mceStatusbar {
+    border-color: #eee!important;
     padding: .5rem;
 }
 
-.template-edit .selectivity-multiple-input-container {
+.selectivity-multiple-input-container {
     background: white;
 }
 
+.section-search #viewlet-below-content-title {
+    margin-left: 4rem;
+}
+
+.facet-input + label:before {
+    text-align: center;
+}
+
+.facet-input:checked + label:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    margin-right: .5rem;
+}
+
+.facet-toggle {
+    font-size: 2rem!important;
+}
+
+.catalogue-container ol {
+    margin-left: 0!important;
+    margin-top: 0!important;
+}
