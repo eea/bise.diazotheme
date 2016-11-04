@@ -25,9 +25,10 @@ $(document).ready(function() {
             .find('.navgroups-body')
             .first();
         $trigger.click(function() {
+            $('.navgroups-body').removeClass('open');
             $target.toggleClass('open');
-
         });
+
     });
 
     $triggers = $("[data-target='#navmenu-body']");
@@ -39,6 +40,8 @@ $(document).ready(function() {
             $target.toggleClass('open');
 
         });
+
+
 
         $navbrandtitle = $('.navbrand-title');
         $navcontainer = $(".nav-container");
@@ -66,6 +69,7 @@ $(document).ready(function() {
             $navbrandtitle.addClass('open');
             $('.page-homepage .navmenu-trigger').addClass('relative');
             $('.page-homepage .navbrand').addClass('relative');
+            $body.addClass('no-ovf');
         });
 
         $cataloguesidebar=$('.catalogue-container .catalogue-sidebar');
@@ -80,6 +84,7 @@ $(document).ready(function() {
             $navbrandtitle.removeClass('open');
             $('.navmenu-trigger').removeClass('relative');
             $('.navbrand').removeClass('relative');
+            $body.removeClass('no-ovf');
         });
 
 
@@ -102,7 +107,7 @@ $(document).ready(function() {
 
         });
 //end of noevents
-
+        
 
     });
 

@@ -503,6 +503,8 @@ body {
     color: #555;
     background-color: #F7F4ED;
     font-size: 14px;
+    margin: 0;
+    border: 0;
 }
 
 h1,
@@ -1489,7 +1491,7 @@ dt {
 .btn-default {
     padding: 0.4em 0.6em;
     border: 1px solid transparent;
-    background: #e0ded7;
+    background: transparent;
     background-image: linear-gradient(to bottom, #e0ded7, #ece8e3);
     font-weight: 700;
     font-family: inherit;
@@ -1918,12 +1920,6 @@ input.navbar-search-input::placeholder {
     font-weight: 700;
 }
 
-.navbar-descriptor-copy {
-    font-size: 92.85714286%;
-    max-width: 50em;
-    color: rgba(255, 255, 255, 0.75);
-}
-
 .navitem-description {
     display: none;
 }
@@ -1977,13 +1973,6 @@ input.navbar-search-input::placeholder {
 .navmenu-navsection a {
     display: inline-block;
     padding: .25rem 0;
-}
-
-@media (max-width: 959px) {
-    .navbar-descriptor-copy,
-    .navbar-descriptor-cta {
-        display: inline;
-    }
 }
 
 @media (min-width: 960px) {
@@ -2091,12 +2080,6 @@ input.navbar-search-input::placeholder {
     .submenu-body a:hover,
     .submenu-body a:focus {
         color: #1679d3;
-    }
-}
-
-@media (max-width: 1128px) {
-    .navbar-descriptor-inner {
-        max-width: 85%!important;
     }
 }
 
@@ -2388,9 +2371,8 @@ input.navbar-search-input::placeholder {
         position: relative;
         float: right;
         width: 200px;
-        margin-top: -62px;
-        margin-right: 22px;
         z-index: 600;
+        margin-top: 1.5em;
     }
 }
 
@@ -2437,6 +2419,10 @@ input.navbar-search-input::placeholder {
 
 #site-admin {
     background: #44434c;
+}
+
+#site-admin li {
+    display: inline;
 }
 
 #site-footer {
@@ -2683,14 +2669,12 @@ input.navbar-search-input::placeholder {
 
 #card-timer {
     position: relative;
-    border-radius: 6px;
-    border: 1px solid #e5dfd1;
-    background-color: #fff;
-    padding: 0;
-    max-width: 80%;
-    max-height: 236px;
-    min-width: 280px;
+    background: url('++theme++bise.diazotheme/img/bg-card-calendar.png') no-repeat;
     z-index: 100;
+    width: 264px;
+    height: 264px;
+    padding: 114px 14px 14px;
+    box-sizing: border-box;
 }
 
 .card-wrapper {
@@ -2704,96 +2688,26 @@ input.navbar-search-input::placeholder {
     border-radius: 5px;
 }
 
-.card-wrapper:after {
-    content: '';
-    background: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 79%;
-    height: 101%;
-    bottom: -30%;
-    right: -8%;
-    transform: rotate(61deg);
-    z-index: 1;
-}
-
-@media (max-width: 800px) {
-    .card-wrapper:after {
-        width: 79%!important;
-        height: 99%!important;
-        bottom: -57%!important;
-        right: -8%!important;
-    }
-}
-
-#card-timer:before {
-    content: '';
-    display: block;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border: 1px solid #d36b46;
-    border-bottom: 0;
-    background-color: #ef8152;
-    height: 60px;
-    margin: -1px;
-}
-
-#card-timer:after {
-    position: absolute;
-    top: 60px;
-    display: block;
-    content: '';
-    margin-top: .5rem;
-    left: .5rem;
-    right: .5rem;
-    border-top: 2px dotted #d36b46;
-}
-
-.timer-wrapper-wrapper:before,
-.timer-wrapper-wrapper:after {
-    // content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAA+CAYAAAAxgtvTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtlJREFUeNrsWE9rE0EUf7PN+ocKG++FVsGbSA6Kx+5FPJp+ACEfoKAHvXvXQ8V+gIAfoL2Kl+1RBAniTbAN1Eus0kiTzf4d35uOdZzObnbXbHswLwwTdmbe7/2Z92beMM451ElW0Ymf1u83qZUFYHkaIMMV7J5ha2Nz5Ochtm36fnPzzV5lAGTews5TGOtEQC6C9EqbSEruLVy+4izeuAXYm6YRsCfnlvYBmcW5tHQdrj16DtRnkCPnlgYgm8Nk/wvsvnwq+hxq5w02ciSDxD+C0eePuU6MktSptE3J7ksPn2TZX5AfJXAUxtXigOzevHsv0/5jZD4YBfDdD2cTaDqFSQpRms4uklWKUw6TOBEgtmXVAXAsOcNfLRqgAhDEKSzgaotBPT4QixlDEFYNgILr8N1bY5Dh3i8sRFagiSDbf/3i7M4DExU5qyyomf5TANydohXxw785GfjcB+flZCWL8ro0YPNIPvdI/pNReT0a0LE57TSbO/lsAPjcRFPvPWUvXpvtOytlQfLWWNpEKod6FRTpybXZAHLCVk7ZakwVSsm1ZQKxFBW7M/BpVzfXbw26RSQvQI4uqIWILvarM9yZq8izpWrQqWH7P1YB3BoAXBVgueq1PcFDITUno+XMQGsUOERiyZVKqFprNMYq5CKSLk6zkzDVx/SEMI5iUSOnBW7Xff3jwSTMAUjBRxAba1gyp28uCPsqgKeP7v70T2lBkh9OIhhio/8kPRfCRCYATwXY0EepyP4wGIqHDmL6bRzAD/x/gD2ZZtE+Lk6/jgIIzBqcRLN4s8PI80zRbKMJrl5sgI03UXr4uIBmoYtvwriQPEyMDthZ337v6nVyR6bpv/JRhGYa+FGZjTXUM4PYRYi4N6OU0ZG8Tm9THKC30DUpRVmiNWuSR3YcyAmUCXdKMKe5LRPzEydnnLOuNJtryFd9uRU3kHFvSuLihdqrB7ebReeq7ZcAAwB5i2sqmPDOeQAAAABJRU5ErkJggg==);
-    content: '';
-    position: absolute;
-    top: -25px;
-    background: rgb(229, 223, 210);
-    width: 12px;
-    height: 60px;
-    border-radius: 100px;
-    border: 5px solid rgba(48, 144, 173, 1);
-}
-
-.timer-wrapper-wrapper:before {
-    left: 25%;
-}
-
-.timer-wrapper-wrapper:after {
-    right: 25%;
-}
-
 #countdown {
-    font-size: 5em;
+    font-size: 54px;
     font-family: inherit;
     font-weight: 600;
     color: rgb(68, 67, 76);
     float: left;
     margin-right: 1rem;
     line-height: .9;
-}
-
-#card-timer .timer-wrapper-wrapper {
-    padding: 1rem;
-    text-align: center;
+    letter-spacing: -4px;
 }
 
 #card-timer .timer-wrapper {
     position: relative;
     text-align: left;
     display: inline-block;
-    padding: 1em;
     font-size: 12px;
 }
 
 #card-timer .days {
-    font-size: 3.3em;
+    font-size: 30px;
     line-height: 1;
     font-family: inherit;
     font-weight: 600;
@@ -2810,12 +2724,12 @@ input.navbar-search-input::placeholder {
 }
 
 #card-timer .eu-targets {
-    font-size: 2.5em;
+    font-size: 30px;
     display: block;
     position: relative;
     text-align: left;
     clear: left;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
     color: rgb(68, 67, 76);
 }
@@ -3041,8 +2955,8 @@ aside .portlet .navTreeItem {
 }
 
 .navbrand {
-    float: none;
-    display: inline-block;
+    float: left;
+    display: block;
     height: 78px;
     text-decoration: none;
 }
@@ -3136,6 +3050,10 @@ body.sidebaropen {
     overflow: hidden;
 }
 
+.no-ovf {
+    overflow: hidden;
+}
+
 .navgroups .btn {
     bottom: 0;
     left: 0;
@@ -3202,7 +3120,7 @@ dl#portal-personaltools dt.actionMenuHeader a {
     padding-bottom: 20px;
 }
 
-.search-and-login i {
+.search-and-login .fa-search {
     font-size: 19px;
 }
 
@@ -3243,6 +3161,14 @@ dl#portal-personaltools dt.actionMenuHeader a {
 
 #navbar dd.actionMenuContent {
     background: rgba(0, 130, 50, 0.8);
+}
+
+@media (max-width: 800px) {
+    #navbar dd.actionMenuContent {
+        background: rgba(0, 130, 50, 0.2);
+        margin-left: 0;
+        max-width: 100px;
+    }
 }
 
 #navbar ul li#personaltools-dashboard a:after {
@@ -3378,46 +3304,43 @@ a.subitem {
     display: block;
 }
 
-.navmenu-head .navbar-descriptor-inner {
-    display: inline-block;
+.navbar-descriptor {
+    padding: 1rem;
+    color: #fff;
+    font-size: 92%;
+    display: block;
 }
 
-@media (max-width: 1000px) {
-    .navmenu-head .navbar-descriptor-inner {
-        max-width: 38%;
+@media (max-width: 1023px) {
+    .navbar-descriptor {
+        display: none;
     }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 1024px) {
     .navmenu-head .navbar-descriptor-inner {
-        max-width: 100%;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
     .navbar-descriptor {
-        width: 45%;
-        display: inline-block;
+        width: 380px;
     }
 }
 
-.navbar-descriptor {
-    padding-top: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: inline-block;
+@media (min-width: 1360px) {
+    .navbar-descriptor {
+        width: 480px;
+    }
 }
 
 .navbar-descriptor-copy strong {
-    color: #ffc612;
     white-space: nowrap;
-}
-
-.navbar-descriptor-cta a:before {
-    content: ' ► ';
+    font-weight: normal;
+    font-style: italic;
 }
 
 .navbar-descriptor-cta a {
     white-space: nowrap;
-    color: #ffc612;
+    color: #ffe34b;
 }
 
 @media (max-width:900px) {
@@ -3702,6 +3625,14 @@ a.subitem {
         border-bottom: 1px solid white;
         background-color: white;
     }
+    #navitem-research .navgroups-body {
+        border: none!important;
+    }
+
+    #navitem-research #navitem-toggle {
+        display: none;
+    }
+
     .submenu-contact .navitem-header {
         width: 50%;
         margin: 0 auto;
@@ -3716,9 +3647,15 @@ a.subitem {
         display: table-cell;
         white-space: nowrap;
     }
+
+    .nav-container, .nav-menu{
+        height: 100%;
+    }
     .navmenu-body {
         display: none;
         background-color: #36b76d;
+        height: 89vh;
+        overflow-y: auto;
     }
     #navmenu-close {
         background-color: #36b76d;
@@ -3746,6 +3683,7 @@ a.subitem {
     }
     .search-and-login {
         overflow: hidden;
+        clear: both;
     }
     .search-and-login #portal-personaltools {
         display: block;
@@ -3860,9 +3798,19 @@ aside {
 
 @media (max-width: 800px) {
     .asidetrigger {
-        float: right;
         display: block;
-        padding-right: 24px;
+     position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 200px;
+    border: 1px solid #aaa;
+    padding-right: 0;
+    background: #fff;
+    border-top-left-radius: 5px;
+    transform: rotate(90deg);
+    transform-origin: 0 100%;
+    border-top-right-radius: 5px;
+    border-bottom: 0;
     }
     #aside-button {
         float: right;
@@ -3979,7 +3927,7 @@ aside .portletWrapper {
 }
 
 .navbar-descriptor {
-    display: inline-block;
+    float: left;
 }
 
 @media (max-width: 1000px) {
@@ -4275,11 +4223,6 @@ main.asidefalse .managePortletsFallback {
     }
 }
 
-#catalogue-trigger {
-    position: relative;
-    z-index: 100;
-    margin-top: -20px;
-}
 
 .portaltype-biodiversityfactsheet .fact-contents .data-source {
     text-align: right;
@@ -4368,6 +4311,7 @@ main.asidefalse .managePortletsFallback {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
+    height: 34px;
 }
 
 .input-group {
@@ -4412,8 +4356,6 @@ main.asidefalse .managePortletsFallback {
 
 .search-label,
 .search-submit {
-    display: block;
-    padding: .7em;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
     width: 3rem;
@@ -4421,6 +4363,8 @@ main.asidefalse .managePortletsFallback {
     background: rgba(0, 130, 50, 0.3);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-label {
@@ -4428,6 +4372,7 @@ main.asidefalse .managePortletsFallback {
     z-index: 100;
     border: none;
     background: none!important;
+    height: 34px;
 }
 
 #navbar .search-field {
@@ -4475,7 +4420,7 @@ main.asidefalse .managePortletsFallback {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .aside-wrapper {
         margin-top: -230px;
     }
@@ -4630,29 +4575,13 @@ tr.mceFirst {
     content: ''!important;
 }
 
-dl.portalMessage,
-div.attention,
-div.caution,
-div.danger,
-div.error,
-div.hint,
-div.important,
-div.note,
-div.tip,
-div.warning {
-    margin: 1em 0;
-    font-size: 100%;
-    border: 1px solid #399834;
-    background-color: #63bd88;
-    clear: both;
-    color: white;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
 dl.portalMessage dt,
 div > .admonition-title {
     background-color: #0d9e05;
+}
+
+.portalMessage.error dd {
+    color: #474646;
 }
 
 .edit-tile-link.link-overlay {
@@ -4663,4 +4592,19 @@ div > .admonition-title {
     border-radius: 3px;
     left: 0px;
     color: white;
+}
+
+#personalbar-options li {
+    display: inline;
+}
+
+.search-image img {
+    width: 18px;
+    height: 18px;
+}
+
+.search-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

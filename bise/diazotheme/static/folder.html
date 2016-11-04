@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, height=device-height">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>BISE</title>
 <meta name="description" content="The Biodiversity Information System for Europe (BISE) is a single entry point for data and information on biodiversity supporting the implementation of the EU strategy and the Aichi targets in Europe.">
@@ -65,7 +65,12 @@
                             <div class="login-wrapper">
                             </div>
                             <div class="search">
-                                <label class="search-label" for="search-input"><i class="fa fa-search"></i></label>
+                                <label class="search-label" for="search-input" title="Search">
+                                    <span class="search-image">
+                                        <img src="/++theme++bise.diazotheme/img/search.png" title="search-icon" alt="search-icon" />
+                                    </span>
+                                    <span class="sr-only">Search</span>
+                                </label>
                                 <div class="search-field">
 
                                     <form class="input-group" method="GET" action="/search">
@@ -73,9 +78,12 @@
                                              <input type="search" id="search-input" class="search-input" name='q' placeholder="Search" />
                                         </div>
                                         <span class="input-addon">
-                                                 <button type="submit" id="search-submit" class="search-submit">
-                                                        <i class="fa fa-search"></i>
-                                                 </button>
+                                            <button type="submit" id="search-submit" class="search-submit" title="Search">
+                                                <span class="search-image">
+                                                    <img src="/++theme++bise.diazotheme/img/search.png" title="search-icon" alt="search-icon" />
+                                                </span>
+                                                <span class="sr-only">Search</span>
+                                            </button>
                                          </span>
                                     </form>
 
