@@ -8,42 +8,38 @@
 
 function sidebarplugin($trigger, $sidebar, $closetrigger) {
 
-	console.log('plugin works');
- 			$body = $("body");
-        	$backdrop = $('#backdrop');
-               $trigger.click(function() {
-                   $sidebar.addClass('triggered')
-                   $body.addClass('sidebaropen');
-               });
+    $body = $("body");
+    $backdrop = $('#backdrop');
+    $trigger.click(function() {
+        $sidebar.addClass('triggered')
+        $body.addClass('sidebaropen');
+    });
 
-               $backdrop.click(function() {
-                   $sidebar.removeClass('triggered')
-                   $body.removeClass('sidebaropen');
-               });
+    $backdrop.click(function() {
+        $sidebar.removeClass('triggered')
+        $body.removeClass('sidebaropen');
+    });
 
-               $closetrigger.click(function() {
-                   $sidebar.removeClass('triggered')
-                   $body.removeClass('sidebaropen');
-               });
+    $closetrigger.click(function() {
+        $sidebar.removeClass('triggered')
+        $body.removeClass('sidebaropen');
+    });
 
 
-      if($('.asidetrigger').length > 0) {
-                  if (window.matchMedia("(max-width: 800px)").matches) {
-        var navbar = document.querySelector('body');
-        delete Hammer.defaults.cssProps.userSelect;
-        var hammertime = new Hammer(navbar);
-        hammertime.on('swiperight', function() {
-           $sidebar.addClass('triggered')
-           $body.addClass('sidebaropen');
-        });
+    if($('.asidetrigger').length > 0) {
+        if (window.matchMedia("(max-width: 800px)").matches) {
+            var navbar = document.querySelector('body');
+            delete Hammer.defaults.cssProps.userSelect;
+            var hammertime = new Hammer(navbar);
+            hammertime.on('swiperight', function() {
+                $sidebar.addClass('triggered')
+                $body.addClass('sidebaropen');
+            });
 
-        hammertime.on('swipeleft', function() {
-           $sidebar.removeClass('triggered')
-           $body.removeClass('sidebaropen');
-        });
+            hammertime.on('swipeleft', function() {
+                $sidebar.removeClass('triggered')
+                $body.removeClass('sidebaropen');
+            });
+        }
     }
-  }
 }
-
-
-
