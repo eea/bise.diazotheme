@@ -4708,10 +4708,10 @@ div > .admonition-title {
 .edit-tile-link.link-overlay {
     font-size: 1.2rem;
     padding: .2rem;
-    top: -3%!important;
+    top: -1rem !important;
     background: #41b664;
     border-radius: 3px;
-    left: 0px;
+    left: 1rem;
     color: white;
 }
 
