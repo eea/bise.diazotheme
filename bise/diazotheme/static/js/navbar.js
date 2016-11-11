@@ -76,6 +76,11 @@ $(document).ready(function() {
        
         sidebarplugin($asidetrigger, $aside, $asidebutton);
 
+        if ( !$( "aside" ).length ) { 
+            $asidetrigger.hide();
+        }
+
+
         $navmenuclose.click(function() {
             $navmenuclose.addClass('hidden');
             $navmenuopen.removeClass('hidden');

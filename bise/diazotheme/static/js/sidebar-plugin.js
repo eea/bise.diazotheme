@@ -11,7 +11,8 @@ function sidebarplugin($trigger, $sidebar, $closetrigger) {
     $body = $("body");
     $backdrop = $('#backdrop');
     $trigger.click(function() {
-        $sidebar.addClass('triggered')
+    	$sidebar.css('display', 'block');
+        $sidebar.addClass('triggered');
         $body.addClass('sidebaropen');
     });
 

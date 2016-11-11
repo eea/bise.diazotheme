@@ -448,10 +448,10 @@ pre, code {
 }
 
 /* tinymce in overlay */
-.overlay .mceEditor {
-  margin-left: -2rem;
-  margin-right: -2rem;
-}
+// .overlay .mceEditor {
+//   margin-left: -2rem;
+//   margin-right: -2rem;
+// }
 .overlay .ploneSkin .mceIframeContainer,
 .overlay .ploneSkin table.mceLayout td.mceStatusbar {
   border: 0!important;

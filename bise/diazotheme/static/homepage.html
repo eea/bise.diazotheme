@@ -322,6 +322,36 @@
                     line-height: 44px;
                 }
             }
+            @media print {
+
+                .slick-track {
+                    width: auto!important;
+                    opacity: 1!important;
+                    transform: none!important;
+                }
+
+                .slick-cloned {
+                    display: none!important;
+                }
+                #slider-nav,
+                .slider-counter {
+                    display: none;
+                }
+                .slick-slider {
+                    min-height: auto!important;
+                }
+                #highlights-slider {
+                    padding: 0;
+                    border-bottom: 0!important;
+                    margin: 0;
+                    position: static!important;
+                    padding-bottom: 0!important;
+                }
+                .slick-slide {
+                    width: auto!important;
+                    padding: 0!important;
+                }
+            }
             </style>
             <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
             <script>
