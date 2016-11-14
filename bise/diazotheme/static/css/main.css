@@ -2737,6 +2737,10 @@ aside .portlet .navTreeItem {
 #edit-bar .actionMenu {
   margin-bottom: 0;
 }
+.actionMenu ul {
+  margin-left: 0!important;
+  padding-left: 0!important;  
+}
 
 .navgroups .navgroup-item {
   display: block;
