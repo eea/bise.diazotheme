@@ -1,12 +1,5 @@
 /* Generic fixes */
 
-#content ul {
-  margin-left: 2.3em;
-}
-
-strong {
-  font-weight: bolder;
-}
 
 .documentByLine {
   margin-bottom: 2em;

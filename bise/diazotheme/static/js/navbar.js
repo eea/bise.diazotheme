@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   
+
     var search = document.querySelector('.search');
     var submit = document.querySelector('.search-submit');
     var input = document.getElementById('search-input');
@@ -14,22 +14,105 @@ $(document).ready(function() {
     submit.addEventListener('blur', toggleSearch);
 
 
+    var navmenu = document.querySelector('#navmenu-items');
+    var triggers = document.querySelectorAll('.navmenu-item'); //navmenu.children; 
+    var menuIsOpen = false;
+    var menuToOpen;
+    var mobileicon = document.querySelector('.fa-angle-down');
+    var mobilemenu = document.querySelectorAll('.navgroups-body');
+
+    clickoutside = function(e) {
+        e.stopPropagation();
+    }
+
+    openNavMenu = function(menu) {
+        menuIsOpen = menu;
+        menuToOpen = undefined;
+
+        menu.classList.add('is-open');
+
+        navmenu.addEventListener('click', clickoutside, false);
+        document.documentElement.addEventListener('click', closeNavMenu, false);
+
+        // console.log('openNavMenu');
+    }
+    closeNavMenu = function() {
+        menu = menuIsOpen;
+        menuIsOpen = false;
+
+        menu.classList.remove('is-open');
+
+        navmenu.removeEventListener('click', clickoutside, false);
+        document.documentElement.removeEventListener('click', closeNavMenu, false);
+
+        // console.log('closeNavMenu');
+    }
+    if (window.matchMedia("(min-width: 600px)").matches) {
+        Array.prototype.forEach.call(triggers, function(trigger, index) {
+            trigger.addEventListener('mouseenter', function() {
+                menuToOpen = setTimeout(function() {
+                    openNavMenu(trigger)
+                }, 100);
+            }, false);
+            trigger.addEventListener('mouseleave', function() {
+                if (menuToOpen)
+                    clearTimeout(menuToOpen);
+                else {
+                    closeNavMenu();
+                }
+            }, false);
+
+            trigger.addEventListener('click', function(e) {
+                target = e.target;
+
+
+                if (trigger.id !== 'navitem-research' && target !== mobileicon) {
+                    // Naugthy exception from lazy developers. Tsst tsst!
+                    if ((target.matches('.navitem-header a')) && !menuIsOpen) {
+                        openNavMenu(trigger);
+                        e.preventDefault();
+                    }
+                }
+            }, false);
+        });
+    }
+
+    var mobiletrigger = document.querySelector('#navitem-toggle');
+    var indexcounter= undefined;
+
+
+    Array.prototype.forEach.call(triggers, function(trigger, index) {
+        trigger.addEventListener('click', function(e) {
+        trigger = e.target;
+        triggerparent  = trigger.parentNode.parentNode;
+
+
+            if (e.target.matches('#navitem-toggle')) {
+            if (!menuIsOpen) {
+                openNavMenu(triggerparent);
+                // e.preventDefault();
+                indexcounter = index;
+            }
+           else if (menuIsOpen) {
+                closeNavMenu(triggerparent);
+                if(index !== indexcounter){
+                openNavMenu(triggerparent);
+                indexcounter = index;
+                // e.preventDefault();
+                }
+  
+            }
+        }
+
+
+       
+
+        }, false);
+    });
 
 
 
     $triggers = $('[data-toggle="navmenu"]');
-
-    $triggers.each(function() {
-        var $trigger = $(this),
-            $target = $(this).closest('.navmenu-item')
-            .find('.navgroups-body')
-            .first();
-        $trigger.click(function() {
-            $('.navgroups-body').removeClass('open');
-            $target.toggleClass('open');
-        });
-
-    });
 
     $triggers = $("[data-target='#navmenu-body']");
     $triggers.each(function() {
@@ -40,8 +123,6 @@ $(document).ready(function() {
             $target.toggleClass('open');
 
         });
-
-
 
         $navbrandtitle = $('.navbrand-title');
         $navcontainer = $(".nav-container");
@@ -72,11 +153,17 @@ $(document).ready(function() {
             $body.addClass('no-ovf');
         });
 
-        $cataloguesidebar=$('.catalogue-container .catalogue-sidebar');
-       
-        sidebarplugin($asidetrigger, $aside, $asidebutton);
+        $cataloguesidebar = $('.catalogue-container .catalogue-sidebar');
 
-        if ( !$( "aside" ).length ) { 
+
+        var asidetrigger = document.querySelector('.asidetrigger');
+        var aside = document.querySelector('aside');
+        var asidebutton = document.querySelector('#aside-button');
+
+
+        sidebarplugin(asidetrigger, aside, asidebutton);
+
+        if (!$("aside").length) {
             $asidetrigger.hide();
         }
 
@@ -93,29 +180,18 @@ $(document).ready(function() {
         });
 
 
-//noevents
-        $navmenuitem.each(function() {
-
-            var $navmenuitem = $(this),
-                $target1 = $(this).closest($navmenuitem)
-                .find($noeventstablet)
-                .first();
-            $navmenuitem.click(function() {
-                $target1.removeClass('noevents');
-            });
-
-            $navmenuitem.click(function(evt) {
-                if ($(evt.target).is($target1)) {
-                    $target1.addClass('noevents');
-                }
-            });
-
-        });
-//end of noevents
-        
 
     });
 
+
+
+
+
+
+
+
+
+    // Create search params
     function getURLParameter(name) {
         return decodeURI(
             (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, ''])[1]
@@ -124,10 +200,5 @@ $(document).ready(function() {
     var q = getURLParameter("q");
     q = q.replace("+", " ");
     if (q != '') { $("#catalogue-app").attr("data-query", q); }
-
-
-
-
-
 
 });
