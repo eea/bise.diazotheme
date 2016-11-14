@@ -2843,6 +2843,7 @@ body.sidebaropen {
 
 ul#portal-personaltools {
   margin: 0;
+  padding-left:0;
 }
 
 dl#portal-personaltools {

@@ -78,116 +78,91 @@ $(document).ready(function() {
     }
 
     var mobiletrigger = document.querySelector('#navitem-toggle');
-    var indexcounter= undefined;
+    var indexcounter = undefined;
 
 
     Array.prototype.forEach.call(triggers, function(trigger, index) {
         trigger.addEventListener('click', function(e) {
-        trigger = e.target;
-        triggerparent  = trigger.parentNode.parentNode;
+            trigger = e.target;
+            triggerparent = trigger.parentNode.parentNode;
 
 
             if (e.target.matches('#navitem-toggle')) {
-            if (!menuIsOpen) {
-                openNavMenu(triggerparent);
-                // e.preventDefault();
-                indexcounter = index;
-            }
-           else if (menuIsOpen) {
-                closeNavMenu(triggerparent);
-                if(index !== indexcounter){
-                openNavMenu(triggerparent);
-                indexcounter = index;
-                // e.preventDefault();
+                if (!menuIsOpen) {
+                    openNavMenu(triggerparent);
+                    // e.preventDefault();
+                    indexcounter = index;
+                } else if (menuIsOpen) {
+                    closeNavMenu(triggerparent);
+                    if (index !== indexcounter) {
+                        openNavMenu(triggerparent);
+                        indexcounter = index;
+                        // e.preventDefault();
+                    }
+
                 }
-  
             }
-        }
 
 
-       
+
 
         }, false);
     });
 
 
+    var navbrandtitle = document.querySelector('.navbrand-title');
+    var navcontainer = document.querySelector(".nav-container");
+    var navbrand = document.querySelector(".navbrand .navbrand-logo");
+    var searchandlogin = document.querySelector('.search-and-login');
+    var body = document.querySelector("body");
+    var backdrop = document.querySelector('#backdrop');
+    var navmenuopen = document.querySelector("#navmenu-open");
+    var navmenuclose = document.querySelector("#navmenu-close");
+    var navmenubody = document.querySelector(".navmenu-body");
+    var asidetrigger = document.querySelector('.asidetrigger');
+    var aside = document.querySelector("aside");
+    var section = document.querySelector(".section");
+    var asideclass = document.querySelector(".aside")
+    var asidebutton = document.querySelector("#aside-button");
+    var homepage_navtrigger = document.querySelector('.page-homepage .navmenu-trigger');
+    var homepage_navbrand = document.querySelector('.page-homepage .navbrand');
 
-    $triggers = $('[data-toggle="navmenu"]');
+    //opening and closing of mobile menu
 
-    $triggers = $("[data-target='#navmenu-body']");
-    $triggers.each(function() {
-        var $trigger = $(this),
-            target = $trigger.data('target'),
-            $target = $(target);
-        $trigger.click(function() {
-            $target.toggleClass('open');
-
-        });
-
-        $navbrandtitle = $('.navbrand-title');
-        $navcontainer = $(".nav-container");
-        $navbrand = $(".navbrand .navbrand-logo");
-        $searchandlogin = $('.search-and-login');
-        $body = $("body");
-        $backdrop = $('#backdrop');
-        $navmenuopen = $("#navmenu-open");
-        $navmenuclose = $("#navmenu-close");
-        $navmenubody = $(".navmenu-body");
-        $asidetrigger = $(".folder .asidetrigger");
-        $aside = $("aside");
-        $section = $(".section");
-        $asideclass = $(".aside")
-        $asidebutton = $("#aside-button");
-        $noeventstablet = $(".navmenu-item .navitem-header a.noevents");
-        $navmenuitem = $(".navmenu-item");
-        $nav = $("nav");
-
-        $navmenuopen.click(function() {
-            $navmenuopen.addClass('hidden');
-            $navmenuclose.removeClass('hidden');
-            $searchandlogin.addClass('open');
-            $navbrand.addClass('hidden');
-            $navbrandtitle.addClass('open');
-            $('.page-homepage .navmenu-trigger').addClass('relative');
-            $('.page-homepage .navbrand').addClass('relative');
-            $body.addClass('no-ovf');
-        });
-
-        $cataloguesidebar = $('.catalogue-container .catalogue-sidebar');
-
-
-        var asidetrigger = document.querySelector('.asidetrigger');
-        var aside = document.querySelector('aside');
-        var asidebutton = document.querySelector('#aside-button');
-
-
-        sidebarplugin(asidetrigger, aside, asidebutton);
-
-        if (!$("aside").length) {
-            $asidetrigger.hide();
-        }
-
-
-        $navmenuclose.click(function() {
-            $navmenuclose.addClass('hidden');
-            $navmenuopen.removeClass('hidden');
-            $searchandlogin.removeClass('open');
-            $navbrand.removeClass('hidden');
-            $navbrandtitle.removeClass('open');
-            $('.navmenu-trigger').removeClass('relative');
-            $('.navbrand').removeClass('relative');
-            $body.removeClass('no-ovf');
-        });
-
-
-
+    navmenuopen.addEventListener('click', function() {
+        navmenubody.classList.add('open');
+        navmenuopen.classList.add('hidden');
+        navmenuclose.classList.remove('hidden');
+        searchandlogin.classList.add('open');
+        navbrand.classList.add('hidden');
+        navbrandtitle.classList.add('open');
+        homepage_navtrigger.classList.add('relative');
+        homepage_navbrand.classList.add('relative');
+        body.classList.add('no-ovf');
     });
 
 
 
+    navmenuclose.addEventListener('click', function() {
+        navmenubody.classList.remove('open');
+        navmenuclose.classList.add('hidden');
+        navmenuopen.classList.remove('hidden');
+        searchandlogin.classList.remove('open');
+        navbrand.classList.remove('hidden');
+        navbrandtitle.classList.remove('open');
+        homepage_navtrigger.classList.remove('relative');
+        homepage_navbrand.classList.remove('relative');
+        body.classList.remove('no-ovf');
+    });
 
 
+    //call for sidebar plugin
+    sidebarplugin(asidetrigger, aside, asidebutton);
 
+    // hide sidebar trigger if there is no sidebar
+    if (!aside && asidetrigger) {
+        asidetrigger.style.display = 'none';
+    }
 
 
 
