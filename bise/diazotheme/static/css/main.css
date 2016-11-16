@@ -3605,6 +3605,12 @@ aside .portletHeader .tile {
 
 aside .portletItem {
   padding: 0!important;
+  margin-left: 0!important;
+}
+
+aside .portletItem ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 aside .portletWrapper {
