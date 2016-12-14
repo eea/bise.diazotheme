@@ -374,17 +374,29 @@
 
                 var $hlFirstSlide = $($hlSliderPhotos[0]);
 
-                $hlFirstSlide.find('img')[0].onload = function() {
 
-                    // setTimeout(function() {
 
-                    $(this).css({
-                        'visibility': 'visible'
-                    }).addClass('current');
-                    initSlider();
-                    $hlSliderPlaceholder.css('opacity', '0');
-                    // }, 5000);
-                };             
+		$(document).ready(function() {
+				setTimeout(function() {
+					$hlFirstSlide.css({
+						'visibility': 'visible'
+						}).addClass('current');
+					initSlider();
+					$hlSliderPlaceholder.css('opacity', '0');
+					}, 800);
+				});
+
+//              $hlFirstSlide.find('img')[0].onload = function() {
+
+//                  // setTimeout(function() {
+
+//                  $(this).css({
+//                      'visibility': 'visible'
+//                  }).addClass('current');
+//                  initSlider();
+//                  $hlSliderPlaceholder.css('opacity', '0');
+//                  // }, 5000);
+//              };             
 
                 $hlFirstSlide.css({
                     'visibility': 'hidden',
