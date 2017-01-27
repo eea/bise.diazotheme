@@ -2327,11 +2327,11 @@ input.navbar-search-input::placeholder {
 }
 
 #site-admin {
-  position: fixed;
-  z-index: 10000;
-  width: 100%;
-  padding-top: 1em;
-  vertical-align: bottom;
+  /* position: fixed; */
+  /* z-index: 10000; */
+  /* width: 100%; */
+  /* padding-top: 1em; */
+  /* vertical-align: bottom; */
   background: #44434c;
 }
 
