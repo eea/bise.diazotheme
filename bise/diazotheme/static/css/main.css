@@ -2339,6 +2339,10 @@ input.navbar-search-input::placeholder {
   display: inline;
 }
 
+.actionMenuHeader {
+    color: #989898;
+}
+
 #site-footer {
   padding: 2rem 0;
   color: #748284;
