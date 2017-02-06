@@ -59,6 +59,39 @@ dl.actionMenu {
   background-color: #363636 !important;
 }
 
+/* Fix tile edit height */
+
+.tile-content .ploneSkin iframe {
+  min-height: 150px !important;
+}
+
+.tile-content .mceLayout {min-height: 150px;}
+
+/* Fix warning message*/
+
+dl.portalMessage dd {
+  padding: 0;
+  line-height: 30px;
+}
+
+.portalMessage {
+    margin: 1em 0;
+    border: 1px solid #41b764;
+    background: white;
+    clear: both;
+    border-radius: 3px;
+    overflow: hidden;
+    line-height: 30px;
+}
+.portalMessage strong {
+    background-color: #41b764;
+    font-weight: bold;
+    float: left;
+    margin: 0 0.5em 0 0;
+    padding: 0.5em 0.75em;
+    color: white;
+    line-height: 1.25em;
+}
 
 /* Frontpage fixes */
 
