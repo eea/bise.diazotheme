@@ -10,7 +10,7 @@
         <theme href="homepage.html" />
         <drop css:theme="div#content" />
 
-        <replace css:theme-children="#highlights-slider" css:content-children="#highlights-slider-content" />
+       <!-- <replace css:theme-children="#highlights-slider" css:content-children="#highlights-slider-content" /> -->
         <drop css:content="#highlights-slider-content" />
 
         <replace css:theme-children="#site-body .page">

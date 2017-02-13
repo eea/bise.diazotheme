@@ -106,41 +106,33 @@
         
         <div id="site-body">
             
-            <div id="highlights-slider">
-                <div class="highlight-photos">
-                    <!-- <img class="current" src="./img/bise-highlights/photo-highlights-targets.jpg"> -->
-                    <!-- <img src="./img/bise-highlights/photo-highlights-maes.jpg"> -->
-                    <!-- <img src="./img/bise-highlights/photo-highlights-chm.jpg"> -->
-                </div>
-                <div class="page-container">
-                    <header class="slider-header">
-                        <h2 class="slider-title">BISE Highlights</h2>
-                        <small class="slider-counter">1/3</small>
-                    </header>
-                    <div class="highlights">
-                        <div class="highlight">
-                            <h3 class="highlight-title">Towards the 2020 biodiversity targets</h3>
-                            <p class="highlight-description">BISE is contributing to the improvement of the knowledge and evidence base for the European Union's enviromental policy</p>
-                        </div>
-                        <div class="highlight">
-                            <h3 class="highlight-title">Mapping and Assessment of Ecosystems and their Services (MAES)</h3>
-                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                        </div>
-                        <div class="highlight">
-                            <h3 class="highlight-title">BISE - CHMs network of Europe</h3>
-                            <p class="highlight-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        </div>
-                    </div>
-                    <div id="slider-nav">
-                        <button class="slider-prev">
-                            &larr; Previous
-                        </button>
-                        <button class="slider-next">
-                            Next &rarr;
-                        </button>
-                    </div>
-                </div>
-            </div>
+
+
+<div id="highlights-slider">
+<div class="highlight-photos"><picture class="highlight-photo current"> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-targets-lg.jpg" media="(min-width: 1600px)" /> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-targets-sm.jpg" media="(max-width: 960px)" /> <img alt="Towards the 2020 biodiversity targets" src="++theme++bise.diazotheme/img/bise-highlights/highlights-targets-md.jpg" /> </picture> <picture class="highlight-photo" style="display: none; "> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-maes-lg.jpg" media="(min-width: 1600px)" /> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-maes-sm.jpg" media="(max-width: 960px)" /> <img alt="Mapping and Assessment of Ecosystems and their Services (MAES)" src="++theme++bise.diazotheme/img/bise-highlights/highlights-maes-md.jpg" /> </picture> <picture class="highlight-photo" style="display: none; "> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-chm-lg.jpg" media="(min-width: 1600px)" /> <source srcset="/++theme++bise.diazotheme/img/bise-highlights/highlights-chm-sm.jpg" media="(max-width: 960px)" /> <img alt="BISE - CHMs Network of Europe" src="++theme++bise.diazotheme/img/bise-highlights/highlights-chm-md.jpg" /> </picture></div>
+<div class="page-container">
+<div class="slider-highlights"><header class="slider-header">
+<h2 class="slider-title">BISE Highlights </h2>
+<small class="slider-counter" id="hlslider-counter">1/3</small></header>
+<div class="highlights" id="hlslider-slides">
+<div class="highlight">
+<h3 class="highlight-title"><a href="policy">Towards the 2020 biodiversity targets</a></h3>
+<p class="highlight-description">Halting the loss of biodiversity and the degradation of ecosystem services in the EU by 2020, and restoring them in so far as feasible, while stepping up the EU contribution to averting global biodiversity loss.</p>
+</div>
+<div class="highlight" style="display: none; ">
+<h3 class="highlight-title"><a href="maes">Mapping and Assessment of Ecosystems and their Services (MAES)</a></h3>
+<p class="highlight-description">To keep Europe's ecosystems healthy, we need to protect biodiversity. How can the ecosystem service approach help? And how can we capture people's more deeply held values beyond mere money? Watch the video produced by Science for Environment Policy about the different tools in the ecosystem services toolbox.</p>
+</div>
+<div class="highlight" style="display: none; ">
+<h3 class="highlight-title"><a href="chm-network">BISE - CHMs network of Europe</a></h3>
+<p class="highlight-description">The network aims at promoting and facilitating technical cooperation, knowledge sharing and information exchange amongst national CHMs and BISE, in support of the implementation of the Convention on Biological Diversity (CBD) Strategic Plan for Biodiversity 2011-2020</p>
+</div>
+</div>
+<div id="slider-nav"><span class="slider-prev" id="hlslider-prev">Previous</span> <span class="slider-next" id="hlslider-next">Next</span></div>
+</div>
+</div>
+</div>
+
             <style>
             #highlights-slider {
                 padding-bottom: 3rem!important;
@@ -355,7 +347,8 @@
             </style>
             <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
             <script>
-            (function() {
+
+(function() {
 
                 jQuery.extend(jQuery.easing, {
                     'easeOutQuint': function(x, t, b, c, d) {
@@ -369,31 +362,22 @@
                     $hlSliderNext = $('#hlslider-next'),
                     $hlSliderPhotos = $('.highlight-photos').children();
 
-                var $hlSliderPlaceholder = $('<div class="highlight-placeholder"><img src="/++theme++bise.diazotheme/img/bise-highlights/highlights-placeholder.jpg" alt="Slider placeholder"></div>');
-                $('#highlights-slider').prepend($hlSliderPlaceholder);
+
+            $(document).ready(function(){
+                // var $hlSliderPlaceholder = $('<div class="highlight-placeholder"></div>');
+                // $('#highlights-slider').prepend($hlSliderPlaceholder);
 
                 var $hlFirstSlide = $($hlSliderPhotos[0]);
+                console.log($hlFirstSlide);
 
-                $hlFirstSlide.find('img')[0].onload = function() {
-
-                    // setTimeout(function() {
-
-                    $(this).css({
+                    $hlFirstSlide.css({
                         'visibility': 'visible'
                     }).addClass('current');
                     initSlider();
-                    $hlSliderPlaceholder.css('opacity', '0');
-                    // }, 5000);
-                };             
-
-                $hlFirstSlide.css({
-                    'visibility': 'hidden',
-                    'display': 'block'
+                    // $hlSliderPlaceholder.css('opacity', '0');
                 });
 
-                var initSlider = function() {
-                    
-
+                  function initSlider() {
                     $hlSlider.children().css({ 'display': 'block' });
                     $hlSlider.slick({
                         autoplay: true,
@@ -469,7 +453,7 @@
                 
 
             }())
-            </script>
+</script>
 
             <script>
             $(document).ready(function() {
