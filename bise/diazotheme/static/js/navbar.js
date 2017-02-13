@@ -167,7 +167,20 @@ $(document).ready(function() {
 $('.mtrTargetDiv').append('<div class="close-dialog btn btn-default">Close</div>');
 $('.target-nav a').click(function(){
     $(this).addClass('no-events')
-})
+});
+
+
+
+
+var $loading = $('#ajax-spinner').hide();
+$(document)
+  .ajaxStart(function () {
+    $('#ajax-spinner').css('display','block');
+  })
+  .ajaxStop(function () {
+ $('#ajax-spinner').css('display','none');
+  });
+
     // Create search params
     function getURLParameter(name) {
         return decodeURI(

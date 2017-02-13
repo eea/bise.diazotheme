@@ -1500,7 +1500,7 @@ small,
 .btn-primary {
   background: #ffc612 linear-gradient(#f4d13b, #f4b331) no-repeat;
   color: #444;
-  text-shadow: 0 1px 0 #ffc612;
+  text-shadow: 0 1px 0 #ffc612; 
 }
 .btn-primary:hover {
   background: #f4b331;
@@ -2188,7 +2188,7 @@ input.navbar-search-input::placeholder {
     border-top: solid #f4c035;
   }
 
-
+ 
   .nav-container .submenu-close {
     display: none;
   }
@@ -2327,20 +2327,11 @@ input.navbar-search-input::placeholder {
 }
 
 #site-admin {
-  /* position: fixed; */
-  /* z-index: 10000; */
-  /* width: 100%; */
-  /* padding-top: 1em; */
-  /* vertical-align: bottom; */
   background: #44434c;
 }
 
 #site-admin li {
   display: inline;
-}
-
-.actionMenuHeader {
-    color: #989898;
 }
 
 #site-footer {
@@ -2748,7 +2739,7 @@ aside .portlet .navTreeItem {
 }
 .actionMenu ul {
   margin-left: 0!important;
-  padding-left: 0!important;
+  padding-left: 0!important;  
 }
 
 .navgroups .navgroup-item {
@@ -3013,7 +3004,7 @@ dl#portal-personaltools dt.actionMenuHeader a {
   right: 2rem;
   }
 }
-
+  
 
 .page-homepage .tile-type-name {
   position: relative;
@@ -3722,8 +3713,8 @@ aside .portletWrapper {
 
 #viewlet-social-like iframe {
   height: 21px!important;
-  width: 6em !important;
-  margin-left: -1em;
+  width: 81px !important;
+  margin-left: -22px;
 }
 
 
@@ -4410,10 +4401,10 @@ div > .admonition-title {
 .edit-tile-link.link-overlay {
   font-size: 1.2rem;
   padding: .2rem;
-  top: -0.9em !important;
+  top: -3%!important;
   background: #41b664;
   border-radius: 3px;
-  left: 0.3em;
+  left: 0px;
   color: white;
 }
 
@@ -4549,7 +4540,7 @@ margin: 1rem;
 }
 
 #ajax-spinner {
-      z-index: 999;
+      z-index: 9999;
 }
 
 
@@ -4679,4 +4670,21 @@ margin: 1rem;
 .sidebaropen .element-nav a:hover,
 .sidebaropen .element-nav .btn:hover {
  text-shadow: 1px 1px 2px #a09999;
+}
+
+.subsection-countries-romania td {
+    width: auto!important;
+}
+
+
+.subsection-countries-romania .documentFirstHeading,
+.subsection-countries-finland .documentFirstHeading {
+  margin-right: 10rem;
+}
+
+.subsection-biodiversity-strategy-plan #ajax-spinner {
+      top: 51%;
+    left: 54%;
+        width: 100px;
+    height: 100px;
 }
