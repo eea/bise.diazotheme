@@ -164,8 +164,10 @@ $(document).ready(function() {
         asidetrigger.style.display = 'none';
     }
 
-
-
+$('.mtrTargetDiv').append('<div class="close-dialog btn btn-default">Close</div>');
+$('.target-nav a').click(function(){
+    $(this).addClass('no-events')
+})
     // Create search params
     function getURLParameter(name) {
         return decodeURI(
@@ -176,4 +178,134 @@ $(document).ready(function() {
     q = q.replace("+", " ");
     if (q != '') { $("#catalogue-app").attr("data-query", q); }
 
+
+    if ($('.modal-container').length > 0) {
+
+        loadmodaldata()
+        $('.close-dialog, #backdrop').click(function() {
+            modalclose();
+        })
+    }
+
 });
+
+
+var modal_link = 0;
+
+$modal = $('.modal-container');
+
+
+
+function modalopen() {
+    $('.modal-container').addClass('open');
+    $('body').addClass('sidebaropen');
+
+}
+
+
+function modalclose() {
+    $('.modal-container').removeClass('open');
+    $('body').removeClass('sidebaropen');
+    $('.targetDiv').removeClass('element-nav');
+    $('.mtractive').removeClass('mtractive');
+history.replaceState({}, document.title, ".");
+
+}
+
+function loadmodaldata() {
+    $mtrmenu = 0;
+    var linkindex;
+    $click_item = $('.targetDiv.mtrTargetDiv a');
+if (window.matchMedia("(min-width: 600px)").matches) {
+    $click_item.click(function(event) {
+
+        event.preventDefault();
+
+
+        var link = $(this).attr("href");
+        if (!$(this).parent().hasClass('target-nav')) {
+            $mtrmenu = $(this).parent();
+        } else if ($(this).parent().hasClass('target-nav')) {
+            //target 1
+            if ($(this).parent().parent().hasClass('target1Bg') && $(this).hasClass('next')) {
+                $mtrmenu = $('.target2Bg');
+            }
+            //target 2
+            if ($(this).parent().parent().hasClass('target2Bg') && $(this).hasClass('next')) {
+                $mtrmenu = $('.t3a');
+            }
+            if ($(this).parent().parent().hasClass('target2Bg') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.target1Bg');
+            }
+            //target 3a
+            if ($(this).parent().parent().hasClass('t3a') && $(this).hasClass('next')) {
+                $mtrmenu = $('.t3b');
+            }
+            if ($(this).parent().parent().hasClass('t3a') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.target2Bg');
+            }
+            //target 3b
+            if ($(this).parent().parent().hasClass('t3b') && $(this).hasClass('next')) {
+                $mtrmenu = $('.target4Bg');
+            }
+            if ($(this).parent().parent().hasClass('t3b') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.t3a');
+            }
+            //targer 4
+            if ($(this).parent().parent().hasClass('target4Bg') && $(this).hasClass('next')) {
+                $mtrmenu = $('.target5Bg');
+            }
+            if ($(this).parent().parent().hasClass('target4Bg') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.target3Bg');
+            }
+            //target 5 
+            if ($(this).parent().parent().hasClass('target5Bg') && $(this).hasClass('next')) {
+                $mtrmenu = $('.target6Bg');
+            }
+            if ($(this).parent().parent().hasClass('target5Bg') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.target4Bg');
+            }
+            //target 6 
+            if ($(this).parent().parent().hasClass('target6Bg') && $(this).hasClass('previous')) {
+                $mtrmenu = $('.target5Bg');
+            }
+        }
+        if (linkindex == link) {
+            modalopen();
+            $mtrmenu.addClass('element-nav');
+        } else {
+            $('.modal-content').empty();
+            var request = $.ajax({
+                url: link,
+                type: "GET",
+                data: { id: link },
+                dataType: "html",
+                success: function(data) {
+                    var $response = $(data);
+                    var data1 = $response.find('#content-core').html();
+                    $('.modal-content').append(data1);
+                    modalopen();
+                    $('.targetDiv').removeClass('element-nav');
+                    $mtrmenu.addClass('element-nav');
+                    $mtrmenu = 0;
+                    linkindex = link;
+                    modal_link = link.substring(57);;
+                        $('.target-nav a').removeClass('no-events')
+                            $('.mtractive').removeClass('mtractive');
+                    // var active_link = document.querySelectorAll("a[href=" + link + "]");
+                    var active_link = $('a[href="'+link+'"] > div');
+                    active_link.addClass('mtractive');
+                    // window.location.hash = link;
+
+                    // link_id = window.location.replace(('' + window.location).split('#')[0] + '#' + modal_link);
+                    // window.location.hash = '#!' + link_id;
+                    window.history.replaceState( {} , window.location, link );
+                },
+                failure: function(data) {
+                    alert('Got an error dude');
+                }
+            });
+        }
+    });
+    }
+};
