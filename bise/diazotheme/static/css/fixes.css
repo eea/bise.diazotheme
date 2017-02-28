@@ -130,10 +130,6 @@ dl.portalMessage dd {
   background-color: black;
 }
 
-#content a.edit-tile-link {
-  position: absolute;
-}
-
 #content span.tile-type-name {
   position: absolute;
 }
