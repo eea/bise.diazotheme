@@ -4691,8 +4691,15 @@ margin: 1rem;
 
 /* checkout menu actions in bise.country */
 #bise-checkout-actions {
-  background-color: #bdd8a0;
+  background-color: #f4c738;
   padding: 1rem;
   margin-bottom: 1rem;
   clear: both;
+}
+
+#bise-checkout-actions a {
+  color: black
+}
+#bise-checkout-actions a:before {
+  content: '>'
 }
