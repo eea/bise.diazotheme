@@ -4703,3 +4703,33 @@ margin: 1rem;
 #bise-checkout-actions a:before {
   content: '>'
 }
+
+/* pdf export css settings */
+@media print {
+    .page .page-body {
+      background-color: white;
+      font-size: 17px;
+    }
+
+    #site-header {
+      background-color: white;
+    }
+
+    .page-body .page-container {
+      width: 95%;
+    }
+
+    #portal-breadcrumbs {
+      padding: 1em;
+      padding-top: 2em;
+      background-color: #F7F4ED;
+    }
+
+    #content-core .cover-copyright {
+      margin: 0 40pt 0 65pt;
+    }
+
+    .cover-body {
+      display: none;
+    }
+}
