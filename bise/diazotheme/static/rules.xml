@@ -99,10 +99,13 @@
     <drop css:theme="head script" />
     <after css:content="head style, head link, head script, head meta" css:theme-children="head" />
     <replace css:content="head title" css:theme="head title" />
-    <copy css:content="head base" css:theme="head base" />
+    <!-- <copy css:content="head base" css:theme="head base" /> -->
     <drop css:content="head link[rel='canonical']" />
     <drop css:content="head link[rel='shortcut icon']" />
     <drop css:content="head link[rel='apple-touch-icon']" />
+
+    <!-- Base tag -->
+    <before theme="/html/head/title" content="/html/head/base"/>
 
     <!-- <after css:theme-children="head">
     <script data-main="++theme++bise.diazotheme/js/appzz.js" src="http://requirejs.org/docs/release/2.1.14/minified/require.js" />

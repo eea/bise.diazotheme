@@ -3,5 +3,7 @@ Changelog
 
 1.0dev (unreleased)
 -------------------
+- Fixed diazo rule for base tag
+  [iulianpetchesi #81711]
 
 - Initial release
