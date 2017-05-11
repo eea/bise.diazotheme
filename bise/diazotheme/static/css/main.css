@@ -4697,6 +4697,10 @@ margin: 1rem;
   clear: both;
 }
 
+#bise-checkout-actions li {
+  list-style-type: none;
+}
+
 #bise-checkout-actions a {
   color: black
 }

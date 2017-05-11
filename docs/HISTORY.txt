@@ -6,4 +6,7 @@ Changelog
 - Fixed diazo rule for base tag
   [iulianpetchesi #81711]
 
+- Improve styling of country checkout actions
+  [tiberich]
+
 - Initial release
