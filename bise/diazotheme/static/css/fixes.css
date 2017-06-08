@@ -493,3 +493,22 @@ pre, code {
 #content form ul {
     margin-left: 0em;
 }
+
+
+#collage .collage-row .row_1,
+#collage .collage-row .row_2 {
+  border-color: transparent;
+}
+
+#collage .collage-row .portletItem {
+  margin-left: 0;
+}
+
+
+#collage .collage-row  .portletHeader.titleless {
+  background: none;
+}
+
+.portlet-collection-news-national-chms .portletHeader {
+  background: none;
+}
