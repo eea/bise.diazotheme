@@ -1,14 +1,17 @@
 Changelog
 =========
 
+1.1 - (2017-06-08)
+------------------
+- Improve styling of mtr pages
+  [mihaim]
+
 1.0dev (unreleased)
 -------------------
 - Added script to enable screentimeAnalytics from eea.jquery
   [iulianpetchesi #85252]
 - Fixed diazo rule for base tag
   [iulianpetchesi #81711]
-
 - Improve styling of country checkout actions
   [tiberich]
-
 - Initial release
