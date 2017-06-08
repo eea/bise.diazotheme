@@ -130,6 +130,10 @@ dl.portalMessage dd {
   background-color: black;
 }
 
+#content a.edit-tile-link {
+  position: absolute;
+}
+
 #content span.tile-type-name {
   position: absolute;
 }
@@ -511,4 +515,65 @@ pre, code {
 
 .portlet-collection-news-national-chms .portletHeader {
   background: none;
+}
+
+
+#strategyPlan {
+  display: flex;
+  justify-content: center;
+}
+
+.goTo {
+    float: right;
+    padding: .5rem;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: .5rem;
+}
+
+.goTo * {
+  color: white;
+}
+
+.goTo img {
+  float: right;
+  margin-left: 8px!important;
+  filter: invert(1);
+
+}
+
+.targetsBack {
+  padding-bottom: 39px;
+}
+
+#strategyPlan .targetDiv {
+  margin-top: 17px;
+}
+
+
+.strategyPlan2 {
+  display: block!important;
+}
+
+.strategyPlan2 .targetDiv {
+  margin-top: 0!important;
+}
+
+
+.strategyPlan1 .targetsBack > *{
+    margin-top: 7px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+.strategyPlan1 .targetDiv {
+  width: 178px;
+
+}
+
+
+.strategyPlan1 .targetId > :first-child + div + div {
+  font-size: 14px!important;
+  padding: .3rem;
 }
