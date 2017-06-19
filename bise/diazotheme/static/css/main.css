@@ -4710,9 +4710,28 @@ margin: 1rem;
 
 /* pdf export css settings */
 @media print {
+    body {
+      min-width: 10cm;
+      width: auto;
+      position: relative;
+      height: auto;
+      float: none !important;
+    }
+
+    #site {position: relative;}
+    #content {
+      white-space: normal;
+      position: relative;
+      float: none !important;
+    }
+
+    .cover-body {
+      display: none;
+    }
+
     .page .page-body {
       background-color: white;
-      font-size: 17px;
+      font-size: 9pt;
     }
 
     #site-header {
@@ -4733,7 +4752,60 @@ margin: 1rem;
       margin: 0 40pt 0 65pt;
     }
 
-    .cover-body {
-      display: none;
+    div > p {
+      position: relative;
+      page-break-inside: avoid !important;
+      page-break-before:  always !important;
+      display: block;
     }
+
+    div {
+      float: none !important;
+      position: relative;
+      /*overflow:initial !important;*/
+    }
+
+    p {
+      border: none !important;
+    }
+
+    a {
+      float: none !important;
+      position: relative;
+    }
+
+    iframe {
+      position: relative;
+      page-break-inside: avoid !important;
+      page-break-before:  always !important;
+      display: block;
+    }
+
+    img {
+      page-break-inside: avoid !important;
+      position: relative;
+      max-width: 100%;
+      page-break-before:  always !important;
+      display: block;
+    }
+
+    .nobreak{ page-break-inside: avoid !important;}
+    .assessment_view .nobreak,
+    .nobreak.break{ page-break-before: auto !important;}
+    .pageBreak{ height: 1px; }
+
+    table {
+      position: relative;
+      page-break-inside: avoid !important;
+      page-break-before:  always !important;
+      display: block;
+    }
+
+    figure {
+      position: relative;
+      page-break-inside: avoid !important;
+      page-break-before: always !important;
+      display: block;
+    }
+
 }

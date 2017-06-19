@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2 - (unreleased)
+------------------
+- Improve pdf styling
+  [iulianpetchesi #85140]
+
 1.1 - (2017-06-08)
 ------------------
 - Improve styling of mtr pages
