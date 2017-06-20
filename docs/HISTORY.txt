@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+- Prevent unwanted slicing of content at pdf export
+  [iulianpetchesi #85140]
 - Improve pdf styling
   [iulianpetchesi #85140]
 

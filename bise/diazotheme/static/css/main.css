@@ -4755,14 +4755,14 @@ margin: 1rem;
     div > p {
       position: relative;
       page-break-inside: avoid !important;
-      page-break-before:  always !important;
+      /*page-break-before:  always !important;*/
       display: block;
     }
 
     div {
       float: none !important;
       position: relative;
-      /*overflow:initial !important;*/
+      overflow:initial !important;
     }
 
     p {
@@ -4770,14 +4770,14 @@ margin: 1rem;
     }
 
     a {
-      float: none !important;
+      /*float: none !important;*/
       position: relative;
     }
 
     iframe {
       position: relative;
       page-break-inside: avoid !important;
-      page-break-before:  always !important;
+      /*page-break-before:  always !important;*/
       display: block;
     }
 
@@ -4785,7 +4785,7 @@ margin: 1rem;
       page-break-inside: avoid !important;
       position: relative;
       max-width: 100%;
-      page-break-before:  always !important;
+      /*page-break-before:  always !important;*/
       display: block;
     }
 
@@ -4797,14 +4797,14 @@ margin: 1rem;
     table {
       position: relative;
       page-break-inside: avoid !important;
-      page-break-before:  always !important;
+      /*page-break-before:  always !important;*/
       display: block;
     }
 
     figure {
       position: relative;
       page-break-inside: avoid !important;
-      page-break-before: always !important;
+      /*page-break-before: always !important;*/
       display: block;
     }
 
