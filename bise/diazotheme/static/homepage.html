@@ -116,15 +116,15 @@
 <small class="slider-counter" id="hlslider-counter">1/3</small></header>
 <div class="highlights" id="hlslider-slides">
 <div class="highlight">
-<h3 class="highlight-title"><a href="policy">Towards the 2020 biodiversity targets</a></h3>
+<h3 class="highlight-title"><a href="/policy/biodiversity-strategy-plan">Towards the 2020 biodiversity targets</a></h3>
 <p class="highlight-description">Halting the loss of biodiversity and the degradation of ecosystem services in the EU by 2020, and restoring them in so far as feasible, while stepping up the EU contribution to averting global biodiversity loss.</p>
 </div>
 <div class="highlight" style="display: none; ">
-<h3 class="highlight-title"><a href="maes">Mapping and Assessment of Ecosystems and their Services (MAES)</a></h3>
+<h3 class="highlight-title"><a href="/maes">Mapping and Assessment of Ecosystems and their Services (MAES)</a></h3>
 <p class="highlight-description">To keep Europe's ecosystems healthy, we need to protect biodiversity. How can the ecosystem service approach help? And how can we capture people's more deeply held values beyond mere money? Watch the video produced by Science for Environment Policy about the different tools in the ecosystem services toolbox.</p>
 </div>
 <div class="highlight" style="display: none; ">
-<h3 class="highlight-title"><a href="chm-network">BISE - CHMs network of Europe</a></h3>
+<h3 class="highlight-title"><a href="/chm-network">BISE - CHMs network of Europe</a></h3>
 <p class="highlight-description">The network aims at promoting and facilitating technical cooperation, knowledge sharing and information exchange amongst national CHMs and BISE, in support of the implementation of the Convention on Biological Diversity (CBD) Strategic Plan for Biodiversity 2011-2020</p>
 </div>
 </div>
@@ -348,6 +348,7 @@
             <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
             <script>
 
+
 (function() {
 
                 jQuery.extend(jQuery.easing, {
@@ -362,22 +363,31 @@
                     $hlSliderNext = $('#hlslider-next'),
                     $hlSliderPhotos = $('.highlight-photos').children();
 
-
-            $(document).ready(function(){
-                // var $hlSliderPlaceholder = $('<div class="highlight-placeholder"></div>');
-                // $('#highlights-slider').prepend($hlSliderPlaceholder);
+                var $hlSliderPlaceholder = $('<div class="highlight-placeholder"><img src="/++theme++bise.diazotheme/img/bise-highlights/highlights-placeholder.jpg" alt="Slider placeholder"></div>');
+                $('#highlights-slider').prepend($hlSliderPlaceholder);
 
                 var $hlFirstSlide = $($hlSliderPhotos[0]);
-                console.log($hlFirstSlide);
 
-                    $hlFirstSlide.css({
+                $hlFirstSlide.find('img')[0].onload = function() {
+
+                    // setTimeout(function() {
+
+                    $(this).css({
                         'visibility': 'visible'
                     }).addClass('current');
                     initSlider();
-                    // $hlSliderPlaceholder.css('opacity', '0');
+                    $hlSliderPlaceholder.css('opacity', '0');
+                    // }, 5000);
+                };             
+
+                $hlFirstSlide.css({
+                    'visibility': 'hidden',
+                    'display': 'block'
                 });
 
-                  function initSlider() {
+                var initSlider = function() {
+                    
+
                     $hlSlider.children().css({ 'display': 'block' });
                     $hlSlider.slick({
                         autoplay: true,
@@ -453,6 +463,8 @@
                 
 
             }())
+
+
 </script>
 
             <script>
@@ -523,6 +535,16 @@
             </div>
         </footer>
     </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-41509591-1', 'europa.eu');
+  ga('send', 'pageview');
+ 
+</script>
 </body>
 
 </html>
