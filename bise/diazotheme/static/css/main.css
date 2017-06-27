@@ -4839,7 +4839,7 @@ margin: 1rem;
     }
 
     .template-pdf-cover .col-sm-6 .footer-logos img {
-      display: block !important;
+      display: inline-block !important;
     }
 
     .template-pdf-cover .col-sm-6 {
@@ -4850,4 +4850,34 @@ margin: 1rem;
     .col-sm-6 .footer-logos span {
       display: none;
     }
+
+    .template-pdf-cover .footer-logos a img:before {
+      position:absolute;
+      top:0px;
+      left:0px;
+      bottom:0px;
+      right:0px;
+      color: #FFF;
+      z-index: 0;
+      display: block;
+    }
+
+    .template-pdf-cover .footer-logs a > * { z-index: 1; }
+
+    a img {
+      display: inline-block !important;
+    }
+
+    a img:after {
+      position:absolute;
+      top:0px;
+      left:0px;
+      bottom:0px;
+      right:0px;
+      color: #FFF;
+      z-index: 0;
+      display: block;
+    }
+
+    a > * { z-index: 1; }
 }
