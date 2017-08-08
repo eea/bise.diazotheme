@@ -155,6 +155,13 @@ $(document).ready(function() {
         body.classList.remove('no-ovf');
     });
 
+    // Set window.location.origin for IE
+    if (!window.location.origin) {
+      window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+    }
+
+    // set the navbrand link to bise homepage
+    $('.navbrand')[0].href = window.location.origin
 
     //call for sidebar plugin
     sidebarplugin(asidetrigger, aside, asidebutton);
