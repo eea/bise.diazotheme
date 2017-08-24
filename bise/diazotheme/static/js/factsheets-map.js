@@ -3,9 +3,9 @@ $(document).ready(function() {
 $('body').addClass('factsheets');
 
 $('#site-body').prepend('<div class="header-bg"><svg-container><svg viewBox="0 0 1200 300"></svg> </svg-container> </div> ')
-    var wflags = window.location.origin + "/countries.tsv",
-          w110 = "https://gist.githubusercontent.com/mbostock/4090846/raw/world-110m.json",
-          wnames = "https://gist.githubusercontent.com/mbostock/4090846/raw/world-country-names.tsv";
+    var wflags = window.location.origin + "/++theme++bise.diazotheme/countries/countries.tsv",
+          w110 = window.location.origin + "/++theme++bise.diazotheme/countries/world-110m.json",
+          wnames = window.location.origin + "/++theme++bise.diazotheme/countries/world-country-names.tsv";
 
 
     var width = 1200,
