@@ -573,3 +573,7 @@ pre, code {
   font-size: 14px!important;
   padding: .3rem;
 }
+
+#form-widgets-IRelatedItems-relatedItems-input-fields {
+  display: block !important;
+}
