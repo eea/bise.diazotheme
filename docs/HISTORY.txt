@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+- Fix country highlight when changing countries from country factsheets dropdown
+  [krisztina #85826]
 - Added overlay over images so that the links work in the pdf version
   [iulianpetchesi #85140]
 - Added links to footer

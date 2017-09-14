@@ -65,12 +65,16 @@ svg.append("path")
 
         var href_split = href.split("/");
         var selected_country = href_split[href_split.length - 1]
-      if(selected_country.length) {
-        selected_country =  selected_country[0].toUpperCase() + selected_country.slice(1);
-        selected_country = selected_country.replace('-', ' ');
-        //for testing
-        selected_country = selected_country.split('.')[0]
-}
+
+        if (selected_country.length) {
+          selected_country =  selected_country[0].toUpperCase() + selected_country.slice(1);
+          if (selected_country.includes('#')) {
+            selected_country = selected_country.substring(0, selected_country.indexOf('#'))
+          }
+          selected_country = selected_country.replace('-', ' ');
+          //for testing
+          selected_country = selected_country.split('.')[0]
+        }
 
 
         if (selected_country == 'Czech republic')
@@ -247,16 +251,16 @@ svg.append("path")
             else
               return  "#f7f4ed"
           })
-          .on('click',function(d){
-            var link = d.name.toLowerCase()
-             location.href = "http://biodiversity.europa.eu/countries/eu_country_profiles/"+link+"";
-          })
-          .on('mouseover',function(e){
-            d3.select(this).attr('opacity','0')
-          })
-          .on('mouseout',function(d){
-            d3.select(this).attr('opacity','1')
-          });
+          // .on('click',function(d){
+          //   var link = d.name.toLowerCase()
+          //    location.href = "http://biodiversity.europa.eu/countries/eu_country_profiles/"+link+"";
+          // })
+          // .on('mouseover',function(e){
+          //   d3.select(this).attr('opacity','0')
+          // })
+          // .on('mouseout',function(d){
+          //   d3.select(this).attr('opacity','1')
+          // });
 
 
 
