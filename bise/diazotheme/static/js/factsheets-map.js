@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // console.log("Context countries", window.available_map_countries);
   $('body').addClass('factsheets');
 
   if ($('svg-container').length === 0) {
@@ -22,7 +23,7 @@ $(document).ready(function() {
   if (pY) {
     pos[2] = parseInt(pY);
   }
-  console.log("used pos", pos);
+  // console.log("used pos", pos);
 
   var isGlobalMap = $("svg-container").data('globalmap') === 'global';
 
@@ -30,16 +31,15 @@ $(document).ready(function() {
     w110 = window.location.origin + "/++theme++bise.diazotheme/countries/world-110m.json",
     wnames = window.location.origin + "/++theme++bise.diazotheme/countries/world-country-names.tsv";
 
-  var width = 1200,
-    height = 700;
+  var width = 1200;
+  var height = 700;
 
   var projection = d3.geo.robinson()
     .scale(160)
     .translate([width / 2, height / 2.3])
     .precision(.1);
 
-  var path = d3.geo.path()
-    .projection(projection);
+  var path = d3.geo.path().projection(projection);
 
   var graticule = d3.geo.graticule();
 
@@ -52,12 +52,12 @@ $(document).ready(function() {
   defs.append("path")
     .datum({type: "Sphere"})
     .attr("id", "sphere")
-    .attr('fill',' rgb(48, 140, 168)')
+    // .attr('fill',' rgb(255, 140, 168)') // change global color here
     .attr("d", path)
 
   var new_path = d3.select('#sphere').attr('d').replace(/,/g, ' ')
 
-  d3.select('#sphere').attr('d',new_path)
+  d3.select('#sphere').attr('d', new_path)
 
   svg.append("use")
     .attr("class", "stroke")
@@ -82,9 +82,17 @@ $(document).ready(function() {
 
     var href = window.location.href;
 
-    var href_split = href.split("/");
-    var selected_country = href_split[href_split.length - 1]
-    if(selected_country.length) {
+    var frags = href.split("/").reverse();
+    var selected_country;
+
+    for (var f=0; f<frags.length; f++) {
+      if (frags[f].length) {
+        selected_country = frags[f];
+        break;
+      }
+    }
+
+    if(selected_country) {
       selected_country =  selected_country[0].toUpperCase() + selected_country.slice(1);
       if (selected_country.includes('#')) {
         selected_country = selected_country.substring(0, selected_country.indexOf('#'))
@@ -94,10 +102,8 @@ $(document).ready(function() {
       selected_country = selected_country.split('.')[0]
     }
 
-    if (selected_country == 'Czech republic')
-      selected_country = 'Czech Republic'
-    if (selected_country == 'United kingdom')
-      selected_country = 'United Kingdom'
+    if (selected_country == 'Czech republic') selected_country = 'Czech Republic';
+    if (selected_country == 'United kingdom') selected_country = 'United Kingdom';
 
     //ugly ifs
     // if (selected_country == 'United Kingdom')
@@ -156,14 +162,20 @@ $(document).ready(function() {
         }
       });
     });
+    // console.log('countries', countries);
 
-    // var flaags = []
+    // countries = countries.filter(function(d) {
+    //   if (available_map_countries.indexOf(d.name) > -1) {
+    //     console.log('This is good', d.name);
+    //     return true;
+    //   } else {
+    //     console.log('this is not good', d.name);
+    //   }
+    // });
 
     // for (var f of countries){
     //     $('body').append(f.url+" ")
     // }
-
-
 
     // /* usage: */
     // // stringified SVG
@@ -181,19 +193,22 @@ $(document).ready(function() {
       .enter()
       .append("clipPath")
       .attr("class", "mask")
-      .attr("id", function(d) {return "iso-" + d.id})
+      .attr("id", function(d) {
+        return "iso-" + d.id
+      })
       .attr("width", function (d) {
         return d.bounds[1][0] - d.bounds[0][0];}
       )
-      .attr("height", function (d) {return d.bounds[1][1] - d.bounds[0][1];})
+      .attr("height", function (d) {
+        return d.bounds[1][1] - d.bounds[0][1];
+      })
       .append("path")
       .attr("d", path);
-
 
     var group = svg.selectAll("country")
       .data(countries)
       .enter()
-      .append('g')
+      .append('g');
 
     svg.selectAll("country")
       .data(countries)
@@ -228,7 +243,8 @@ $(document).ready(function() {
       .attr("preserveAspectRatio", "none")
       .attr("clip-path", function(d) {
         return "url(#iso-"+d.id+")";
-      })
+      });
+    //
     // .attr('width',function(d){
     //   if(d.name=='France')
     //     return '39'
@@ -244,6 +260,9 @@ $(document).ready(function() {
 
     var $rect = group.append('rect')
       .attr("class", "country-wrapper")
+      // .attr("data-country-name", function(d) {
+      //   return d.name;
+      // })
       .attr("x", function (d) {return d.bounds[0][0];})
       .attr("y", function (d) {return d.bounds[0][1];})
       .attr("width", function (d) {
@@ -255,23 +274,41 @@ $(document).ready(function() {
         return "url(#iso-" + d.id + ")";
       })
       .attr("fill",function(d){
+        if (isGlobalMap === true) {
+          if (window.available_map_countries.indexOf(d.name) > -1) {
+            return 'darkgreen';
+          }
+          return "#f7f4ed"; // change color here;
+        }
+
         if (d.name == selected_country)
-          return 'none'
+          return 'none';
         else
-          return  "#f7f4ed"
+          return "#f7f4ed"; // change color here;
       });
 
     if (isGlobalMap) {
-      $rect.on('click',function(d){
-        var link = d.name.toLowerCase()
-        location.href = "/countries/eu_country_profiles/"+link+"";
+      $rect.on('click', function(d){
+        if (window.available_map_countries.indexOf(d.name) > -1) {
+          // console.log("You clicked", d);
+          var dd = d3.select(this);
+          // console.log("the dom obj", dd);
+          return false;
+          // TODO: this locations, don't hardcode
+          // var link = d.name.toLowerCase();
+          // location.href = "/countries/eu_country_profiles/"+link+"";
+        }
       })
-      .on('mouseover',function(e){
-        console.log("mouseover", this);
-        d3.select(this).attr('opacity','0')
+      .on('mouseover', function(d){
+        if (window.available_map_countries.indexOf(d.name) > -1) {
+          // console.log("mouseover", this);
+          d3.select(this).attr('opacity','0');
+        }
       })
-      .on('mouseout',function(d){
-        d3.select(this).attr('opacity','1')
+      .on('mouseout', function(d){
+        if (window.available_map_countries.indexOf(d.name) > -1) {
+          d3.select(this).attr('opacity','1');
+        }
       });
     }
 
@@ -288,6 +325,5 @@ $(document).ready(function() {
       .attr("class", "boundary");
 
     svg.style('transform', 'scale('+pos[0]+') translate('+pos[1]+'px, '+pos[2]+'px');
-
   }
 });
