@@ -178,13 +178,13 @@ dl.portalMessage dd {
 /* 1. Negative margin prevents it from becoming an orphan
    (the only one to break line) */
 
-.externalLink:after {
+/*.externalLink:after {
   content: url("/external-link.png");
   display: inline-block;
   width: 12px;
   height: 11px;
   margin-left: 3px;
-}
+}*/
 
 #navbar .externalLink:after {
   margin-right: -12px;
@@ -392,6 +392,9 @@ dl.portalMessage dd {
   #compare-form .field {
     margin-bottom: 1rem;
   }
+  .card__expander .fa {
+    left: 24px !important;
+  }
 }
 @media (min-width: 800px) {
   #compare-form {
@@ -576,4 +579,8 @@ pre, code {
 
 #form-widgets-IRelatedItems-relatedItems-input-fields {
   display: block !important;
+}
+
+.singlerow-title {
+  font-weight: 600 !important;
 }
