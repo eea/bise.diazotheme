@@ -50,29 +50,41 @@
     </rules>
 
     <rules if="$have_left_portlets">
-        <!-- <theme href="folder.html" /> -->
-        <!-- we want full width on edit pages -->
-        <rules css:if-not-content=".template-edit">
-            <rules css:if-not-content="#content-core form">
-                <drop css:theme="main.asidefalse" />
-                <append css:content-children="#portal-column-one" css:theme="aside" />
-                <append css:content-children="#portal-column-two" css:theme="aside" />
-            </rules>
+      <!-- <theme href="folder.html" /> -->
+      <!-- we want full width on edit pages -->
+      <rules css:if-not-content=".template-edit">
+        <rules css:if-not-content="#content-core form">
+          <rules css:if-not-content=".template-manage-portlets">
+            <drop css:theme="main.asidefalse" />
+            <append css:content-children="#portal-column-one" css:theme="aside" />
+            <append css:content-children="#portal-column-two" css:theme="aside" />
+          </rules>
         </rules>
+      </rules>
     </rules>
 
-    <rules if="not($have_left_portlets)">
-        <drop css:theme="main.asidetrue" />
-        <drop css:theme="aside" />
-        <strip css:theme=".col-md-push-3" />
+      <rules css:if-content=".template-manage-portlets">
+        <drop css:theme="main.asidefalse" />
+        <append css:content-children="#portal-column-one" css:theme="aside" />
+        <append css:content-children="#portal-column-two" css:theme="aside" />
+      </rules>
+
+      <rules if="not($have_left_portlets)">
+        <rules css:if-not-content=".template-manage-portlets">
+          <drop css:theme="main.asidetrue" />
+          <drop css:theme="aside" />
+          <strip css:theme=".col-md-push-3" />
+        </rules>
+
         <!--  <strip attributes=".col-md-push-3" css:theme=".col-md-9" /> -->
         <!-- <replace css:theme-children="div.col-md-9" css:content=" " />        -->
         <!-- <replace css:content=".article" css:theme=".article-wide" /> -->
         <!--    <append css:content="#portal-column-content" css:theme=".article-wide" /> -->
-        <!--    <replace css:theme=".article" >
-                <div class=".article-wide" css:content="#portal-column-content"> </div>
-        </replace> -->
-    </rules>
+        <!-- <replace css:theme=".article" > -->
+          <!--   <div class=".article&#45;wide" css:content="#portal&#45;column&#45;content"> </div> -->
+          <!-- </replace> -->
+
+      </rules>
 
     <rules css:if-content="#catalogue-app">
         <theme href="catalogue.html" />

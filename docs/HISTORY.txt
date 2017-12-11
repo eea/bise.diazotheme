@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+- Bug fix: don't break portlet manager when all portlets are blocked
+  [tiberich, krisztina]
 - Fix country highlight when changing countries from country factsheets dropdown
   [krisztina #85826]
 - Added overlay over images so that the links work in the pdf version
