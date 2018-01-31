@@ -8,12 +8,19 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="bise.diazotheme">
 
-    <browser:page 
+    <browser:page
         name="frontpage-news"
         for="*"
         class=".frontpage.NewsListing"
         template="pt/frontpage-news.pt"
         permission="zope.Public"
+        />
+
+    <browser:page
+        name="detect-images"
+        for="*"
+        class=".admin.DetectImageLinks"
+        permission="cmf.ManagePortal"
         />
 
 </configure>

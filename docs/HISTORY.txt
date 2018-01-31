@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+- Feature: added page to detect linked "foreign" images
+  [tiberich #92205]
 - Bug fix: don't break portlet manager when all portlets are blocked
   [tiberich, krisztina]
 - Fix country highlight when changing countries from country factsheets dropdown
