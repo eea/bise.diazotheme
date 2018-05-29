@@ -133,6 +133,7 @@ dl.portalMessage dd {
 #content span.tile-type-name {
   position: absolute;
 }
+#document-action-download_pdf { display: none !important; }
 
 
 /* strategyPlan.css */
@@ -421,11 +422,9 @@ dl.portalMessage dd {
   border: 1px solid #e5dfd1;
 }
 
-
-/* cifChart.css */
-#cifChart {
-  min-width: 600px;
-  width: 100%!important;
+/* search page */
+#search-results-bar {
+  z-index: 10;
 }
 
 
