@@ -107,14 +107,14 @@
             css:content-children="#portal-column-content"/>
 
     <!-- =============[ Head ]============= -->
+    <drop css:theme="head link[rel='canonical']" />
+    <drop css:theme="head link[rel='shortcut icon']" />
+    <drop css:theme="head link[rel='apple-touch-icon']" />
     <copy css:content="html" css:theme="html" attributes="lang dir" />
     <drop css:theme="head script" />
     <after css:content="head style, head link, head script, head meta" css:theme-children="head" />
     <replace css:content="head title" css:theme="head title" />
     <!-- <copy css:content="head base" css:theme="head base" /> -->
-    <drop css:content="head link[rel='canonical']" />
-    <drop css:content="head link[rel='shortcut icon']" />
-    <drop css:content="head link[rel='apple-touch-icon']" />
 
     <!-- Base tag -->
     <before theme="/html/head/title" content="/html/head/base"/>
@@ -160,3 +160,4 @@
     <drop css:content="#viewlet-social-like" />-->
 
 </rules>
+
