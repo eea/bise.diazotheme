@@ -3,6 +3,14 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+* Change: html template cleanups
+  [ichim-david refs #95380]
+* Change: load theme css from portal_css when applied to plone site
+  [ichim-david refs #95380]
+* Change: removed canonical from theme when applied to plone site
+  [ichim-david refs #95380]
+* Change: fixed links for favicons for 16x and 32x
+  [ichim-david refs #95380]
 - Feature: added page to detect linked "foreign" images
   [tiberich #92205]
 - Bug fix: don't break portlet manager when all portlets are blocked
