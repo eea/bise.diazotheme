@@ -421,7 +421,12 @@ dl.portalMessage dd {
   box-shadow: none;
   border: 1px solid #e5dfd1;
 }
-
+/* cifChart.css */
+#cifChart {
+  z-index: 10;
+  min-width: 600px;
+  width: 100%!important;
+}
 /* search page */
 #search-results-bar {
   z-index: 10;
