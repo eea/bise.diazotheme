@@ -4062,7 +4062,7 @@ main.asidefalse .managePortletsFallback {
 }
 
 .esriBasemapIcon {
-  background-image: url("Basemap16.png");
+  background-image: url("/Basemap16.png");
   background-repeat: no-repeat;
   display: inline-block;
   height: 16px;
@@ -4129,6 +4129,12 @@ main.asidefalse .managePortletsFallback {
 
 .fact-contents {
   margin-left: 1.2rem;
+}
+
+/* reduce size of Information not yet available headings  */
+.fact-contents  h2 {
+  font-size: 125% !important;
+  text-align: left !important;
 }
 
 .search {
