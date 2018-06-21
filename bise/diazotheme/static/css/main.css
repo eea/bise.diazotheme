@@ -4420,6 +4420,9 @@ div > .admonition-title {
   width: 18px;
   height: 18px;
 }
+.search-label img {
+  display: none; /* 90214 hide double icon displaced when viewed on IOS */
+}
 
 .search-image {
   display: flex;

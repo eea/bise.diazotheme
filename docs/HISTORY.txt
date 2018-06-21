@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+* Bug fix: avoid double search icon on IOS devices
+  [ichim-david refs #90214]
 * Change: html template cleanups
   [ichim-david refs #95380]
 * Change: load theme css from portal_css when applied to plone site
