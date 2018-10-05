@@ -3,6 +3,8 @@ Changelog
 
 1.2 - (unreleased)
 ------------------
+* Task: Added matomo code for bise
+  [iulianpetchesi #99202]
 * Bug fix: avoid double search icon on IOS devices
   [ichim-david refs #90214]
 * Change: html template cleanups
