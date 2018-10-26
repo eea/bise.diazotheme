@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.2 - (unreleased)
-------------------
+1.2.dev0 - (unreleased)
+-----------------------
 * Bug fix: Check for content and screentimeAnalytics before activation
   [olimpiurob #96812]
 * Task: Added matomo code for bise
