@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.2.dev0 - (unreleased)
------------------------
+1.2 - (2018-10-26)
+------------------
 * Bug fix: Check for content and screentimeAnalytics before activation
   [olimpiurob #96812]
 * Task: Added matomo code for bise
@@ -48,3 +48,4 @@ Changelog
 - Improve styling of country checkout actions
   [tiberich]
 - Initial release
+
