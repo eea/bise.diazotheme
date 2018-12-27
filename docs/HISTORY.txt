@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4-dev - (unreleased)
+------------------
+* dummy release
+  [iulianpetchesi #100969]
+
 1.3 - (2018-12-27)
 ------------------
 * Task: Removed google analytics code for bise
