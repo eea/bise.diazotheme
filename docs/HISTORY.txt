@@ -3,6 +3,9 @@ Changelog
 
 1.4-dev - (unreleased)
 ------------------
+-remove "Learn more about BISE"
+  [iugin #112210]
+
 * dummy release
   [iulianpetchesi #100969]
 
@@ -58,4 +61,3 @@ Changelog
 - Improve styling of country checkout actions
   [tiberich]
 - Initial release
-
