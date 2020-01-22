@@ -4890,3 +4890,21 @@ margin: 1rem;
 
     a > * { z-index: 1; }
 }
+
+.context-state-archived {
+  margin: 1em 0;
+  border-radius: 3px;
+  overflow: hidden;
+  line-height: 30px;
+  border: 1px solid #45a3b3;
+  color: #0c5460;
+}
+
+.context-state-archived .fa-info-circle {
+  float: left;
+  margin: 0 0.5em 0 0;
+  padding: 0.5em 1.2em;
+  background-color: #45a3b3;
+  line-height: 1.25em;
+  color: #fff;
+}
